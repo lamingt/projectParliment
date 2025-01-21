@@ -1,0 +1,3057 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html class="no-js" lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+ <!--<![endif]-->
+ <head id="Head1">
+  <!-- UserWay widget -->
+  <script>
+   (function (d) {
+            var s = d.createElement("script");
+            /* uncomment the following line to override default position*/
+            /* s.setAttribute("data-position", 1);*/
+            /* uncomment the following line to override default size (values: small, large)*/
+            /* s.setAttribute("data-size", "large");*/
+            /* uncomment the following line to override default language (e.g., fr, de, es, he, nl, etc.)*/
+            /* s.setAttribute("data-language", "null");*/
+            /* uncomment the following line to override color set via widget (e.g., #053f67)*/
+            s.setAttribute("data-color", "#0e1531");
+            /* uncomment the following line to override type set via widget (1=person, 2=chair, 3=eye, 4=text)*/
+            /* s.setAttribute("data-type", "1");*/
+            /* s.setAttribute("data-statement_text:", "Our Accessibility Statement");*/
+            /* s.setAttribute("data-statement_url", "http://www.example.com/accessibility";*/
+            /* uncomment the following line to override support on mobile devices*/
+            /* s.setAttribute("data-mobile", true);*/
+            /* uncomment the following line to set custom trigger action for accessibility menu*/
+            /* s.setAttribute("data-trigger", "triggerId")*/
+            s.setAttribute("data-account", "Nu37TW4Ef2");
+            s.setAttribute("src", "https://cdn.userway.org/widget.js");
+            (d.body || d.head).appendChild(s);
+        })(document)
+  </script>
+  <!-- Google Tag Manager -->
+  <script>
+   (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-N2CL3M9');
+  </script>
+  <!-- End Google Tag Manager -->
+  <meta charset="utf-8"/>
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
+  <meta content="Bills before Parliament" property="og:title"/>
+  <meta content="/images/template/Default_Classified_150_90.png" property="og:image"/>
+  <meta content="Bills before Parliament" property="og:description"/>
+  <meta content="https://www.aph.gov.au/Parliamentary_Business/Bills_Legislation/Bills_before_Parliament?Page=1" property="og:url"/>
+  <meta content="5D9111AD3364510F24400EBF6E139AB5" name="msvalidate.01"/>
+  <title>
+   Bills before Parliament
+         – Page 1
+     – Parliament of Australia
+  </title>
+  <meta content="Bills before Parliament" name="description"/>
+  <meta content="parliament, house, senate, parliamentary, committees, representatives, government, bills, motions" name="keywords"/>
+  <meta content="Bills before Parliament" name="DCTERMS.Description"/>
+  <meta content="corporateName=Commonwealth Parliament; address=Parliament House, Canberra, ACT, 2600; contact=+61 2 6277 7111;" name="DCTERMS.creator"/>
+  <meta content="Bills before Parliament" name="DCTERMS.title"/>
+  <meta content="Bills before Parliament" name="DCTERMS.subject"/>
+  <meta content="2010-12-14" name="DCTERMS.created"/>
+  <meta content="2022-01-20" name="DCTERMS.modified"/>
+  <meta content="text" name="DCTERMS.type"/>
+  <meta content="Australia" name="DCTERMS.coverage"/>
+  <meta content="https://www.aph.gov.au/Parliamentary_Business/Bills_Legislation/Bills_before_Parliament?Page=1" name="DCTERMS.identifier"/>
+  <meta content="corporateName=Commonwealth Parliament; address=Parliament House, Canberra, ACT, 2600; contact=+61 2 6277 7111" name="DCTERMS.publisher"/>
+  <meta content="http://www.aph.gov.au/Help/Disclaimer_Privacy_Copyright" name="DCTERMS.rights"/>
+  <meta content="Commonwealth of Australia" name="DCTERMS.rightsHolder"/>
+  <meta content="Creative Commons - Attribution-NonCommercial-NoDerivs 3.0 Australia (CC BY-NC-ND 3.0 AU)" name="DCTERMS.license"/>
+  <meta content="en-AU" name="DCTERMS.language"/>
+  <meta content="text/html" name="DCTERMS.format"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <link href="/favicon.ico" rel="shortcut icon"/>
+  <link href="//fonts.googleapis.com/css?family=Open+Sans:400italic,700,300,800,400|Open+Sans+Condensed:300,700" rel="stylesheet" type="text/css"/>
+  <link href="/touch-icon-iphone.png" rel="apple-touch-icon" sizes="60x60"/>
+  <link href="/touch-icon-ipad.png" rel="apple-touch-icon" sizes="76x76"/>
+  <link href="/touch-icon-iphone-retina.png" rel="apple-touch-icon" sizes="120x120"/>
+  <link href="/touch-icon-ipad-retina.png" rel="apple-touch-icon" sizes="152x152"/>
+  <link href="/css/style.min.css?v=3539851482" media="screen" rel="stylesheet"/>
+  <link href="/css/handheld.css?v=3444104224" media="handheld" rel="stylesheet"/>
+  <link href="/css/aph-theme/jquery-ui-1.8.6.custom.css" media="screen" rel="stylesheet"/>
+  <link href="/css/vendor/colorbox/colorbox.css?v=215458967" media="screen" rel="stylesheet"/>
+  <link href="/css/print.css?v=1577436929" media="print" rel="stylesheet"/>
+  <script src="/js/libs/jquery-1.10.2.min.js" type="text/javascript">
+  </script>
+  <script src="/js/libs/jquery-ui-1.10.4.custom.min.js" type="text/javascript">
+  </script>
+  <script src="/js/jquery.dateFormat-1.0.js" type="text/javascript">
+  </script>
+  <script src="/scripts/jquery-migrate-1.2.1.min.js" type="text/javascript">
+  </script>
+  <script src="/js/plugins.js?v=2347550531" type="text/javascript">
+  </script>
+  <script src="/js/script.js?v=2800432612" type="text/javascript">
+  </script>
+  <script src="/js/vendor/lightbox2/lightbox.min.js?v=97624409" type="text/javascript">
+  </script>
+  <script src="/js/libs/contentshare.js?v=2058135496">
+  </script>
+  <script src="/js/libs/react/react.min.js?v=3706843405" type="text/javascript">
+  </script>
+  <script src="/js/libs/react/react-dom.min.js?v=3706843405" type="text/javascript">
+  </script>
+  <script src="/js/libs/pubsub.js?v=2418985062" type="text/javascript">
+  </script>
+  <script src="/js/libs/moment.js?v=160068683" type="text/javascript">
+  </script>
+  <script src="/js/libs/moment-timezone-with-data.js?v=1518348680" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+   moment.tz.setDefault("Australia/Canberra");
+  </script>
+  <script src="/js/libs/duration-format.js?v=273884284" type="text/javascript">
+  </script>
+  <!--PLUGINS-->
+  <script src="/js/vendor/porthole.min.js?v=2253615438">
+  </script>
+  <!--END PLUGINS-->
+  <!--CORE-->
+  <script src="/js/core.js?v=3918537519">
+  </script>
+  <!--END CORE-->
+  <!--[if !(IE 6) | !(IE 7) | !(IE 8)]><!-->
+  <script src="/js/libs/snap-ie-cache-fix.js?v=309387760" type="text/javascript">
+  </script>
+  <script src="/js/libs/respond.js?v=2777172843" type="text/javascript">
+  </script>
+  <!--<![endif]-->
+  <!--[if lte IE 8 ]>
+        <link rel="stylesheet" href="/css/ie-legacy.css" />    
+    <![endif]-->
+  <!--[if lt IE 7 ]>
+    <script src="/js/libs/dd_belatedpng.js"></script>
+    <script> DD_belatedPNG.fix('#site-logo img'); //fix any <img> or .png_bg background-images </script>
+    <![endif]-->
+  <script src="/js/libs/modernizr-3.6-complete.min.js?v=3030946925" type="text/javascript">
+  </script>
+  <script src="/js/vendor/AC_RunActiveContent.js?v=2714468098" type="text/javascript">
+  </script>
+  <script src="https://www.google.com/recaptcha/api.js?render=6LfmYOAUAAAAAEBzqqMqlmsGwEdiUMaAy4o6VFTW">
+  </script>
+ </head>
+ <body class="" id="body1">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+   <iframe height="0" src="https://www.googletagmanager.com/ns.html?id=" style="display: none; visibility: hidden" width="0">
+   </iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <form action="/Parliamentary_Business/Bills_Legislation/Bills_before_Parliament?Page=1" id="mainform" method="post">
+   <div class="aspNetHidden">
+    <input id="__VIEWSTATE" name="__VIEWSTATE" type="hidden" value="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"/>
+   </div>
+   <script language="JavaScript">
+    function validatecbRAgree(oSrc, args){args.IsValid = document.getElementById("cbRAgree").checked;}
+   </script>
+   <script language="JavaScript">
+    function validatetxtRPasswordConfirm(oSrc, args){args.IsValid = document.getElementById("txtRPasswordConfirm").value.length == 0 || (document.getElementById("txtRPasswordConfirm").value.length > 0 && document.getElementById("txtRPassword").value == document.getElementById("txtRPasswordConfirm").value);}
+   </script>
+   <script src="/ScriptResource.axd?d=NJmAwtEo3Ipnlaxl6CMhvifA77ZQbPtnPMOkq2BZ0rT4Ftd0M2SlKgxpjyI_gl6H6cIO6J5BhTgPgiNqgOHWexEAx7ov5yaWkiNkXvuwIb-vIC3ytsZnnzibMl6MZl4q1aQqwRHGNip8CbL6rlAIGjD__e41&amp;t=2a9d95e3" type="text/javascript">
+   </script>
+   <script src="/EmailRegistered.svc/js" type="text/javascript">
+   </script>
+   <script src="/ParliamentNumbers.svc/js" type="text/javascript">
+   </script>
+   <script src="/Predictive/Predictive.asmx/js" type="text/javascript">
+   </script>
+   <div class="aspNetHidden">
+    <input id="__VIEWSTATEGENERATOR" name="__VIEWSTATEGENERATOR" type="hidden" value="20B6B7A5"/>
+   </div>
+   <div class="off-canvas-wrap" data-offcanvas="">
+    <div aria-label="inner-wrap" class="inner-wrap">
+     <header>
+      <section aria-label="Skip links" class="row" role="navigation">
+       <div class="columns">
+        <ul class="skip-links">
+         <li>
+          <a aria-label="Skip to navigation" href="#main-nav" role="button">
+           Skip to navigation
+          </a>
+         </li>
+         <li>
+          <a aria-label="Skip to content" href="#content" role="button">
+           Skip to content
+          </a>
+         </li>
+        </ul>
+       </div>
+      </section>
+      <div class="row header-img">
+       <div class="medium-4 large-4 columns">
+        <h1>
+         <a href="/">
+          <img alt="Home - Parliament of Australia logo" src="/images/template/header-logo.png"/>
+         </a>
+        </h1>
+       </div>
+       <div class="medium-8 large-8 columns" style="padding-left: 0rem">
+        <div class="row">
+         <div class="columns">
+          <div class="nav-top-links-container">
+           <nav aria-label="Quick links" class="nav-top-links">
+            <ul class="inline-block-list text-small">
+             <li>
+              <a class="right-off-canvas-toggle" href="#" id="openParliamentaryCalendar" role="button" tabindex="0" title="Open the Parliament Calendar">
+               Parliament Calendar
+              </a>
+             </li>
+             <li>
+              <a href="/Help/Contact" title="Contact Us">
+               Contact
+              </a>
+             </li>
+             <li class="hide-for-small-only">
+              <a href="https://parlinfo.aph.gov.au" rel="noopener noreferrer" target="_blank" title="Go to ParlInfo Search">
+               ParlInfo
+              </a>
+             </li>
+             <li class="hide-for-small-only">
+              <a href="https://parlwork.aph.gov.au" rel="noopener noreferrer" target="_blank" title="Go to ParlWork">
+               ParlWork
+              </a>
+             </li>
+             <li>
+              <a href="/Help/Login" title="Log in to My Parliament account">
+               Log in
+              </a>
+             </li>
+             <li class="has-form hide-for-small-only">
+              <input aria-label="Input search content" id="txtGenericSearchTerm" placeholder="Search ..." type="text"/>
+              <button aria-label="Perform a search" id="btnGenericSearch" type="submit">
+               <em class="fa fa-search">
+               </em>
+              </button>
+             </li>
+             <!--START SEARCH CONTROL-->
+             <script type="text/javascript">
+              function SearchTermIsValid(searchTerm) {
+                                        var result = searchTerm !== '';
+                                        return result;
+                                    }
+
+                                    $(document).ready(function () {
+                                        $("#btnGenericSearch").on("click", function (e) {
+                                            e.preventDefault();
+
+                                            var searchTerm = encodeURI($("#txtGenericSearchTerm").val());
+
+                                            if (SearchTermIsValid(searchTerm)) {
+                                                if (window.location.href.indexOf("parlview.aph.gov.au") > -1) {
+                                                    window.location = "https://www.aph.gov.au/Help/Federated_Search_Results?q=" + searchTerm;
+                                                } else {
+                                                    window.location = "/Help/Federated_Search_Results?q=" + searchTerm;
+                                                }
+                                            }
+
+                                            return false;
+                                        });
+
+                                        $("#txtGenericSearchTerm").keypress(function (e) {
+                                            if (e.keyCode === 13) {
+                                                $("#btnGenericSearch").click();
+                                                return false;
+                                            }
+                                        });
+                                    });
+             </script>
+             <!--END SEARCH CONTROL-->
+            </ul>
+           </nav>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </header>
+     <script src="/js/components/global/header-username.js" type="text/javascript">
+     </script>
+     <div class="contain-to-grid">
+      <nav aria-label="Site navigation" class="top-bar" data-topbar="" id="main-nav">
+       <ul class="title-area nav-top-links-mobile">
+        <li class="has-form show-for-small-only">
+         <input aria-label="Input search content" id="txtGenericSearchTermMobile" placeholder="Search ..." type="text"/>
+         <button aria-label="Perform a search" id="btnGenericSearchMobile" type="submit">
+          <em class="fa fa-search">
+          </em>
+         </button>
+        </li>
+        <!--START SEARCH CONTROL-->
+        <script type="text/javascript">
+         function SearchTermIsValid(searchTerm) {
+                    var result = searchTerm !== '';
+                    return result;
+                }
+
+                $(document).ready(function () {
+                    $("#btnGenericSearchMobile").on("click", function (e) {
+                        e.preventDefault();
+
+                        var searchTerm = encodeURI($("#txtGenericSearchTermMobile").val());
+
+                        if (SearchTermIsValid(searchTerm)) {
+                            if (window.location.href.indexOf("parlview.aph.gov.au") > -1) {
+                                window.location = "https://www.aph.gov.au/Help/Federated_Search_Results?q=" + searchTerm;
+                            } else {
+                                window.location = "/Help/Federated_Search_Results?q=" + searchTerm;
+                            }
+                        }
+
+                        return false;
+                    });
+
+                    $("#txtGenericSearchTermMobile").keypress(function (e) {
+                        if (e.keyCode === 13) {
+                            $("#btnGenericSearchMobile").click();
+                            return false;
+                        }
+                    });
+                });
+        </script>
+        <!--END SEARCH CONTROL-->
+        <li class="toggle-topbar menu-icon">
+         <a aria-expanded="false" aria-label="Open site navigation" href="#" onclick="sendGoogleAnalyticsEvent('Primary Nav', 'Click hamburger menu', '')" role="button">
+          <span>
+           Menu
+          </span>
+         </a>
+        </li>
+       </ul>
+       <section aria-label="navigation" class="top-bar-section top-bar-section-hidden" role="navigation">
+        <ul id="main-nav-sub">
+         <li class="">
+          <a class="primary-nav-item-dropdown" href="/" onclick="sendGoogleAnalyticsEvent('Primary Nav', 'Click Parent item', 'Home')">
+           Home
+          </a>
+         </li>
+         <li class="active has-dropdown not-click">
+          <a class="primary-nav-item-dropdown" href="/Parliamentary_Business" onclick="sendGoogleAnalyticsEvent('Primary Nav', 'Click Parent item', 'Parliamentary Business')">
+           Parliamentary Business
+          </a>
+          <ul class="dropdown primary-nav-item-dropdown-hidden">
+           <li class="">
+            <a href="/Parliamentary_Business/Bills_Legislation" onclick="sendGoogleAnalyticsEvent('Primary Nav', 'Click Child item', 'Bills and Legislation')">
+             Bills and Legislation
+            </a>
+           </li>
+           <li class="">
+            <a href="/Parliamentary_Business/Tabled_documents" onclick="sendGoogleAnalyticsEvent('Primary Nav', 'Click Child item', 'Tabled documents')">
+             Tabled documents
+            </a>
+           </li>
+           <li class="">
+            <a href="/Parliamentary_Business/Chamber_documents" onclick="sendGoogleAnalyticsEvent('Primary Nav', 'Click Child item', 'Chamber documents')">
+             Chamber documents
+            </a>
+           </li>
+           <li class="">
+            <a href="/Parliamentary_Business/Hansard" onclick="sendGoogleAnalyticsEvent('Primary Nav', 'Click Child item', 'Hansard')">
+             Hansard
+            </a>
+           </li>
+           <li class="">
+            <a href="/Parliamentary_Business/Senate_estimates" onclick="sendGoogleAnalyticsEvent('Primary Nav', 'Click Child item', 'Senate estimates')">
+             Senate estimates
+            </a>
+           </li>
+           <li class="">
+            <a href="/Parliamentary_Business/Committees" onclick="sendGoogleAnalyticsEvent('Primary Nav', 'Click Child item', 'Committees')">
+             Committees
+            </a>
+           </li>
+           <li class="">
+            <a href="/Parliamentary_Business/Statistics" onclick="sendGoogleAnalyticsEvent('Primary Nav', 'Click Child item', 'Statistics')">
+             Statistics
+            </a>
+           </li>
+           <li class="">
+            <a href="/Parliamentary_Business/Petitions" onclick="sendGoogleAnalyticsEvent('Primary Nav', 'Click Child item', 'Petitions')">
+             Petitions
+            </a>
+           </li>
+           <li class="">
+            <a href="/Parliamentary_Business/Address_in_Reply" onclick="sendGoogleAnalyticsEvent('Primary Nav', 'Click Child item', 'Address in Reply')">
+             Address in Reply
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="has-dropdown not-click">
+          <a class="primary-nav-item-dropdown" href="/Senators_and_Members" onclick="sendGoogleAnalyticsEvent('Primary Nav', 'Click Parent item', 'Senators and Members')">
+           Senators and Members
+          </a>
+          <ul class="dropdown primary-nav-item-dropdown-hidden">
+           <li class="">
+            <a href="/Senators_and_Members/Senators" onclick="sendGoogleAnalyticsEvent('Primary Nav', 'Click Child item', 'Senators')">
+             Senators
+            </a>
+           </li>
+           <li class="">
+            <a href="/Senators_and_Members/Members" onclick="sendGoogleAnalyticsEvent('Primary Nav', 'Click Child item', 'Members')">
+             Members
+            </a>
+           </li>
+           <li class="">
+            <a href="/Senators_and_Members/Contacting_Senators_and_Members" onclick="sendGoogleAnalyticsEvent('Primary Nav', 'Click Child item', 'Contacting Senators and Members')">
+             Contacting Senators and Members
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="has-dropdown not-click">
+          <a class="primary-nav-item-dropdown" href="/News_and_Events" onclick="sendGoogleAnalyticsEvent('Primary Nav', 'Click Parent item', 'News \u0026 Events')">
+           News &amp; Events
+          </a>
+          <ul class="dropdown primary-nav-item-dropdown-hidden">
+           <li class="">
+            <a href="/News_and_Events/Watch_Read_Listen" onclick="sendGoogleAnalyticsEvent('Primary Nav', 'Click Child item', 'Watch, Read, Listen')">
+             Watch, Read, Listen
+            </a>
+           </li>
+           <li class="">
+            <a href="/News_and_Events/Events_Calendar" onclick="sendGoogleAnalyticsEvent('Primary Nav', 'Click Child item', 'Events Calendar')">
+             Events Calendar
+            </a>
+           </li>
+           <li class="">
+            <a href="/News_and_Events/Whats_on_in_the_Senate" onclick="sendGoogleAnalyticsEvent('Primary Nav', 'Click Child item', 'What\u0027s on in the Senate')">
+             What's on in the Senate
+            </a>
+           </li>
+           <li class="">
+            <a href="/News_and_Events/About_the_House_News" onclick="sendGoogleAnalyticsEvent('Primary Nav', 'Click Child item', 'About the House News')">
+             About the House News
+            </a>
+           </li>
+           <li class="">
+            <a href="/News_and_Events/Joint_statements_by_the_Presiding_Officers" onclick="sendGoogleAnalyticsEvent('Primary Nav', 'Click Child item', 'Joint statements by the Presiding Officers')">
+             Joint statements by the Presiding Officers
+            </a>
+           </li>
+           <li class="">
+            <a href="/News_and_Events/My_First_Speech" onclick="sendGoogleAnalyticsEvent('Primary Nav', 'Click Child item', 'My First Speech')">
+             My First Speech
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="has-dropdown not-click">
+          <a class="primary-nav-item-dropdown" href="/About_Parliament" onclick="sendGoogleAnalyticsEvent('Primary Nav', 'Click Parent item', 'About Parliament')">
+           About Parliament
+          </a>
+          <ul class="dropdown primary-nav-item-dropdown-hidden">
+           <li class="">
+            <a href="/About_Parliament/Senate" onclick="sendGoogleAnalyticsEvent('Primary Nav', 'Click Child item', 'Senate')">
+             Senate
+            </a>
+           </li>
+           <li class="">
+            <a href="/About_Parliament/House_of_Representatives" onclick="sendGoogleAnalyticsEvent('Primary Nav', 'Click Child item', 'House of Representatives')">
+             House of Representatives
+            </a>
+           </li>
+           <li class="">
+            <a href="/About_Parliament/Work_of_the_Parliament" onclick="sendGoogleAnalyticsEvent('Primary Nav', 'Click Child item', 'Work of the Parliament')">
+             Work of the Parliament
+            </a>
+           </li>
+           <li class="">
+            <a href="/About_Parliament/Parliamentary_Leadership_Taskforce" onclick="sendGoogleAnalyticsEvent('Primary Nav', 'Click Child item', 'Parliamentary Leadership Taskforce')">
+             Parliamentary Leadership Taskforce
+            </a>
+           </li>
+           <li class="">
+            <a href="/About_Parliament/Parliamentary_departments" onclick="sendGoogleAnalyticsEvent('Primary Nav', 'Click Child item', 'Parliamentary departments')">
+             Parliamentary departments
+            </a>
+           </li>
+           <li class="">
+            <a href="/About_Parliament/International_Program" onclick="sendGoogleAnalyticsEvent('Primary Nav', 'Click Child item', 'International Program')">
+             International Program
+            </a>
+           </li>
+           <li class="">
+            <a href="/About_Parliament/Publications" onclick="sendGoogleAnalyticsEvent('Primary Nav', 'Click Child item', 'Publications and policies')">
+             Publications and policies
+            </a>
+           </li>
+           <li class="">
+            <a href="/About_Parliament/Employment" onclick="sendGoogleAnalyticsEvent('Primary Nav', 'Click Child item', 'Employment')">
+             Employment
+            </a>
+           </li>
+           <li class="">
+            <a href="/About_Parliament/Media_Rules_and_Filming_Applications" onclick="sendGoogleAnalyticsEvent('Primary Nav', 'Click Child item', 'Media Rules and Filming Applications')">
+             Media Rules and Filming Applications
+            </a>
+           </li>
+           <li class="">
+            <a href="/About_Parliament/Education_Resources" onclick="sendGoogleAnalyticsEvent('Primary Nav', 'Click Child item', 'Education Resources')">
+             Education Resources
+            </a>
+           </li>
+           <li class="">
+            <a href="/About_Parliament/Parliamentary_Friendship" onclick="sendGoogleAnalyticsEvent('Primary Nav', 'Click Child item', 'Parliamentary Friendship Groups (non-country)')">
+             Parliamentary Friendship Groups (non-country)
+            </a>
+           </li>
+           <li class="">
+            <a href="/About_Parliament/Australian_Parliament_House_Security_Pass_Office" onclick="sendGoogleAnalyticsEvent('Primary Nav', 'Click Child item', 'Australian Parliament House Security Pass Office')">
+             Australian Parliament House Security Pass Office
+            </a>
+           </li>
+           <li class="">
+            <a href="/About_Parliament/Sitting_Calendar" onclick="sendGoogleAnalyticsEvent('Primary Nav', 'Click Child item', 'Sitting Calendar')">
+             Sitting Calendar
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="has-dropdown not-click">
+          <a class="primary-nav-item-dropdown" href="/Visit_Parliament" onclick="sendGoogleAnalyticsEvent('Primary Nav', 'Click Parent item', 'Visit Parliament')">
+           Visit Parliament
+          </a>
+          <ul class="dropdown primary-nav-item-dropdown-hidden">
+           <li class="">
+            <a href="/Visit_Parliament/Whats_On" onclick="sendGoogleAnalyticsEvent('Primary Nav', 'Click Child item', 'What\u0027s on')">
+             What's on
+            </a>
+           </li>
+           <li class="">
+            <a href="/Visit_Parliament/Things_to_Do" onclick="sendGoogleAnalyticsEvent('Primary Nav', 'Click Child item', 'Things to Do')">
+             Things to Do
+            </a>
+           </li>
+           <li class="">
+            <a href="/Visit_Parliament/Art" onclick="sendGoogleAnalyticsEvent('Primary Nav', 'Click Child item', 'Art at Parliament')">
+             Art at Parliament
+            </a>
+           </li>
+           <li class="">
+            <a href="/Visit_Parliament/Dining" onclick="sendGoogleAnalyticsEvent('Primary Nav', 'Click Child item', 'Dining')">
+             Dining
+            </a>
+           </li>
+           <li class="">
+            <a href="/Visit_Parliament/Parliament_Shop" onclick="sendGoogleAnalyticsEvent('Primary Nav', 'Click Child item', 'Parliament Shop')">
+             Parliament Shop
+            </a>
+           </li>
+           <li class="">
+            <a href="/Visit_Parliament/Venue_Hire" onclick="sendGoogleAnalyticsEvent('Primary Nav', 'Click Child item', 'Venue Hire')">
+             Venue Hire
+            </a>
+           </li>
+           <li class="">
+            <a href="/Visit_Parliament/Plan_your_Visit" onclick="sendGoogleAnalyticsEvent('Primary Nav', 'Click Child item', 'Plan your Visit')">
+             Plan your Visit
+            </a>
+           </li>
+          </ul>
+         </li>
+        </ul>
+       </section>
+      </nav>
+     </div>
+     <div class="row padding-medium" id="content" role="main">
+      <div class="columns">
+       <div class="breadcrumbs-container show-for-medium-up">
+        <a id="skip">
+        </a>
+        <!-- START BREADCRUMBS -->
+        <nav aria-label="Breadcrumbs" class="breadcrumbs">
+         <a href="/">
+          Home
+         </a>
+         <a href="/Parliamentary_Business">
+          Parliamentary Business
+         </a>
+         <a href="/Parliamentary_Business/Bills_Legislation">
+          Bills and Legislation
+         </a>
+         <span aria-label="breadcrumbs" class="current">
+          Bills before Parliament
+         </span>
+        </nav>
+        <!-- END BREADCRUMBS -->
+       </div>
+       <div class="row">
+        <div class="large-9 columns main-column">
+         <h1>
+          Bills before Parliament
+         </h1>
+         <div class="hide-for-large-up">
+          <div aria-label="Secondary navigation" class="sidenav" role="navigation">
+           <a aria-expanded="false" class="sidenav__heading" role="button" tabindex="0">
+            <span class="sidenav__heading--span">
+             In this section
+            </span>
+           </a>
+           <ul class="restartSecondary sidenav__list">
+            <li class="sidenav__item sidenav__item--has-dropdown active">
+            </li>
+            <a alt="Bills and Legislation secondary link" class="active" href="/Parliamentary_Business/Bills_Legislation" onclick="sendGoogleAnalyticsEvent('Secondary Nav', 'Bills before Parliament', 'Bills and Legislation')" role="link">
+             Bills and Legislation
+            </a>
+            <a aria-label="Drop down" class="sidenav__dropdown__toggle" href="">
+             <span aria-hidden="true" class="fa fa-fw fa-caret-up">
+             </span>
+            </a>
+            <ul class="sidenav__dropdown">
+             <li class="sidenav__item">
+             </li>
+             <a alt="Disallowance Alert 2024 secondary link" href="/Parliamentary_Business/Bills_Legislation/Disallowance_alert" onclick="sendGoogleAnalyticsEvent('Secondary Nav', 'Bills before Parliament', 'Disallowance Alert 2024')" role="link">
+              Disallowance Alert 2024
+             </a>
+             <li class="sidenav__item">
+             </li>
+             <a alt="Tariff Proposals secondary link" href="/Parliamentary_Business/Bills_Legislation/Tariff_Proposals" onclick="sendGoogleAnalyticsEvent('Secondary Nav', 'Bills before Parliament', 'Tariff Proposals')" role="link">
+              Tariff Proposals
+             </a>
+             <li class="sidenav__item">
+             </li>
+             <a alt="Bills currently referred to Senate committees secondary link" href="/Parliamentary_Business/Bills_Legislation/Bills_referred_to_Senate_committees" onclick="sendGoogleAnalyticsEvent('Secondary Nav', 'Bills before Parliament', 'Bills currently referred to Senate committees')" role="link">
+              Bills currently referred to Senate committees
+             </a>
+             <li class="sidenav__item">
+             </li>
+             <a alt="Bills Digests secondary link" href="/Parliamentary_Business/Bills_Legislation/Bills_Digests" onclick="sendGoogleAnalyticsEvent('Secondary Nav', 'Bills before Parliament', 'Bills Digests')" role="link">
+              Bills Digests
+             </a>
+             <li class="sidenav__item">
+             </li>
+             <a alt="Budget and Financial Legislation secondary link" href="http://www.budget.gov.au/" onclick="sendGoogleAnalyticsEvent('Secondary Nav', 'Bills before Parliament', 'Budget and Financial Legislation')" rel="noopener noreferrer" role="link" target="_blank">
+              Budget and Financial Legislation
+             </a>
+             <li class="sidenav__item">
+             </li>
+             <a alt="Browse Bills Digests  secondary link" href="/Parliamentary_Business/Bills_Legislation/bd" onclick="sendGoogleAnalyticsEvent('Secondary Nav', 'Bills before Parliament', 'Browse Bills Digests ')" role="link">
+              Browse Bills Digests
+             </a>
+             <li class="sidenav__item">
+             </li>
+             <a alt="Ordering Printed Bills secondary link" href="/Parliamentary_Business/Bills_Legislation/Ordering_Printed_Bills" onclick="sendGoogleAnalyticsEvent('Secondary Nav', 'Bills before Parliament', 'Ordering Printed Bills')" role="link">
+              Ordering Printed Bills
+             </a>
+             <li class="sidenav__item">
+             </li>
+             <a alt="Legislative Instruments secondary link" href="/Parliamentary_Business/Bills_Legislation/leginstruments" onclick="sendGoogleAnalyticsEvent('Secondary Nav', 'Bills before Parliament', 'Legislative Instruments')" role="link">
+              Legislative Instruments
+             </a>
+            </ul>
+            <li class="sidenav__item">
+            </li>
+            <a alt="Tabled documents secondary link" href="/Parliamentary_Business/Tabled_documents" onclick="sendGoogleAnalyticsEvent('Secondary Nav', 'Bills before Parliament', 'Tabled documents')" role="link">
+             Tabled documents
+            </a>
+            <li class="sidenav__item">
+            </li>
+            <a alt="Chamber documents secondary link" href="/Parliamentary_Business/Chamber_documents" onclick="sendGoogleAnalyticsEvent('Secondary Nav', 'Bills before Parliament', 'Chamber documents')" role="link">
+             Chamber documents
+            </a>
+            <li class="sidenav__item">
+            </li>
+            <a alt="Hansard secondary link" href="/Parliamentary_Business/Hansard" onclick="sendGoogleAnalyticsEvent('Secondary Nav', 'Bills before Parliament', 'Hansard')" role="link">
+             Hansard
+            </a>
+            <li class="sidenav__item">
+            </li>
+            <a alt="Senate estimates secondary link" href="/Parliamentary_Business/Senate_estimates" onclick="sendGoogleAnalyticsEvent('Secondary Nav', 'Bills before Parliament', 'Senate estimates')" role="link">
+             Senate estimates
+            </a>
+            <li class="sidenav__item">
+            </li>
+            <a alt="Committees secondary link" href="/Parliamentary_Business/Committees" onclick="sendGoogleAnalyticsEvent('Secondary Nav', 'Bills before Parliament', 'Committees')" role="link">
+             Committees
+            </a>
+            <li class="sidenav__item">
+            </li>
+            <a alt="Statistics secondary link" href="/Parliamentary_Business/Statistics" onclick="sendGoogleAnalyticsEvent('Secondary Nav', 'Bills before Parliament', 'Statistics')" role="link">
+             Statistics
+            </a>
+            <li class="sidenav__item">
+            </li>
+            <a alt="Petitions secondary link" href="/Parliamentary_Business/Petitions" onclick="sendGoogleAnalyticsEvent('Secondary Nav', 'Bills before Parliament', 'Petitions')" role="link">
+             Petitions
+            </a>
+            <li class="sidenav__item">
+            </li>
+            <a alt="Address in Reply secondary link" href="/Parliamentary_Business/Address_in_Reply" onclick="sendGoogleAnalyticsEvent('Secondary Nav', 'Bills before Parliament', 'Address in Reply')" role="link">
+             Address in Reply
+            </a>
+           </ul>
+          </div>
+         </div>
+         <div class="box" id="main_0_content_0_pnlResults">
+          <input name="st" type="hidden" value="2">
+           <input name="sr" type="hidden" value="0">
+            <input id="titleLetter" name="t" type="hidden"/>
+            <h2>
+             Search all bills
+            </h2>
+            <div class="form search-filter search-filter-showmore" id="main_0_content_0_pnlForm">
+             <fieldset>
+              <legend>
+               <span class="legend">
+                Keyword(s)
+               </span>
+              </legend>
+              <div class="ctrl-group medium-6 columns">
+               <input class="text-input" id="q" maxlength="125" name="q" onkeypress="doClick('btnSearch', event)" type="text" value=""/>
+              </div>
+              <div class="ctrl-group medium-6 columns">
+               <span class="check-input">
+                <input checked="checked" class="check-input" id="ito" name="ito" onkeypress="doClick('btnSearch', event)" type="checkbox" value="1"/>
+                <label for="ito" onkeypress="doClick('btnSearch', event)">
+                 Bills title only
+                </label>
+               </span>
+              </div>
+             </fieldset>
+             <fieldset class="ctrls-additional">
+              <legend>
+               <label associatedcontrolid="drt" class="legend">
+                Period
+               </label>
+              </legend>
+              <input id="expand" name="expand" type="hidden" value="False"/>
+              <div class="row">
+               <div class="medium-4 columns">
+                <input class="radio-input" id="pn1" name="drt" onkeypress="doClick('btnSearch', event)" type="radio" value="1"/>
+                <label for="pn1" onkeypress="doClick('btnSearch', event)">
+                 Date range
+                </label>
+               </div>
+               <div class="medium-4 columns">
+                <select aria-label="Date range" class="full-width" id="dateRange" name="drv" onkeypress="doClick('btnSearch')">
+                 <option value="0">
+                  None
+                 </option>
+                 <option value="1">
+                  Yesterday
+                 </option>
+                 <option value="2">
+                  Today
+                 </option>
+                 <option value="3">
+                  Current Year
+                 </option>
+                 <option value="4">
+                  Last Year
+                 </option>
+                 <option value="5">
+                  Current Session
+                 </option>
+                 <option value="6">
+                  Last Parliament
+                 </option>
+                 <option selected="selected" value="7">
+                  Current Parliament
+                 </option>
+                </select>
+               </div>
+               <input id="drvH" name="drvH" type="hidden" value="7"/>
+              </div>
+              <!-- end ctrl-group -->
+              <div class="row">
+               <div class="medium-4 columns">
+                <input checked="checked" class="radio-input" id="pn2" name="drt" onkeypress="doClick('btnSearch', event)" type="radio" value="2"/>
+                <label for="pn2" onkeypress="doClick('btnSearch', event)">
+                 Parliament no
+                </label>
+               </div>
+               <div class="medium-8 columns">
+                <select aria-label="Parliament number" class="state-width" id="pnu" name="pnu" onkeypress="doClick('btnSearch')">
+                 <option value="0">
+                  -All-
+                 </option>
+                 <option selected="selected" value="47">
+                  47
+                 </option>
+                 <option value="46">
+                  46
+                 </option>
+                 <option value="45">
+                  45
+                 </option>
+                 <option value="44">
+                  44
+                 </option>
+                 <option value="43">
+                  43
+                 </option>
+                 <option value="42">
+                  42
+                 </option>
+                 <option value="41">
+                  41
+                 </option>
+                 <option value="40">
+                  40
+                 </option>
+                 <option value="39">
+                  39
+                 </option>
+                 <option value="38">
+                  38
+                 </option>
+                 <option value="37">
+                  37
+                 </option>
+                 <option value="36">
+                  36
+                 </option>
+                 <option value="35">
+                  35
+                 </option>
+                 <option value="34">
+                  34
+                 </option>
+                 <option value="33">
+                  33
+                 </option>
+                 <option value="32">
+                  32
+                 </option>
+                 <option value="31">
+                  31
+                 </option>
+                 <option value="30">
+                  30
+                 </option>
+                 <option value="29">
+                  29
+                 </option>
+                 <option value="28">
+                  28
+                 </option>
+                 <option value="27">
+                  27
+                 </option>
+                 <option value="26">
+                  26
+                 </option>
+                 <option value="25">
+                  25
+                 </option>
+                 <option value="24">
+                  24
+                 </option>
+                 <option value="23">
+                  23
+                 </option>
+                 <option value="22">
+                  22
+                 </option>
+                 <option value="21">
+                  21
+                 </option>
+                 <option value="20">
+                  20
+                 </option>
+                 <option value="19">
+                  19
+                 </option>
+                 <option value="18">
+                  18
+                 </option>
+                 <option value="17">
+                  17
+                 </option>
+                 <option value="16">
+                  16
+                 </option>
+                 <option value="15">
+                  15
+                 </option>
+                 <option value="14">
+                  14
+                 </option>
+                 <option value="13">
+                  13
+                 </option>
+                 <option value="12">
+                  12
+                 </option>
+                 <option value="11">
+                  11
+                 </option>
+                 <option value="10">
+                  10
+                 </option>
+                 <option value="9">
+                  9
+                 </option>
+                 <option value="8">
+                  8
+                 </option>
+                 <option value="7">
+                  7
+                 </option>
+                 <option value="6">
+                  6
+                 </option>
+                 <option value="5">
+                  5
+                 </option>
+                 <option value="4">
+                  4
+                 </option>
+                 <option value="3">
+                  3
+                 </option>
+                 <option value="2">
+                  2
+                 </option>
+                 <option value="1">
+                  1
+                 </option>
+                </select>
+               </div>
+               <input id="pnuH" name="pnuH" type="hidden" value="47"/>
+              </div>
+              <!-- end ctrl-group -->
+              <div class="row">
+               <div class="medium-4 columns">
+                <label for="f">
+                 Bill Introduced (From)
+                </label>
+                <input class="datepicker text-input medium" id="f" maxlength="50" name="f" onkeypress="doClick('btnSearch', event)" type="text" value="26/07/2022"/>
+               </div>
+               <div class="medium-4 columns">
+                <label for="to">
+                 Bill Introduced (To)
+                </label>
+                <input class="datepicker text-input medium" id="to" maxlength="50" name="to" onkeypress="doClick('btnSearch', event)" type="text" value="21/01/2025"/>
+               </div>
+               <p class="popup-hint">
+                <a>
+                 <img alt="Help icon" src="/images/template/icons/help.png"/>
+                 <span>
+                  Using the Bill Introduced date fields will allow you to search bills by the date they were introduced into Parliament.
+                  <br/>
+                  Clicking the 'Bill Introduced (From)' and 'Bill Introduced (To)' fields displays a calendar.
+                  <br/>
+                  Alternatively select date by typing into these fields in the format 'dd/mm/yyyy'.
+                 </span>
+                </a>
+               </p>
+              </div>
+              <div id="main_0_content_0_datePanel_pnlProgressDate">
+               <div class="row">
+                <div class="medium-4 columns">
+                 <label for="pf">
+                  Bill Progressed (From)
+                 </label>
+                 <input class="datepicker text-input medium" id="pf" maxlength="50" name="pf" onkeypress="doClick('btnSearch', event)" type="text" value="dd/mm/yyyy"/>
+                </div>
+                <div class="medium-4 columns">
+                 <label for="pto">
+                  Bill Progressed (To)
+                 </label>
+                 <input class="datepicker text-input medium" id="pto" maxlength="50" name="pto" onkeypress="doClick('btnSearch', event)" type="text" value="dd/mm/yyyy"/>
+                </div>
+                <p class="popup-hint">
+                 <a>
+                  <img alt="Help icon" src="/images/template/icons/help.png"/>
+                  <span>
+                   Using the Bill Progress date fields will allow you to search bills by the dates they progressed through Parliament.
+                   <br/>
+                   Clicking the 'Bill Progress (From)' and 'Bill Progress (To)' fields displays a calendar.
+                   <br/>
+                   Alternatively select date by typing into these fields in the format 'dd/mm/yyyy'.
+                  </span>
+                 </a>
+                </p>
+               </div>
+              </div>
+             </fieldset>
+             <fieldset class="ctrls-additional">
+              <legend>
+               <span class="legend">
+                Status
+               </span>
+              </legend>
+              <div class="row">
+               <div class="medium-6 columns" style="width: 68%;">
+                <strong>
+                 Current Bills
+                </strong>
+                <div class="check-holder">
+                 <input checked="checked" class="check-input" id="bs" name="bs" onkeypress="doClick('btnSearch', event)" type="checkbox" value="1"/>
+                 <label for="bs" onkeypress="doClick('btnSearch', event)">
+                  Before Senate
+                 </label>
+                </div>
+                <div class="check-holder">
+                 <input checked="checked" class="check-input" id="pbh" name="pbh" onkeypress="doClick('btnSearch', event)" type="checkbox" value="1"/>
+                 <label for="pbh" onkeypress="doClick('btnSearch', event)">
+                  Passed both houses
+                 </label>
+                </div>
+                <div class="check-holder">
+                 <input checked="checked" class="check-input" id="bhor" name="bhor" onkeypress="doClick('btnSearch', event)" type="checkbox" value="1"/>
+                 <label for="bhor" onkeypress="doClick('btnSearch', event)">
+                  Before House of Representatives
+                 </label>
+                </div>
+               </div>
+               <!-- end col-half -->
+               <div class="medium-6 columns" style="width: 32%;">
+                <strong>
+                 Previous Bills
+                </strong>
+                <div class="check-holder">
+                 <input class="check-input" id="ra" name="ra" onkeypress="doClick('btnSearch', event)" type="checkbox" value="1"/>
+                 <label for="ra" onkeypress="doClick('btnSearch', event)">
+                  Royal Assent
+                 </label>
+                </div>
+                <div class="check-holder">
+                 <input class="check-input" id="np" name="np" onkeypress="doClick('btnSearch', event)" type="checkbox" value="1"/>
+                 <label for="np" onkeypress="doClick('btnSearch', event)">
+                  Not passed
+                 </label>
+                </div>
+               </div>
+               <!-- end col-half -->
+              </div>
+              <!-- end ctrl-group -->
+             </fieldset>
+             <fieldset class="ctrls-additional">
+              <legend>
+               <span class="legend">
+                Type
+               </span>
+              </legend>
+              <div class="row">
+               <div class="medium-6 columns">
+                <input checked="checked" class="check-input" id="pmb" name="pmb" onkeypress="doClick('btnSearch', event)" type="checkbox" value="1"/>
+                <label for="pmb" onkeypress="doClick('btnSearch', event)">
+                 Private Member's/Senator's
+                </label>
+               </div>
+               <!-- end col-half -->
+               <div class="medium-6 columns">
+                <input checked="checked" class="check-input" id="g" name="g" onkeypress="doClick('btnSearch', event)" type="checkbox" value="1"/>
+                <label for="g" onkeypress="doClick('btnSearch', event)">
+                 Government
+                </label>
+               </div>
+               <!-- end col-half -->
+              </div>
+             </fieldset>
+             <div class="row">
+              <div class="columns">
+               <input class="button btn-search" id="btnSearch" onclick="document.getElementById('titleLetter').parentNode.removeChild(document.getElementById('titleLetter')); this.form.action = '/Parliamentary_Business/Bills_Legislation/Bills_Search_Results    ';this.form.method='get';clearForm(this.form);this.form.submit();" title="Search" type="submit" value="Search"/>
+              </div>
+             </div>
+            </div>
+            <!-- end form -->
+            <p id="main_0_content_0_pTotalResults">
+             <strong>
+              TOTAL RESULTS: 128
+             </strong>
+            </p>
+            <div class="results-pagination">
+             <div class="page-controls">
+              <p class="result-number">
+               <label for="pageSize1">
+                Results per page
+               </label>
+               <select id="pageSize1" name="ps">
+                <option selected="selected" value="10">
+                 10
+                </option>
+                <option value="25">
+                 25
+                </option>
+                <option value="50">
+                 50
+                </option>
+                <option value="100">
+                 100
+                </option>
+               </select>
+              </p>
+              <ul>
+               <li class="first inactive">
+                <span>
+                 First
+                </span>
+               </li>
+               <li class="prev inactive">
+                <span>
+                 Back
+                </span>
+               </li>
+               <li>
+                <strong>
+                 1
+                </strong>
+               </li>
+               <li>
+                <a href="?page=2&amp;drt=2&amp;drv=7&amp;drvH=7&amp;pnu=47&amp;pnuH=47&amp;f=26%2f07%2f2022&amp;to=21%2f01%2f2025&amp;ps=10&amp;ito=1&amp;q=&amp;bs=1&amp;pbh=1&amp;bhor=1&amp;pmb=1&amp;g=1&amp;st=2" onclick="sendGoogleAnalyticsEvent('Bills Search', 'Click pagination', 'Number')" title="Page 2">
+                 2
+                </a>
+               </li>
+               <li>
+                <a href="?page=3&amp;drt=2&amp;drv=7&amp;drvH=7&amp;pnu=47&amp;pnuH=47&amp;f=26%2f07%2f2022&amp;to=21%2f01%2f2025&amp;ps=10&amp;ito=1&amp;q=&amp;bs=1&amp;pbh=1&amp;bhor=1&amp;pmb=1&amp;g=1&amp;st=2" onclick="sendGoogleAnalyticsEvent('Bills Search', 'Click pagination', 'Number')" title="Page 3">
+                 3
+                </a>
+               </li>
+               <li>
+                <a href="?page=4&amp;drt=2&amp;drv=7&amp;drvH=7&amp;pnu=47&amp;pnuH=47&amp;f=26%2f07%2f2022&amp;to=21%2f01%2f2025&amp;ps=10&amp;ito=1&amp;q=&amp;bs=1&amp;pbh=1&amp;bhor=1&amp;pmb=1&amp;g=1&amp;st=2" onclick="sendGoogleAnalyticsEvent('Bills Search', 'Click pagination', 'Number')" title="Page 4">
+                 4
+                </a>
+               </li>
+               <li>
+                <a href="?page=5&amp;drt=2&amp;drv=7&amp;drvH=7&amp;pnu=47&amp;pnuH=47&amp;f=26%2f07%2f2022&amp;to=21%2f01%2f2025&amp;ps=10&amp;ito=1&amp;q=&amp;bs=1&amp;pbh=1&amp;bhor=1&amp;pmb=1&amp;g=1&amp;st=2" onclick="sendGoogleAnalyticsEvent('Bills Search', 'Click pagination', 'Number')" title="Page 5">
+                 5
+                </a>
+               </li>
+               <li class="next">
+                <a href="?page=2&amp;drt=2&amp;drv=7&amp;drvH=7&amp;pnu=47&amp;pnuH=47&amp;f=26%2f07%2f2022&amp;to=21%2f01%2f2025&amp;ps=10&amp;ito=1&amp;q=&amp;bs=1&amp;pbh=1&amp;bhor=1&amp;pmb=1&amp;g=1&amp;st=2" onclick="sendGoogleAnalyticsEvent('Bills Search', 'Click pagination', 'Next')" title="Next page">
+                 Next
+                </a>
+               </li>
+               <li class="last">
+                <a href="?page=13&amp;drt=2&amp;drv=7&amp;drvH=7&amp;pnu=47&amp;pnuH=47&amp;f=26%2f07%2f2022&amp;to=21%2f01%2f2025&amp;ps=10&amp;ito=1&amp;q=&amp;bs=1&amp;pbh=1&amp;bhor=1&amp;pmb=1&amp;g=1&amp;st=2" onclick="sendGoogleAnalyticsEvent('Bills Search', 'Click pagination', 'Last')" title="Last page">
+                 Last
+                </a>
+               </li>
+              </ul>
+             </div>
+             <!-- end page-controls -->
+             <div class="sort-controls">
+              <p>
+               Sort
+              </p>
+              <ul class="medium-10 columns">
+               <li class="" id="main_0_content_0_liSortDate">
+                <a href="/Parliamentary_Business/Bills_Legislation/Bills_before_Parliament?drt=2&amp;drv=7&amp;drvH=7&amp;pnu=47&amp;pnuH=47&amp;f=26%2f07%2f2022&amp;to=21%2f01%2f2025&amp;ps=10&amp;ito=1&amp;q=&amp;bs=1&amp;pbh=1&amp;bhor=1&amp;pmb=1&amp;g=1&amp;st=1&amp;sr=1" id="main_0_content_0_hlSortDate">
+                 Date
+                 <i aria-label="Sort date descending" class="fas fa-angle-down">
+                 </i>
+                </a>
+               </li>
+               <li class="active" id="main_0_content_0_liSortTitle">
+                <a href="/Parliamentary_Business/Bills_Legislation/Bills_before_Parliament?drt=2&amp;drv=7&amp;drvH=7&amp;pnu=47&amp;pnuH=47&amp;f=26%2f07%2f2022&amp;to=21%2f01%2f2025&amp;ps=10&amp;ito=1&amp;q=&amp;bs=1&amp;pbh=1&amp;bhor=1&amp;pmb=1&amp;g=1&amp;st=2&amp;sr=1" id="main_0_content_0_hlSortTitle">
+                 Title
+                 <i aria-label="Sort title ascending" class="fas fa-angle-up">
+                 </i>
+                </a>
+               </li>
+               <li class="" id="main_0_content_0_liSortChamber">
+                <a href="/Parliamentary_Business/Bills_Legislation/Bills_before_Parliament?drt=2&amp;drv=7&amp;drvH=7&amp;pnu=47&amp;pnuH=47&amp;f=26%2f07%2f2022&amp;to=21%2f01%2f2025&amp;ps=10&amp;ito=1&amp;q=&amp;bs=1&amp;pbh=1&amp;bhor=1&amp;pmb=1&amp;g=1&amp;st=3" id="main_0_content_0_hlSortChamber">
+                 Chamber
+                </a>
+               </li>
+               <li class="" id="main_0_content_0_liSortStatus">
+                <a href="/Parliamentary_Business/Bills_Legislation/Bills_before_Parliament?drt=2&amp;drv=7&amp;drvH=7&amp;pnu=47&amp;pnuH=47&amp;f=26%2f07%2f2022&amp;to=21%2f01%2f2025&amp;ps=10&amp;ito=1&amp;q=&amp;bs=1&amp;pbh=1&amp;bhor=1&amp;pmb=1&amp;g=1&amp;st=4&amp;sr=0" id="main_0_content_0_hlSortStatus">
+                 Status
+                 <i aria-label="Sort status ascending" class="fas fa-angle-up">
+                 </i>
+                </a>
+               </li>
+               <li class="" id="main_0_content_0_liSortSponsorPortfolio">
+                <a href="/Parliamentary_Business/Bills_Legislation/Bills_before_Parliament?drt=2&amp;drv=7&amp;drvH=7&amp;pnu=47&amp;pnuH=47&amp;f=26%2f07%2f2022&amp;to=21%2f01%2f2025&amp;ps=10&amp;ito=1&amp;q=&amp;bs=1&amp;pbh=1&amp;bhor=1&amp;pmb=1&amp;g=1&amp;st=5" id="main_0_content_0_hlSortSponsorPortfolio">
+                 Sponsor/Portfolio
+                </a>
+               </li>
+              </ul>
+             </div>
+             <!-- end sort-controls -->
+            </div>
+            <ul class="search-filter-results">
+             <li>
+              <div class="row">
+               <h4 class="medium-11 small-8 columns">
+                <a href="/Parliamentary_Business/Bills_Legislation/Bills_Search_Results/Result?bId=r7266" id="main_0_content_0_lvResults_hlTitle_0">
+                 Abolition of Special Prospecting Authorities (Ocean Protection) Bill 2024
+                </a>
+               </h4>
+               <p class="action medium-2 small-4 columns">
+                <a class="colorbox-popup button btn-track" data-target="/Help/secure/my-parliament/track-item-popup?type=Bill&amp;id=r7266&amp;meta=" href="#">
+                 Track
+                </a>
+                <span class="">
+                 <a aria-label="Information on tracking" href="#" onclick="$.colorbox({href:'/overlays/Message.aspx?trackingwhatsthis=1',width: '80%', maxWidth:'80%',opacity: 0}); return false;">
+                  (What's this?)
+                 </a>
+                </span>
+               </p>
+              </div>
+              <div>
+               <dl class="dl--inline text-small">
+                <dt>
+                 Date
+                </dt>
+                <dd>
+                 18 Nov 2024
+                </dd>
+                <dt>
+                 Chamber
+                </dt>
+                <dd>
+                 House of Representatives
+                </dd>
+                <dt>
+                 Status
+                </dt>
+                <dd>
+                 Before House of Representatives
+                </dd>
+                <dt>
+                 Sponsor
+                </dt>
+                <dd>
+                 RYAN, Monique, MP
+                </dd>
+               </dl>
+               <p class="extra">
+                <a aria-label="Bill link - Abolition of Special Prospecting Authorities (Ocean Protection) Bill 2024" href="https://parlinfo.aph.gov.au/parlInfo/search/display/display.w3p;query=Id%3A%22legislation%2Fbills%2Fr7266_first-reps%2F0000%22;rec=0" id="main_0_content_0_lvResults_hlBill_0" rel="noopener noreferrer" target="_blank">
+                 Bill
+                </a>
+                |
+                <a aria-label="Explanatory Memorandum - Abolition of Special Prospecting Authorities (Ocean Protection) Bill 2024 - legislation/ems/r7266_ems_dbad72fa-9e93-48cb-989c-d807b7cb1c58" href="https://parlinfo.aph.gov.au/parlInfo/search/display/display.w3p;query=Id%3A%22legislation%2Fems%2Fr7266_ems_dbad72fa-9e93-48cb-989c-d807b7cb1c58%22" id="main_0_content_0_lvResults_hlExplanatoryMemorandum_0" rel="noopener noreferrer" target="_blank">
+                 Explanatory Memorandum
+                </a>
+               </p>
+              </div>
+             </li>
+             <li>
+              <div class="row">
+               <h4 class="medium-11 small-8 columns">
+                <a href="/Parliamentary_Business/Bills_Legislation/Bills_Search_Results/Result?bId=r7260" id="main_0_content_0_lvResults_hlTitle_1">
+                 Accountability of Grants, Investment Mandates and Use of Public Resources Amendment (End Pork Barrelling) Bill 2024 [No. 2]
+                </a>
+               </h4>
+               <p class="action medium-2 small-4 columns">
+                <a class="colorbox-popup button btn-track" data-target="/Help/secure/my-parliament/track-item-popup?type=Bill&amp;id=r7260&amp;meta=" href="#">
+                 Track
+                </a>
+                <span class="">
+                 <a aria-label="Information on tracking" href="#" onclick="$.colorbox({href:'/overlays/Message.aspx?trackingwhatsthis=1',width: '80%', maxWidth:'80%',opacity: 0}); return false;">
+                  (What's this?)
+                 </a>
+                </span>
+               </p>
+              </div>
+              <div>
+               <dl class="dl--inline text-small">
+                <dt>
+                 Date
+                </dt>
+                <dd>
+                 04 Nov 2024
+                </dd>
+                <dt>
+                 Chamber
+                </dt>
+                <dd>
+                 House of Representatives
+                </dd>
+                <dt>
+                 Status
+                </dt>
+                <dd>
+                 Before House of Representatives
+                </dd>
+                <dt>
+                 Sponsor
+                </dt>
+                <dd>
+                 HAINES, Helen, MP
+                </dd>
+                <dt>
+                 Summary
+                </dt>
+                <dd>
+                 Amends: the
+                 <div class="act-reference">
+                  Public Governance, Performance and Accountability Act 2013
+                 </div>
+                 to provide a resource management framework for the use and management of public resources, including for grants administration; the
+                 <div class="act-reference">
+                  Public Service Act 1999
+                 </div>
+                 to provide the Public Service Commissioner with certain powers in relation to breaches of the code of conduct relating to the resource management framework; and 9 Acts in relation to oversight of investment mandates.
+                </dd>
+               </dl>
+               <p class="extra">
+                <a aria-label="Bill link - Accountability of Grants, Investment Mandates and Use of Public Resources Amendment (End Pork Barrelling) Bill 2024 [No. 2]" href="https://parlinfo.aph.gov.au/parlInfo/search/display/display.w3p;query=Id%3A%22legislation%2Fbills%2Fr7260_first-reps%2F0000%22;rec=0" id="main_0_content_0_lvResults_hlBill_1" rel="noopener noreferrer" target="_blank">
+                 Bill
+                </a>
+                |
+                <a aria-label="Explanatory Memorandum - Accountability of Grants, Investment Mandates and Use of Public Resources Amendment (End Pork Barrelling) Bill 2024 [No. 2] - legislation/ems/r7260_ems_806b7b96-52ac-4dcb-8a57-f373c632f139" href="https://parlinfo.aph.gov.au/parlInfo/search/display/display.w3p;query=Id%3A%22legislation%2Fems%2Fr7260_ems_806b7b96-52ac-4dcb-8a57-f373c632f139%22" id="main_0_content_0_lvResults_hlExplanatoryMemorandum_1" rel="noopener noreferrer" target="_blank">
+                 Explanatory Memorandum
+                </a>
+               </p>
+              </div>
+             </li>
+             <li>
+              <div class="row">
+               <h4 class="medium-11 small-8 columns">
+                <a href="/Parliamentary_Business/Bills_Legislation/Bills_Search_Results/Result?bId=r7237" id="main_0_content_0_lvResults_hlTitle_2">
+                 Administrative Review Tribunal (Miscellaneous Measures) Bill 2024
+                </a>
+               </h4>
+               <p class="action medium-2 small-4 columns">
+                <a class="colorbox-popup button btn-track" data-target="/Help/secure/my-parliament/track-item-popup?type=Bill&amp;id=r7237&amp;meta=" href="#">
+                 Track
+                </a>
+                <span class="">
+                 <a aria-label="Information on tracking" href="#" onclick="$.colorbox({href:'/overlays/Message.aspx?trackingwhatsthis=1',width: '80%', maxWidth:'80%',opacity: 0}); return false;">
+                  (What's this?)
+                 </a>
+                </span>
+               </p>
+              </div>
+              <div>
+               <dl class="dl--inline text-small">
+                <dt>
+                 Date
+                </dt>
+                <dd>
+                 21 Aug 2024
+                </dd>
+                <dt>
+                 Chamber
+                </dt>
+                <dd>
+                 House of Representatives
+                </dd>
+                <dt>
+                 Status
+                </dt>
+                <dd>
+                 Before Senate
+                </dd>
+                <dt>
+                 Portfolio
+                </dt>
+                <dd>
+                 Attorney-General
+                </dd>
+                <dt>
+                 Summary
+                </dt>
+                <dd>
+                 Amends 52 Acts to make consequential and technical amendments arising from the enactment of the
+                 <div class="act-reference">
+                  Administrative Review Tribunal Act 2024
+                 </div>
+                 . Also repeals the
+                 <div class="act-reference">
+                  Tribunals Amalgamation Act 2015
+                 </div>
+                 .
+                </dd>
+               </dl>
+               <p class="extra">
+                <a aria-label="Bill link - Administrative Review Tribunal (Miscellaneous Measures) Bill 2024" href="https://parlinfo.aph.gov.au/parlInfo/search/display/display.w3p;query=Id%3A%22legislation%2Fbills%2Fr7237_first-reps%2F0000%22;rec=0" id="main_0_content_0_lvResults_hlBill_2" rel="noopener noreferrer" target="_blank">
+                 Bill
+                </a>
+                |
+                <a aria-label="Explanatory Memorandum - Administrative Review Tribunal (Miscellaneous Measures) Bill 2024 - legislation/ems/r7237_ems_721d1908-b371-4589-a799-e2cb441be9d5" href="https://parlinfo.aph.gov.au/parlInfo/search/display/display.w3p;query=Id%3A%22legislation%2Fems%2Fr7237_ems_721d1908-b371-4589-a799-e2cb441be9d5%22" id="main_0_content_0_lvResults_hlExplanatoryMemorandum_2" rel="noopener noreferrer" target="_blank">
+                 Explanatory Memorandum
+                </a>
+               </p>
+              </div>
+             </li>
+             <li>
+              <div class="row">
+               <h4 class="medium-11 small-8 columns">
+                <a href="/Parliamentary_Business/Bills_Legislation/Bills_Search_Results/Result?bId=r7215" id="main_0_content_0_lvResults_hlTitle_3">
+                 Aged Care Legislation Amendment Bill 2024
+                </a>
+               </h4>
+               <p class="action medium-2 small-4 columns">
+                <a class="colorbox-popup button btn-track" data-target="/Help/secure/my-parliament/track-item-popup?type=Bill&amp;id=r7215&amp;meta=" href="#">
+                 Track
+                </a>
+                <span class="">
+                 <a aria-label="Information on tracking" href="#" onclick="$.colorbox({href:'/overlays/Message.aspx?trackingwhatsthis=1',width: '80%', maxWidth:'80%',opacity: 0}); return false;">
+                  (What's this?)
+                 </a>
+                </span>
+               </p>
+              </div>
+              <div>
+               <dl class="dl--inline text-small">
+                <dt>
+                 Date
+                </dt>
+                <dd>
+                 10 Oct 2024
+                </dd>
+                <dt>
+                 Chamber
+                </dt>
+                <dd>
+                 House of Representatives
+                </dd>
+                <dt>
+                 Status
+                </dt>
+                <dd>
+                 Before Senate
+                </dd>
+                <dt>
+                 Portfolio
+                </dt>
+                <dd>
+                 Health and Aged Care
+                </dd>
+                <dt>
+                 Summary
+                </dt>
+                <dd>
+                 Amends the:
+                 <div class="act-reference">
+                  Aged Care Act 1997
+                 </div>
+                 to: enable the secretary to conduct residential care data assurance reviews; and clarify the maximum accommodation payment that may apply for voluntary moves within a residential aged care service; and
+                 <div class="act-reference">
+                  Aged Care Act 1997
+                 </div>
+                 and
+                 <div class="act-reference">
+                  Aged Care (Transitional Provisions) Act 1997
+                 </div>
+                 to: enable refundable deposit balance information held by approved providers to be used to verify care recipients’ income and asset details; enable an income and assets determination to be varied; and align income and assets determination processes.
+                </dd>
+               </dl>
+               <p class="extra">
+                <a aria-label="Bill link - Aged Care Legislation Amendment Bill 2024" href="https://parlinfo.aph.gov.au/parlInfo/search/display/display.w3p;query=Id%3A%22legislation%2Fbills%2Fr7215_first-reps%2F0000%22;rec=0" id="main_0_content_0_lvResults_hlBill_3" rel="noopener noreferrer" target="_blank">
+                 Bill
+                </a>
+                |
+                <a aria-label="Explanatory Memorandum - Aged Care Legislation Amendment Bill 2024 - legislation/ems/r7215_ems_7312c951-ff3a-4090-8737-2a2bf6e88c90" href="https://parlinfo.aph.gov.au/parlInfo/search/display/display.w3p;query=Id%3A%22legislation%2Fems%2Fr7215_ems_7312c951-ff3a-4090-8737-2a2bf6e88c90%22" id="main_0_content_0_lvResults_hlExplanatoryMemorandum_3" rel="noopener noreferrer" target="_blank">
+                 Explanatory Memorandum
+                </a>
+               </p>
+              </div>
+             </li>
+             <li>
+              <div class="row">
+               <h4 class="medium-11 small-8 columns">
+                <a href="/Parliamentary_Business/Bills_Legislation/Bills_Search_Results/Result?bId=r7157" id="main_0_content_0_lvResults_hlTitle_4">
+                 Agriculture (Biosecurity Protection) Charges Bill 2024
+                </a>
+               </h4>
+               <p class="action medium-2 small-4 columns">
+                <a class="colorbox-popup button btn-track" data-target="/Help/secure/my-parliament/track-item-popup?type=Bill&amp;id=r7157&amp;meta=" href="#">
+                 Track
+                </a>
+                <span class="">
+                 <a aria-label="Information on tracking" href="#" onclick="$.colorbox({href:'/overlays/Message.aspx?trackingwhatsthis=1',width: '80%', maxWidth:'80%',opacity: 0}); return false;">
+                  (What's this?)
+                 </a>
+                </span>
+               </p>
+              </div>
+              <div>
+               <dl class="dl--inline text-small">
+                <dt>
+                 Date
+                </dt>
+                <dd>
+                 28 Feb 2024
+                </dd>
+                <dt>
+                 Chamber
+                </dt>
+                <dd>
+                 House of Representatives
+                </dd>
+                <dt>
+                 Status
+                </dt>
+                <dd>
+                 Before Senate
+                </dd>
+                <dt>
+                 Portfolio
+                </dt>
+                <dd>
+                 Agriculture, Fisheries and Forestry
+                </dd>
+                <dt>
+                 Summary
+                </dt>
+                <dd>
+                 Introduced with the Agriculture (Biosecurity Protection) Levies Bill 2024 and Agriculture (Biosecurity Protection) Levies and Charges Collection Bill 2024, the bill provides for the imposition of biosecurity protection charges to be payable by certain producers of agricultural, forestry and fisheries products within Australia.
+                </dd>
+               </dl>
+               <p class="extra">
+                <a aria-label="Bill link - Agriculture (Biosecurity Protection) Charges Bill 2024" href="https://parlinfo.aph.gov.au/parlInfo/search/display/display.w3p;query=Id%3A%22legislation%2Fbills%2Fr7157_first-reps%2F0000%22;rec=0" id="main_0_content_0_lvResults_hlBill_4" rel="noopener noreferrer" target="_blank">
+                 Bill
+                </a>
+                |
+                <a aria-label="Explanatory Memorandum - Agriculture (Biosecurity Protection) Charges Bill 2024 - legislation/ems/r7157_ems_974ff256-0770-4a84-922f-1c258263f00d" href="https://parlinfo.aph.gov.au/parlInfo/search/display/display.w3p;query=Id%3A%22legislation%2Fems%2Fr7157_ems_974ff256-0770-4a84-922f-1c258263f00d%22" id="main_0_content_0_lvResults_hlExplanatoryMemorandum_4" rel="noopener noreferrer" target="_blank">
+                 Explanatory Memorandum
+                </a>
+               </p>
+              </div>
+             </li>
+             <li>
+              <div class="row">
+               <h4 class="medium-11 small-8 columns">
+                <a href="/Parliamentary_Business/Bills_Legislation/Bills_Search_Results/Result?bId=r7159" id="main_0_content_0_lvResults_hlTitle_5">
+                 Agriculture (Biosecurity Protection) Levies and Charges Collection Bill 2024
+                </a>
+               </h4>
+               <p class="action medium-2 small-4 columns">
+                <a class="colorbox-popup button btn-track" data-target="/Help/secure/my-parliament/track-item-popup?type=Bill&amp;id=r7159&amp;meta=" href="#">
+                 Track
+                </a>
+                <span class="">
+                 <a aria-label="Information on tracking" href="#" onclick="$.colorbox({href:'/overlays/Message.aspx?trackingwhatsthis=1',width: '80%', maxWidth:'80%',opacity: 0}); return false;">
+                  (What's this?)
+                 </a>
+                </span>
+               </p>
+              </div>
+              <div>
+               <dl class="dl--inline text-small">
+                <dt>
+                 Date
+                </dt>
+                <dd>
+                 28 Feb 2024
+                </dd>
+                <dt>
+                 Chamber
+                </dt>
+                <dd>
+                 House of Representatives
+                </dd>
+                <dt>
+                 Status
+                </dt>
+                <dd>
+                 Before Senate
+                </dd>
+                <dt>
+                 Portfolio
+                </dt>
+                <dd>
+                 Agriculture, Fisheries and Forestry
+                </dd>
+                <dt>
+                 Summary
+                </dt>
+                <dd>
+                 Introduced with the Agriculture (Biosecurity Protection) Levies Bill 2024 and Agriculture (Biosecurity Protection) Charges Bill 2024, the bill: provides for the collection and administration of biosecurity protection levies and charges; applies the standard provisions of the
+                 <div class="act-reference">
+                  Regulatory Powers (Standard Provisions) Act 2014
+                 </div>
+                 ; and provides for the use and disclosure of certain information.
+                </dd>
+               </dl>
+               <p class="extra">
+                <a aria-label="Bill link - Agriculture (Biosecurity Protection) Levies and Charges Collection Bill 2024" href="https://parlinfo.aph.gov.au/parlInfo/search/display/display.w3p;query=Id%3A%22legislation%2Fbills%2Fr7159_first-reps%2F0000%22;rec=0" id="main_0_content_0_lvResults_hlBill_5" rel="noopener noreferrer" target="_blank">
+                 Bill
+                </a>
+                |
+                <a aria-label="Explanatory Memorandum - Agriculture (Biosecurity Protection) Levies and Charges Collection Bill 2024 - legislation/ems/r7159_ems_4136cb01-8dba-467c-8b8a-3d006fe3645f" href="https://parlinfo.aph.gov.au/parlInfo/search/display/display.w3p;query=Id%3A%22legislation%2Fems%2Fr7159_ems_4136cb01-8dba-467c-8b8a-3d006fe3645f%22" id="main_0_content_0_lvResults_hlExplanatoryMemorandum_5" rel="noopener noreferrer" target="_blank">
+                 Explanatory Memorandum
+                </a>
+               </p>
+              </div>
+             </li>
+             <li>
+              <div class="row">
+               <h4 class="medium-11 small-8 columns">
+                <a href="/Parliamentary_Business/Bills_Legislation/Bills_Search_Results/Result?bId=r7158" id="main_0_content_0_lvResults_hlTitle_6">
+                 Agriculture (Biosecurity Protection) Levies Bill 2024
+                </a>
+               </h4>
+               <p class="action medium-2 small-4 columns">
+                <a class="colorbox-popup button btn-track" data-target="/Help/secure/my-parliament/track-item-popup?type=Bill&amp;id=r7158&amp;meta=" href="#">
+                 Track
+                </a>
+                <span class="">
+                 <a aria-label="Information on tracking" href="#" onclick="$.colorbox({href:'/overlays/Message.aspx?trackingwhatsthis=1',width: '80%', maxWidth:'80%',opacity: 0}); return false;">
+                  (What's this?)
+                 </a>
+                </span>
+               </p>
+              </div>
+              <div>
+               <dl class="dl--inline text-small">
+                <dt>
+                 Date
+                </dt>
+                <dd>
+                 28 Feb 2024
+                </dd>
+                <dt>
+                 Chamber
+                </dt>
+                <dd>
+                 House of Representatives
+                </dd>
+                <dt>
+                 Status
+                </dt>
+                <dd>
+                 Before Senate
+                </dd>
+                <dt>
+                 Portfolio
+                </dt>
+                <dd>
+                 Agriculture, Fisheries and Forestry
+                </dd>
+                <dt>
+                 Summary
+                </dt>
+                <dd>
+                 Introduced with the Agriculture (Biosecurity Protection) Charges Bill 2024 and Agriculture (Biosecurity Protection) Levies and Charges Collection Bill 2024, the bill provides for the imposition of biosecurity protection levies to be payable by certain producers of agricultural, forestry and fisheries products within Australia.
+                </dd>
+               </dl>
+               <p class="extra">
+                <a aria-label="Bill link - Agriculture (Biosecurity Protection) Levies Bill 2024" href="https://parlinfo.aph.gov.au/parlInfo/search/display/display.w3p;query=Id%3A%22legislation%2Fbills%2Fr7158_first-reps%2F0000%22;rec=0" id="main_0_content_0_lvResults_hlBill_6" rel="noopener noreferrer" target="_blank">
+                 Bill
+                </a>
+                |
+                <a aria-label="Explanatory Memorandum - Agriculture (Biosecurity Protection) Levies Bill 2024 - legislation/ems/r7158_ems_974ff256-0770-4a84-922f-1c258263f00d" href="https://parlinfo.aph.gov.au/parlInfo/search/display/display.w3p;query=Id%3A%22legislation%2Fems%2Fr7158_ems_974ff256-0770-4a84-922f-1c258263f00d%22" id="main_0_content_0_lvResults_hlExplanatoryMemorandum_6" rel="noopener noreferrer" target="_blank">
+                 Explanatory Memorandum
+                </a>
+               </p>
+              </div>
+             </li>
+             <li>
+              <div class="row">
+               <h4 class="medium-11 small-8 columns">
+                <a href="/Parliamentary_Business/Bills_Legislation/Bills_Search_Results/Result?bId=s1410" id="main_0_content_0_lvResults_hlTitle_7">
+                 Airline Passenger Protections (Pay on Delay) Bill 2024
+                </a>
+               </h4>
+               <p class="action medium-2 small-4 columns">
+                <a class="colorbox-popup button btn-track" data-target="/Help/secure/my-parliament/track-item-popup?type=Bill&amp;id=s1410&amp;meta=" href="#">
+                 Track
+                </a>
+                <span class="">
+                 <a aria-label="Information on tracking" href="#" onclick="$.colorbox({href:'/overlays/Message.aspx?trackingwhatsthis=1',width: '80%', maxWidth:'80%',opacity: 0}); return false;">
+                  (What's this?)
+                 </a>
+                </span>
+               </p>
+              </div>
+              <div>
+               <dl class="dl--inline text-small">
+                <dt>
+                 Date
+                </dt>
+                <dd>
+                 27 Feb 2024
+                </dd>
+                <dt>
+                 Chamber
+                </dt>
+                <dd>
+                 Senate
+                </dd>
+                <dt>
+                 Status
+                </dt>
+                <dd>
+                 Before Senate
+                </dd>
+                <dt>
+                 Sponsor
+                </dt>
+                <dd>
+                 MCKENZIE, Sen Bridget
+                 <br/>
+                 SMITH, Sen Dean
+                </dd>
+                <dt>
+                 Summary
+                </dt>
+                <dd>
+                 Requires the Transport Minister to make carriers’ obligations rules and an aviation industry code of conduct to provide for the protection of passengers in certain circumstances.
+                </dd>
+               </dl>
+               <p class="extra">
+                <a aria-label="Bill link - Airline Passenger Protections (Pay on Delay) Bill 2024" href="https://parlinfo.aph.gov.au/parlInfo/search/display/display.w3p;query=Id%3A%22legislation%2Fbills%2Fs1410_first-senate%2F0000%22;rec=0" id="main_0_content_0_lvResults_hlBill_7" rel="noopener noreferrer" target="_blank">
+                 Bill
+                </a>
+                |
+                <a aria-label="Explanatory Memorandum - Airline Passenger Protections (Pay on Delay) Bill 2024 - legislation/ems/s1410_ems_7934cef2-b18b-46fc-9eab-4a4efac32463" href="https://parlinfo.aph.gov.au/parlInfo/search/display/display.w3p;query=Id%3A%22legislation%2Fems%2Fs1410_ems_7934cef2-b18b-46fc-9eab-4a4efac32463%22" id="main_0_content_0_lvResults_hlExplanatoryMemorandum_7" rel="noopener noreferrer" target="_blank">
+                 Explanatory Memorandum
+                </a>
+               </p>
+              </div>
+             </li>
+             <li>
+              <div class="row">
+               <h4 class="medium-11 small-8 columns">
+                <a href="/Parliamentary_Business/Bills_Legislation/Bills_Search_Results/Result?bId=r7270" id="main_0_content_0_lvResults_hlTitle_8">
+                 Anti-Money Laundering and Counter-Terrorism Financing Amendment (Making Gambling Businesses Accountable) Bill 2024
+                </a>
+               </h4>
+               <p class="action medium-2 small-4 columns">
+                <a class="colorbox-popup button btn-track" data-target="/Help/secure/my-parliament/track-item-popup?type=Bill&amp;id=r7270&amp;meta=" href="#">
+                 Track
+                </a>
+                <span class="">
+                 <a aria-label="Information on tracking" href="#" onclick="$.colorbox({href:'/overlays/Message.aspx?trackingwhatsthis=1',width: '80%', maxWidth:'80%',opacity: 0}); return false;">
+                  (What's this?)
+                 </a>
+                </span>
+               </p>
+              </div>
+              <div>
+               <dl class="dl--inline text-small">
+                <dt>
+                 Date
+                </dt>
+                <dd>
+                 18 Nov 2024
+                </dd>
+                <dt>
+                 Chamber
+                </dt>
+                <dd>
+                 House of Representatives
+                </dd>
+                <dt>
+                 Status
+                </dt>
+                <dd>
+                 Before House of Representatives
+                </dd>
+                <dt>
+                 Sponsor
+                </dt>
+                <dd>
+                 WILKIE, Andrew, MP
+                </dd>
+               </dl>
+               <p class="extra">
+                <a aria-label="Bill link - Anti-Money Laundering and Counter-Terrorism Financing Amendment (Making Gambling Businesses Accountable) Bill 2024" href="https://parlinfo.aph.gov.au/parlInfo/search/display/display.w3p;query=Id%3A%22legislation%2Fbills%2Fr7270_first-reps%2F0000%22;rec=0" id="main_0_content_0_lvResults_hlBill_8" rel="noopener noreferrer" target="_blank">
+                 Bill
+                </a>
+                |
+                <a aria-label="Explanatory Memorandum - Anti-Money Laundering and Counter-Terrorism Financing Amendment (Making Gambling Businesses Accountable) Bill 2024 - legislation/ems/r7270_ems_9f47011a-dc84-4efa-b636-99a2d621dde0" href="https://parlinfo.aph.gov.au/parlInfo/search/display/display.w3p;query=Id%3A%22legislation%2Fems%2Fr7270_ems_9f47011a-dc84-4efa-b636-99a2d621dde0%22" id="main_0_content_0_lvResults_hlExplanatoryMemorandum_8" rel="noopener noreferrer" target="_blank">
+                 Explanatory Memorandum
+                </a>
+               </p>
+              </div>
+             </li>
+             <li>
+              <div class="row">
+               <h4 class="medium-11 small-8 columns">
+                <a href="/Parliamentary_Business/Bills_Legislation/Bills_Search_Results/Result?bId=s1393" id="main_0_content_0_lvResults_hlTitle_9">
+                 Australian Education Amendment (Save Our Public Schools) Bill 2023
+                </a>
+               </h4>
+               <p class="action medium-2 small-4 columns">
+                <a class="colorbox-popup button btn-track" data-target="/Help/secure/my-parliament/track-item-popup?type=Bill&amp;id=s1393&amp;meta=" href="#">
+                 Track
+                </a>
+                <span class="">
+                 <a aria-label="Information on tracking" href="#" onclick="$.colorbox({href:'/overlays/Message.aspx?trackingwhatsthis=1',width: '80%', maxWidth:'80%',opacity: 0}); return false;">
+                  (What's this?)
+                 </a>
+                </span>
+               </p>
+              </div>
+              <div>
+               <dl class="dl--inline text-small">
+                <dt>
+                 Date
+                </dt>
+                <dd>
+                 14 Sep 2023
+                </dd>
+                <dt>
+                 Chamber
+                </dt>
+                <dd>
+                 Senate
+                </dd>
+                <dt>
+                 Status
+                </dt>
+                <dd>
+                 Before Senate
+                </dd>
+                <dt>
+                 Sponsor
+                </dt>
+                <dd>
+                 ALLMAN-PAYNE, Sen Penny
+                </dd>
+                <dt>
+                 Summary
+                </dt>
+                <dd>
+                 Amends the
+                 <div class="act-reference">
+                  Australian Education Act 2013
+                 </div>
+                 to: redefine the Commonwealth share of funding for a government school to 25%; and introduce an obligation on the minister to be satisfied when determining the Commonwealth share that it is consistent with the objective that every school-aged child in Australia has access to a fully-funded government school.
+                </dd>
+               </dl>
+               <p class="extra">
+                <a aria-label="Bill link - Australian Education Amendment (Save Our Public Schools) Bill 2023" href="https://parlinfo.aph.gov.au/parlInfo/search/display/display.w3p;query=Id%3A%22legislation%2Fbills%2Fs1393_first-senate%2F0000%22;rec=0" id="main_0_content_0_lvResults_hlBill_9" rel="noopener noreferrer" target="_blank">
+                 Bill
+                </a>
+                |
+                <a aria-label="Explanatory Memorandum - Australian Education Amendment (Save Our Public Schools) Bill 2023 - legislation/ems/s1393_ems_5d0a8f15-f7db-4703-bcc9-a2244c699be7" href="https://parlinfo.aph.gov.au/parlInfo/search/display/display.w3p;query=Id%3A%22legislation%2Fems%2Fs1393_ems_5d0a8f15-f7db-4703-bcc9-a2244c699be7%22" id="main_0_content_0_lvResults_hlExplanatoryMemorandum_9" rel="noopener noreferrer" target="_blank">
+                 Explanatory Memorandum
+                </a>
+               </p>
+              </div>
+             </li>
+            </ul>
+            <div class="results-pagination">
+             <div class="page-controls">
+              <p class="result-number">
+               <label for="pageSize2">
+                Results per page
+               </label>
+               <select id="pageSize2">
+                <option selected="selected" value="10">
+                 10
+                </option>
+                <option value="25">
+                 25
+                </option>
+                <option value="50">
+                 50
+                </option>
+                <option value="100">
+                 100
+                </option>
+               </select>
+              </p>
+              <ul>
+               <li class="first inactive">
+                <span>
+                 First
+                </span>
+               </li>
+               <li class="prev inactive">
+                <span>
+                 Back
+                </span>
+               </li>
+               <li>
+                <strong>
+                 1
+                </strong>
+               </li>
+               <li>
+                <a href="?page=2&amp;drt=2&amp;drv=7&amp;drvH=7&amp;pnu=47&amp;pnuH=47&amp;f=26%2f07%2f2022&amp;to=21%2f01%2f2025&amp;ps=10&amp;ito=1&amp;q=&amp;bs=1&amp;pbh=1&amp;bhor=1&amp;pmb=1&amp;g=1&amp;st=2" onclick="sendGoogleAnalyticsEvent('Bills Search', 'Click pagination', 'Number')" title="Page 2">
+                 2
+                </a>
+               </li>
+               <li>
+                <a href="?page=3&amp;drt=2&amp;drv=7&amp;drvH=7&amp;pnu=47&amp;pnuH=47&amp;f=26%2f07%2f2022&amp;to=21%2f01%2f2025&amp;ps=10&amp;ito=1&amp;q=&amp;bs=1&amp;pbh=1&amp;bhor=1&amp;pmb=1&amp;g=1&amp;st=2" onclick="sendGoogleAnalyticsEvent('Bills Search', 'Click pagination', 'Number')" title="Page 3">
+                 3
+                </a>
+               </li>
+               <li>
+                <a href="?page=4&amp;drt=2&amp;drv=7&amp;drvH=7&amp;pnu=47&amp;pnuH=47&amp;f=26%2f07%2f2022&amp;to=21%2f01%2f2025&amp;ps=10&amp;ito=1&amp;q=&amp;bs=1&amp;pbh=1&amp;bhor=1&amp;pmb=1&amp;g=1&amp;st=2" onclick="sendGoogleAnalyticsEvent('Bills Search', 'Click pagination', 'Number')" title="Page 4">
+                 4
+                </a>
+               </li>
+               <li>
+                <a href="?page=5&amp;drt=2&amp;drv=7&amp;drvH=7&amp;pnu=47&amp;pnuH=47&amp;f=26%2f07%2f2022&amp;to=21%2f01%2f2025&amp;ps=10&amp;ito=1&amp;q=&amp;bs=1&amp;pbh=1&amp;bhor=1&amp;pmb=1&amp;g=1&amp;st=2" onclick="sendGoogleAnalyticsEvent('Bills Search', 'Click pagination', 'Number')" title="Page 5">
+                 5
+                </a>
+               </li>
+               <li class="next">
+                <a href="?page=2&amp;drt=2&amp;drv=7&amp;drvH=7&amp;pnu=47&amp;pnuH=47&amp;f=26%2f07%2f2022&amp;to=21%2f01%2f2025&amp;ps=10&amp;ito=1&amp;q=&amp;bs=1&amp;pbh=1&amp;bhor=1&amp;pmb=1&amp;g=1&amp;st=2" onclick="sendGoogleAnalyticsEvent('Bills Search', 'Click pagination', 'Next')" title="Next page">
+                 Next
+                </a>
+               </li>
+               <li class="last">
+                <a href="?page=13&amp;drt=2&amp;drv=7&amp;drvH=7&amp;pnu=47&amp;pnuH=47&amp;f=26%2f07%2f2022&amp;to=21%2f01%2f2025&amp;ps=10&amp;ito=1&amp;q=&amp;bs=1&amp;pbh=1&amp;bhor=1&amp;pmb=1&amp;g=1&amp;st=2" onclick="sendGoogleAnalyticsEvent('Bills Search', 'Click pagination', 'Last')" title="Last page">
+                 Last
+                </a>
+               </li>
+              </ul>
+             </div>
+            </div>
+            <script type="text/javascript">
+             var bs = document.getElementById("bs");
+        var bhor = document.getElementById("bhor");
+        var pbh = document.getElementById("pbh");
+        var ra = document.getElementById("ra");
+        var np = document.getElementById("np");
+        var search = document.getElementById("q");
+
+        search.setAttribute("title", "Search");
+
+        if (bs != null) {
+            bs.onclick = function () {
+                checkStatus(this);
+            }
+            bs.onkeypress = function () {
+                checkStatus(this);
+            }
+        }
+
+        if (bhor != null) {
+            bhor.onclick = function () {
+                checkStatus(this);
+            }
+            bhor.onkeypress = function () {
+                checkStatus(this);
+            }
+        }
+
+        if (pbh != null) {
+            pbh.onclick = function () {
+                checkStatus(this);
+            }
+            pbh.onkeypress = function () {
+                checkStatus(this);
+            }
+        }
+
+        if (ra != null) {
+            ra.onclick = function () {
+                checkStatus(this);
+            }
+            ra.onkeypress = function () {
+                checkStatus(this);
+            }
+        }
+
+        if (np != null) {
+            np.onclick = function () {
+                checkStatus(this);
+            }
+            np.onkeypress = function () {
+                checkStatus(this);
+            }
+        }
+
+        function checkStatus(cb) {
+            var bs = document.getElementById("bs");
+            var bhor = document.getElementById("bhor");
+            var pbh = document.getElementById("pbh");
+            var ra = document.getElementById("ra");
+            var np = document.getElementById("np");
+
+            if (!cb.checked && !bs.checked && !bhor.checked && !pbh.checked && !ra.checked && !np.checked)
+                cb.checked = true;
+        }
+
+        var pmb = document.getElementById("pmb");
+        var g = document.getElementById("g");
+
+        if (pmb != null) {
+            pmb.onclick = function () {
+                checkType(this);
+            }
+            pmb.onkeypress = function () {
+                checkType(this);
+            }
+        }
+
+        if (g != null) {
+            g.onclick = function () {
+                checkType(this);
+            }
+            g.onkeypress = function () {
+                checkType(this);
+            }
+        }
+
+        function checkType(cb) {
+            var pmb = document.getElementById("pmb");
+            var g = document.getElementById("g");
+
+            if (!cb.checked && (!pmb.checked) && (!g.checked))
+                cb.checked = true;
+        }
+
+        //
+
+        var ps = document.getElementById("pageSize1");
+        if (ps != null) {
+            ps.onchange = function () {
+                var tempIndex = this.selectedIndex;
+
+                this.form.reset();
+
+                var ps2 = document.getElementById("pageSize2");
+                ps2.selectedIndex = tempIndex;
+                this.selectedIndex = tempIndex;
+
+                this.form.action = '/Parliamentary_Business/Bills_Legislation/Bills_before_Parliament';
+                this.form.method = 'get';
+                clearForm(this.form);
+                this.form.submit();
+            }
+        }
+
+        var ps2 = document.getElementById("pageSize2");
+        if (ps2 != null) {
+            ps2.onchange = function () {
+                var tempIndex = this.selectedIndex;
+
+                this.form.reset();
+
+                var ps = document.getElementById("pageSize1");
+                ps.selectedIndex = tempIndex;
+                this.selectedIndex = tempIndex;
+
+                this.form.action = '/Parliamentary_Business/Bills_Legislation/Bills_before_Parliament';
+                this.form.method = 'get';
+                clearForm(this.form);
+                this.form.submit();
+            }
+        }
+
+        var dateRangeRadio = document.getElementById("pn1");
+        var parlNumberRadio = document.getElementById("pn2");
+        var dr = document.getElementById("dateRange");
+        var type = document.getElementById("drt");
+        var dateFrom = document.getElementById("f");
+        var dateTo = document.getElementById("to");
+        var parlNumbers = document.getElementById("pnu");
+        var pnu = document.getElementById("pnu");
+        var pnuHidden = document.getElementById("pnuH");
+        var drHidden = document.getElementById("drvH");
+
+        if (dateRangeRadio != null) {
+            if (!dateRangeRadio.checked)
+                dr.disabled = true;
+
+            dateRangeRadio.onclick = function () {
+                pnu.disabled = true;
+                dr.disabled = false;
+                dr.onchange();
+            }
+
+            dateRangeRadio.onkeypress = function () {
+                pnu.disabled = true;
+                dr.disabled = false;
+                dr.onchange();
+            }
+        }
+
+        if (parlNumberRadio != null) {
+            if (!parlNumberRadio.checked)
+                pnu.disabled = true;
+
+            parlNumberRadio.onclick = function () {
+                dr.disabled = true;
+                pnu.disabled = false;
+                pnu.onchange();
+            }
+
+            parlNumberRadio.onkeypress = function () {
+                dr.disabled = true;
+                pnu.disabled = false;
+                pnu.onchange();
+            }
+        }
+
+        if (dateFrom != null) {
+            dateFrom.onchange = function () {
+                dr.selectedIndex = 0;
+                drHidden.value = "0";
+                pnu.selectedIndex = 0;
+                pnuHidden.value = "0";
+                dateRangeRadio.checked = false;
+                parlNumberRadio.checked = false;
+                dr.disabled = true;
+                pnu.disabled = true;
+            }
+        }
+
+        if (dateTo != null) {
+            dateTo.onchange = function () {
+                dr.selectedIndex = 0;
+                drHidden.value = "0";
+                pnu.selectedIndex = 0;
+                pnuHidden.value = "0";
+                dateRangeRadio.checked = false;
+                parlNumberRadio.checked = false;
+                dr.disabled = true;
+                pnu.disabled = true;
+            }
+        }
+
+        if (pnu != null) {
+            pnu.onchange = function () {
+                var parliamentNumber = this.options[this.selectedIndex].value;
+                pnuHidden.value = parliamentNumber;
+
+                if (parliamentNumber == "") {
+                    dateFrom.value = "dd/mm/yyyy";
+                    dateTo.value = dateFrom.value;
+                }
+                else {
+                    dateFrom.value = pnHash[parliamentNumber].DateFrom.format("dd/MM/yyyy");
+                    dateTo.value = pnHash[parliamentNumber].DateTo.format("dd/MM/yyyy");
+                }
+            }
+        }
+
+        if (dr != null) {
+            dr.onchange = function () {
+                var chosenoption = this.options[this.selectedIndex];
+
+                drHidden.value = chosenoption.value;
+
+                switch (chosenoption.value) {
+                    case "0": // None
+                        {
+                            dateRangeRadio.checked = true;
+                            parlNumberRadio.checked = false;
+                            dateFrom.value = "dd/mm/yyyy";
+                            dateTo.value = dateFrom.value;
+                            parlNumbers.selectedIndex = 0;
+                        }
+                        break;
+
+                    case "1": // Yesterday
+                        {
+                            dateRangeRadio.checked = true;
+                            parlNumberRadio.checked = false;
+                            dateFrom.value = '20/01/2025';
+                            dateTo.value = '20/01/2025';
+                            parlNumbers.selectedIndex = 0;
+                        }
+                        break;
+
+                    case "2": // Today
+                        {
+                            dateRangeRadio.checked = true;
+                            parlNumberRadio.checked = false;
+                            dateFrom.value = '21/01/2025';
+                            dateTo.value = '21/01/2025';
+                            parlNumbers.selectedIndex = 0;
+                        }
+                        break;
+
+                    case "3": // Current Year
+                        {
+                            date = new Date();
+
+                            dateRangeRadio.checked = true;
+                            parlNumberRadio.checked = false;
+                            dateFrom.value = "01/01/" + date.getFullYear();
+                            dateTo.value = "31/12/" + date.getFullYear();
+                        }
+                        break;
+
+                    case "4": // Last Year
+                        {
+                            date = new Date();
+
+                            dateRangeRadio.checked = true;
+                            parlNumberRadio.checked = false;
+                            dateFrom.value = "01/01/" + (date.getFullYear() - 1);
+                            dateTo.value = "31/12/" + (date.getFullYear() - 1);
+                        }
+                        break;
+
+                    case "5": // Current Session
+                        {
+                            dateRangeRadio.checked = true;
+                            parlNumberRadio.checked = false;
+                            dateFrom.value = '06/09/2015';
+                            dateTo.value = '17/09/2015';
+                        }
+                        break;
+
+                    case "6": // Last Parliament
+                        {
+
+                            dateFrom.value = '02/07/2019';
+                            dateTo.value = '25/07/2022';
+
+                        }
+                        break;
+
+                    case "7": // Current Parliament
+                        {
+
+                            dateFrom.value = '26/07/2022';
+                            dateTo.value = '21/01/2025';
+
+                        }
+                        break;
+                }
+            }
+        }
+
+        var pnData;
+        var pnHash = new Array();
+        var currentParliament = 0;
+        tempuri.org.ParliamentNumbers.GetDates(PNCallBack);
+
+        function PNCallBack(WebServiceResult) {
+            currentParliament = WebServiceResult[0].ParliamentNumber;
+            for (i = 0; i < WebServiceResult.length; i++) {
+                var pnObject = WebServiceResult[i];
+                pnHash[pnObject.ParliamentNumber] = pnObject;
+            }
+
+            // set DateTo on the current parliament
+            pnHash[currentParliament].DateTo = new Date();
+        }
+            </script>
+           </input>
+          </input>
+         </div>
+         <!-- end box -->
+        </div>
+        <div class="large-3 columns right-column">
+         <div class="show-for-large-up">
+          <div aria-label="Secondary navigation" class="sidenav" role="navigation">
+           <a aria-expanded="false" class="sidenav__heading" role="button" tabindex="0">
+            <span class="sidenav__heading--span">
+             In this section
+            </span>
+           </a>
+           <ul class="restartSecondary sidenav__list">
+            <li class="sidenav__item sidenav__item--has-dropdown active">
+            </li>
+            <a alt="Bills and Legislation secondary link" class="active" href="/Parliamentary_Business/Bills_Legislation" onclick="sendGoogleAnalyticsEvent('Secondary Nav', 'Bills before Parliament', 'Bills and Legislation')" role="link">
+             Bills and Legislation
+            </a>
+            <a aria-label="Drop down" class="sidenav__dropdown__toggle" href="">
+             <span aria-hidden="true" class="fa fa-fw fa-caret-up">
+             </span>
+            </a>
+            <ul class="sidenav__dropdown">
+             <li class="sidenav__item">
+             </li>
+             <a alt="Disallowance Alert 2024 secondary link" href="/Parliamentary_Business/Bills_Legislation/Disallowance_alert" onclick="sendGoogleAnalyticsEvent('Secondary Nav', 'Bills before Parliament', 'Disallowance Alert 2024')" role="link">
+              Disallowance Alert 2024
+             </a>
+             <li class="sidenav__item">
+             </li>
+             <a alt="Tariff Proposals secondary link" href="/Parliamentary_Business/Bills_Legislation/Tariff_Proposals" onclick="sendGoogleAnalyticsEvent('Secondary Nav', 'Bills before Parliament', 'Tariff Proposals')" role="link">
+              Tariff Proposals
+             </a>
+             <li class="sidenav__item">
+             </li>
+             <a alt="Bills currently referred to Senate committees secondary link" href="/Parliamentary_Business/Bills_Legislation/Bills_referred_to_Senate_committees" onclick="sendGoogleAnalyticsEvent('Secondary Nav', 'Bills before Parliament', 'Bills currently referred to Senate committees')" role="link">
+              Bills currently referred to Senate committees
+             </a>
+             <li class="sidenav__item">
+             </li>
+             <a alt="Bills Digests secondary link" href="/Parliamentary_Business/Bills_Legislation/Bills_Digests" onclick="sendGoogleAnalyticsEvent('Secondary Nav', 'Bills before Parliament', 'Bills Digests')" role="link">
+              Bills Digests
+             </a>
+             <li class="sidenav__item">
+             </li>
+             <a alt="Budget and Financial Legislation secondary link" href="http://www.budget.gov.au/" onclick="sendGoogleAnalyticsEvent('Secondary Nav', 'Bills before Parliament', 'Budget and Financial Legislation')" rel="noopener noreferrer" role="link" target="_blank">
+              Budget and Financial Legislation
+             </a>
+             <li class="sidenav__item">
+             </li>
+             <a alt="Browse Bills Digests  secondary link" href="/Parliamentary_Business/Bills_Legislation/bd" onclick="sendGoogleAnalyticsEvent('Secondary Nav', 'Bills before Parliament', 'Browse Bills Digests ')" role="link">
+              Browse Bills Digests
+             </a>
+             <li class="sidenav__item">
+             </li>
+             <a alt="Ordering Printed Bills secondary link" href="/Parliamentary_Business/Bills_Legislation/Ordering_Printed_Bills" onclick="sendGoogleAnalyticsEvent('Secondary Nav', 'Bills before Parliament', 'Ordering Printed Bills')" role="link">
+              Ordering Printed Bills
+             </a>
+             <li class="sidenav__item">
+             </li>
+             <a alt="Legislative Instruments secondary link" href="/Parliamentary_Business/Bills_Legislation/leginstruments" onclick="sendGoogleAnalyticsEvent('Secondary Nav', 'Bills before Parliament', 'Legislative Instruments')" role="link">
+              Legislative Instruments
+             </a>
+            </ul>
+            <li class="sidenav__item">
+            </li>
+            <a alt="Tabled documents secondary link" href="/Parliamentary_Business/Tabled_documents" onclick="sendGoogleAnalyticsEvent('Secondary Nav', 'Bills before Parliament', 'Tabled documents')" role="link">
+             Tabled documents
+            </a>
+            <li class="sidenav__item">
+            </li>
+            <a alt="Chamber documents secondary link" href="/Parliamentary_Business/Chamber_documents" onclick="sendGoogleAnalyticsEvent('Secondary Nav', 'Bills before Parliament', 'Chamber documents')" role="link">
+             Chamber documents
+            </a>
+            <li class="sidenav__item">
+            </li>
+            <a alt="Hansard secondary link" href="/Parliamentary_Business/Hansard" onclick="sendGoogleAnalyticsEvent('Secondary Nav', 'Bills before Parliament', 'Hansard')" role="link">
+             Hansard
+            </a>
+            <li class="sidenav__item">
+            </li>
+            <a alt="Senate estimates secondary link" href="/Parliamentary_Business/Senate_estimates" onclick="sendGoogleAnalyticsEvent('Secondary Nav', 'Bills before Parliament', 'Senate estimates')" role="link">
+             Senate estimates
+            </a>
+            <li class="sidenav__item">
+            </li>
+            <a alt="Committees secondary link" href="/Parliamentary_Business/Committees" onclick="sendGoogleAnalyticsEvent('Secondary Nav', 'Bills before Parliament', 'Committees')" role="link">
+             Committees
+            </a>
+            <li class="sidenav__item">
+            </li>
+            <a alt="Statistics secondary link" href="/Parliamentary_Business/Statistics" onclick="sendGoogleAnalyticsEvent('Secondary Nav', 'Bills before Parliament', 'Statistics')" role="link">
+             Statistics
+            </a>
+            <li class="sidenav__item">
+            </li>
+            <a alt="Petitions secondary link" href="/Parliamentary_Business/Petitions" onclick="sendGoogleAnalyticsEvent('Secondary Nav', 'Bills before Parliament', 'Petitions')" role="link">
+             Petitions
+            </a>
+            <li class="sidenav__item">
+            </li>
+            <a alt="Address in Reply secondary link" href="/Parliamentary_Business/Address_in_Reply" onclick="sendGoogleAnalyticsEvent('Secondary Nav', 'Bills before Parliament', 'Address in Reply')" role="link">
+             Address in Reply
+            </a>
+           </ul>
+          </div>
+         </div>
+         <div class="widget">
+          <div class="panel">
+           <div>
+            <h3>
+             What is a bill?
+            </h3>
+            <div class="arrow arrow-down arr-down">
+            </div>
+            <div style="clear: both;">
+            </div>
+            <div class="collapsed-content">
+             <span>
+              <div>
+               <p>
+                A bill is a proposal for a law or a change to an existing law. A bill becomes law (an
+                <a href="http://www.comlaw.gov.au/">
+                 Act
+                </a>
+                ) when agreed to in identical form by both houses of Parliament and assented to by the Governor-General.
+               </p>
+              </div>
+             </span>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="widget calendar">
+          <div class="box title">
+           <h3>
+            Parliament House Calendar
+           </h3>
+          </div>
+          <div class="tabs">
+           <ul class="tab-control">
+            <li>
+             <a class="active" href="#tab2a">
+              Month view
+             </a>
+            </li>
+            <li class="last">
+             <a href="#tab2b">
+              Week view
+             </a>
+            </li>
+           </ul>
+           <div class="tab-content" id="tab2a" style="display: block;">
+            <div class="box">
+             <div class="position">
+              <h4>
+               January 2025
+              </h4>
+              <ul>
+               <li class="prev">
+                <a href="?Page=1&amp;CalendarWidgetTarget=21-12-2024&amp;tab=tab2a" title="Previous (December)">
+                 Previous
+                </a>
+               </li>
+               <li class="next">
+                <a href="?Page=1&amp;CalendarWidgetTarget=21-02-2025&amp;tab=tab2a" title="Next (February)">
+                 Next
+                </a>
+               </li>
+              </ul>
+             </div>
+             <table summary="Calendar">
+              <thead>
+               <tr class="even">
+                <th scope="row">
+                 Sun
+                </th>
+                <th scope="row">
+                 Mon
+                </th>
+                <th scope="row">
+                 Tue
+                </th>
+                <th scope="row">
+                 Wed
+                </th>
+                <th scope="row">
+                 Thu
+                </th>
+                <th scope="row">
+                 Fri
+                </th>
+                <th scope="row">
+                 Sat
+                </th>
+               </tr>
+              </thead>
+              <tbody>
+               <tr>
+                <td class="off">
+                 29
+                </td>
+                <td class="off">
+                 30
+                </td>
+                <td class="off">
+                 31
+                </td>
+                <td>
+                 1
+                </td>
+                <td>
+                 2
+                </td>
+                <td>
+                 3
+                </td>
+                <td>
+                 4
+                </td>
+               </tr>
+               <tr>
+                <td>
+                 5
+                </td>
+                <td>
+                 6
+                </td>
+                <td>
+                 7
+                </td>
+                <td>
+                 8
+                </td>
+                <td>
+                 9
+                </td>
+                <td>
+                 10
+                </td>
+                <td>
+                 11
+                </td>
+               </tr>
+               <tr>
+                <td>
+                 12
+                </td>
+                <td>
+                 13
+                </td>
+                <td>
+                 14
+                </td>
+                <td>
+                 15
+                </td>
+                <td>
+                 16
+                </td>
+                <td>
+                 17
+                </td>
+                <td>
+                 18
+                </td>
+               </tr>
+               <tr>
+                <td>
+                 19
+                </td>
+                <td>
+                 20
+                </td>
+                <td>
+                 21
+                </td>
+                <td>
+                 22
+                </td>
+                <td>
+                 23
+                </td>
+                <td>
+                 24
+                </td>
+                <td>
+                 25
+                </td>
+               </tr>
+               <tr>
+                <td>
+                 26
+                </td>
+                <td>
+                 27
+                </td>
+                <td>
+                 28
+                </td>
+                <td>
+                 29
+                </td>
+                <td>
+                 30
+                </td>
+                <td>
+                 31
+                </td>
+                <td class="off">
+                 1
+                </td>
+               </tr>
+              </tbody>
+             </table>
+             <ul class="cal-colours">
+              <li class="sen">
+               Senate
+              </li>
+              <li class="reps">
+               House of Representatives
+              </li>
+              <li class="both">
+               Both
+              </li>
+              <li class="ph">
+               Public Holiday
+              </li>
+              <li class="other">
+               Other
+              </li>
+             </ul>
+             <dl>
+              <dt>
+               22 Jan 25
+              </dt>
+              <dd>
+               <a href="/News_and_Events/Events_Calendar/Event_Details?ID={F3BFABF8-BB1D-4393-AF11-F29719EE148F}">
+                Inquiry Submission Closing Health Regulations
+               </a>
+              </dd>
+             </dl>
+            </div>
+           </div>
+           <div class="tab-content" id="tab2b" style="display: none;">
+            <div class="box">
+             <div class="position">
+              <h4>
+               19/01/25 - 25/01/25
+              </h4>
+              <ul>
+               <li class="prev">
+                <a href="?Page=1&amp;CalendarWidgetTarget=12-01-2025&amp;tab=tab2b" title="Previous week">
+                 Previous
+                </a>
+               </li>
+               <li class="next">
+                <a href="?Page=1&amp;CalendarWidgetTarget=26-01-2025&amp;tab=tab2b" title="Next week">
+                 Next
+                </a>
+               </li>
+              </ul>
+             </div>
+             <table style="border:0" summary="Events">
+              <thead>
+               <tr>
+                <th scope="row" style="text-align:left;">
+                 Date
+                </th>
+                <th scope="row" style="text-align:left; width: 120px;">
+                 Title
+                </th>
+               </tr>
+              </thead>
+              <tbody>
+               <tr>
+                <td style="text-align:left;">
+                 22/01/25
+                </td>
+                <td style="text-align:left;  width: 120px;">
+                 <a href="/News_and_Events/Events_Calendar/Event_Details?ID={F3BFABF8-BB1D-4393-AF11-F29719EE148F}">
+                  Inquiry Submission Closing Health Regulations
+                 </a>
+                </td>
+               </tr>
+              </tbody>
+             </table>
+            </div>
+           </div>
+          </div>
+          <!-- end tabs -->
+          <div class="box half-pad">
+           <p>
+            <a href="/About_Parliament/Sitting_Calendar" title="Parliamentary Sittings ">
+             Parliamentary sitting calendar
+            </a>
+           </p>
+           <p>
+            <a href="/News_and_Events/Events_Calendar">
+             Go to the full calendar of events
+            </a>
+           </p>
+          </div>
+         </div>
+         <div class="widget search">
+          <div class="panel">
+           <h4>
+            Senator/Member search
+           </h4>
+           <label class="offScreen" for="smKeyword">
+            Keywords
+           </label>
+           <div class="row collapse">
+            <div class="small-10 columns">
+             <input id="smKeyword" maxlength="120" name="main_0$right_2$smKeyword" placeholder="Name, postcode, electorate" type="text"/>
+            </div>
+            <div class="small-2 columns">
+             <input class="button postfix" id="main_0_right_2_btnSubmit" name="main_0$right_2$btnSubmit" title="Go" type="submit" value="Go"/>
+            </div>
+           </div>
+           <a class="text-small" href="/Senators_and_Members/Parliamentarian_Search_Results?q=" title="Browse all Senators and Members">
+            Browse all Senators and Members
+           </a>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <a class="cd-top" href="#">
+      Top
+     </a>
+     <!-- end container -->
+     <!-- .prefooter -->
+     <section aria-label="prefooter" class="prefooter margin-leader padding-medium">
+      <div class="row">
+       <div class="small-6 large-3 columns">
+        <p aria-level="2" class="prefooter-heading" role="heading">
+         Senate
+        </p>
+        <ul class="no-bullet text-small">
+         <li aria-label="Footer link">
+          <a href="/About_Parliament/Senate">
+           Senate
+          </a>
+         </li>
+         <li aria-label="Footer link">
+          <a href="/Parliamentary_Business/Chamber_documents/Senate_chamber_documents">
+           Work of the Senate
+          </a>
+         </li>
+         <li aria-label="Footer link">
+          <a href="https://parlwork.aph.gov.au/Senate/DynamicRed">
+           Dynamic Red
+          </a>
+         </li>
+         <li aria-label="Footer link">
+          <a href="/Senators_and_Members/Senators">
+           Senators
+          </a>
+         </li>
+         <li aria-label="Footer link">
+          <a href="/Senators_and_Members/Senators/Seating_plan">
+           Seating plan
+          </a>
+         </li>
+        </ul>
+        <p aria-level="2" class="prefooter-heading" role="heading">
+         House of Representatives
+        </p>
+        <ul class="no-bullet text-small">
+         <li aria-label="Footer link">
+          <a href="/About_Parliament/House_of_Representatives">
+           House of Representatives
+          </a>
+         </li>
+         <li aria-label="Footer link">
+          <a href="/Parliamentary_Business/Chamber_documents/HoR">
+           House of Representatives chamber and business documents
+          </a>
+         </li>
+         <li aria-label="Footer link">
+          <a href="/Parliamentary_Business/Chamber_documents/Live_Minutes">
+           Live Minutes
+          </a>
+         </li>
+         <li aria-label="Footer link">
+          <a href="/Senators_and_Members/Members">
+           Members
+          </a>
+         </li>
+         <li aria-label="Footer link">
+          <a href="/About_Parliament/House_of_Representatives/House_of_Representatives_Seating_Plan">
+           House of Representatives Seating Plan
+          </a>
+         </li>
+        </ul>
+       </div>
+       <div class="small-6 large-3 columns">
+        <p aria-level="2" class="prefooter-heading" role="heading">
+         Get informed
+        </p>
+        <ul class="no-bullet text-small">
+         <li aria-label="Footer link">
+          <a href="/News_and_Events">
+           News &amp; Events
+          </a>
+         </li>
+         <li aria-label="Footer link">
+          <a href="/News_and_Events/Watch_Read_Listen">
+           Watch, Read, Listen
+          </a>
+         </li>
+         <li aria-label="Footer link">
+          <a href="/About_Parliament">
+           About Parliament
+          </a>
+         </li>
+         <li aria-label="Footer link">
+          <a href="/About_Parliament/Education_Resources">
+           Education Resources
+          </a>
+         </li>
+         <li aria-label="Footer link">
+          <a href="/About_Parliament/Parliamentary_departments/Parliamentary_Library">
+           Parliamentary Library
+          </a>
+         </li>
+         <li aria-label="Footer link">
+          <a href="/About_Parliament/International_Program">
+           International Program
+          </a>
+         </li>
+        </ul>
+        <p aria-level="2" class="prefooter-heading" role="heading">
+         Bills
+        </p>
+        <ul class="no-bullet text-small">
+         <li aria-label="Footer link">
+          <a href="/Parliamentary_Business/Bills_Legislation/Bills_before_Parliament">
+           Bills before Parliament
+          </a>
+         </li>
+         <li aria-label="Footer link">
+          <a href="/Parliamentary_Business/Bills_Legislation/Assented_Bills_of_previous_Parliaments">
+           Assented Bills of previous Parliaments
+          </a>
+         </li>
+         <li aria-label="Footer link">
+          <a href="/Parliamentary_Business/Bills_Legislation/Tariff_Proposals">
+           Tariff Proposals
+          </a>
+         </li>
+         <li aria-label="Footer link">
+          <a href="/Parliamentary_Business/Bills_Legislation/leginstruments">
+           Legislative Instruments
+          </a>
+         </li>
+        </ul>
+        <p aria-level="2" class="prefooter-heading" role="heading">
+         Committees
+        </p>
+        <ul class="no-bullet text-small">
+         <li aria-label="Footer link">
+          <a href="/Parliamentary_Business/Committees">
+           Committees
+          </a>
+         </li>
+        </ul>
+       </div>
+       <div class="small-6 large-3 columns">
+        <p aria-level="2" class="prefooter-heading" role="heading">
+         Get involved
+        </p>
+        <ul class="no-bullet text-small">
+         <li aria-label="Footer link">
+          <a href="/Parliamentary_Business/Committees/Getting_Involved_in_Parliamentary_Committees">
+           Getting involved in Parliamentary Committees
+          </a>
+         </li>
+         <li aria-label="Footer link">
+          <a href="/Parliamentary_Business/Petitions">
+           Petitions
+          </a>
+         </li>
+         <li aria-label="Footer link">
+          <a href="/Help/Connect_with_us">
+           Connect with us
+          </a>
+         </li>
+         <li aria-label="Footer link">
+          <a href="/Help/Contact">
+           Contact Parliament House
+          </a>
+         </li>
+        </ul>
+        <p aria-level="2" class="prefooter-heading" role="heading">
+         Visit Parliament
+        </p>
+        <ul class="no-bullet text-small">
+         <li aria-label="Footer link">
+          <a href="/Visit_Parliament/Whats_On">
+           What's on
+          </a>
+         </li>
+         <li aria-label="Footer link">
+          <a href="/Visit_Parliament/Things_to_Do">
+           Things to Do
+          </a>
+         </li>
+         <li aria-label="Footer link">
+          <a href="/Visit_Parliament/Art">
+           Art at Parliament
+          </a>
+         </li>
+         <li aria-label="Footer link">
+          <a href="/Visit_Parliament/Plan_your_Visit">
+           Plan your Visit
+          </a>
+         </li>
+         <li aria-label="Footer link">
+          <a href="/About_Parliament/Media_Rules_and_Filming_Applications">
+           Media Rules and Filming Applications
+          </a>
+         </li>
+        </ul>
+       </div>
+       <div class="small-6 large-3 columns">
+        <p aria-level="2" class="prefooter-heading" role="heading">
+         Website features
+        </p>
+        <ul class="no-bullet text-small">
+         <li>
+          <a class="colorbox-popup" data-target="/Help/secure/my-parliament/login-popup" href="#">
+           My Parliament - Log in
+          </a>
+         </li>
+         <li>
+          <a href="https://desktop.aph.gov.au" target="_blank" title="Remote Access for Authorised Users">
+           Remote Users - Log in
+          </a>
+         </li>
+         <li>
+          <a href="https://parlinfo.aph.gov.au" target="_blank" title="ParlInfo Search">
+           ParlInfo Search
+          </a>
+         </li>
+         <li>
+          <a href="https://www.surveymonkey.com/s/aphwebsite_feedback_010A" target="_blank">
+           APH website survey
+          </a>
+         </li>
+         <li aria-label="Footer link">
+          <a href="/About_Parliament/Employment">
+           Employment
+          </a>
+         </li>
+         <li aria-label="Footer link">
+          <a href="/Help/A_-_Z_Index">
+           A - Z Index
+          </a>
+         </li>
+         <li aria-label="Footer link">
+          <a href="/Help/Glossary">
+           Glossary
+          </a>
+         </li>
+         <li aria-label="Footer link">
+          <a href="/Help/RSS_feeds">
+           RSS feeds
+          </a>
+         </li>
+        </ul>
+        <p aria-level="2" class="prefooter-heading" role="heading">
+         Parliamentary Departments
+        </p>
+        <ul class="no-bullet text-small">
+         <li aria-label="Footer link">
+          <a href="/About_Parliament/Parliamentary_departments/Department_of_the_Senate">
+           Department of the Senate
+          </a>
+         </li>
+         <li aria-label="Footer link">
+          <a href="/About_Parliament/Parliamentary_departments/Department_of_the_House_of_Representatives">
+           Department of the House of Representatives
+          </a>
+         </li>
+         <li aria-label="Footer link">
+          <a href="/About_Parliament/Parliamentary_departments/Department_of_Parliamentary_Services">
+           Department of Parliamentary Services
+          </a>
+         </li>
+         <li aria-label="Footer link">
+          <a href="/About_Parliament/Parliamentary_departments/Parliamentary_Budget_Office">
+           Parliamentary Budget Office
+          </a>
+         </li>
+         <li aria-label="Footer link">
+          <a href="/About_Parliament/Parliamentary_departments/Parliamentary_Library">
+           Parliamentary Library
+          </a>
+         </li>
+        </ul>
+       </div>
+      </div>
+     </section>
+     <!-- footer -->
+     <footer aria-label="Footer" class="padding-top footer" role="contentinfo">
+      <div class="row">
+       <div class="medium-12 columns acknowledgement">
+        <p>
+         We acknowledge the traditional owners and custodians of country throughout Australia and acknowledge their continuing connection to land, waters and community. We pay our respects to the people, the cultures and the elders past, present and emerging.
+        </p>
+        <p>
+         Aboriginal and Torres Strait Islander people are advised that this website may contain images and voices of deceased people.
+        </p>
+       </div>
+       <div class="medium-10 columns">
+        <ul class="inline-list text-small">
+         <li>
+          <a href="/Help/Accessibility" role="link">
+           Accessibility information
+          </a>
+         </li>
+         <li>
+          <a href="/Help/Disclaimer_Privacy_Copyright#c" role="link">
+           Copyright information
+          </a>
+         </li>
+         <li>
+          <a href="/Help/Disclaimer_Privacy_Copyright#d" role="link">
+           Disclaimer
+          </a>
+         </li>
+         <li>
+          <a href="/Help/Contact" role="link">
+           Feedback
+          </a>
+         </li>
+         <li>
+          <a href="/Help" role="link">
+           Help
+          </a>
+         </li>
+        </ul>
+       </div>
+       <div class="medium-2 columns text-small text-right">
+        <a aria-label="Return to top of page" href="#" id="back-to-top" role="button">
+         Back to top
+         <em class="fa fa-fw fa-angle-up">
+         </em>
+        </a>
+       </div>
+      </div>
+     </footer>
+     <div class="hidden" id="right-off-canvas-wrapper">
+      <!-- Contain the keyboard focus to the open modal -->
+      <span onfocus="document.getElementById('endParlCalender').focus();" tabindex="0">
+      </span>
+      <span id="startParlCalender" style="opacity:0;" tabindex="-1">
+      </span>
+      <aside class="right-off-canvas-menu" id="right-off-canvas" tabindex="-1">
+       <div class="row">
+        <div class="columns" id="parliamentary-calendar-wrapper">
+        </div>
+       </div>
+      </aside>
+      <a class="exit-off-canvas" id="parlCalendarClose">
+      </a>
+      <span id="endParlCalender" style="opacity:0;" tabindex="-1">
+      </span>
+      <span onfocus="document.getElementById('startParlCalender').focus();" tabindex="0">
+      </span>
+     </div>
+     <a class="exit-off-canvas">
+     </a>
+    </div>
+   </div>
+  </form>
+  <script type="text/javascript">
+   var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-29392238-1']);
+            _gaq.push(['_trackPageview']);
+
+            (function () {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+  </script>
+  <!-- Monsido -->
+  <script type="text/javascript">
+   window._monsido = window._monsido || {
+                token: "SuMqs2y0akXCDS2XlbTOMg",
+                statistics: {
+                    enabled: true,
+                    documentTracking: {
+                        enabled: true,
+                        documentCls: "monsido_download",
+                        documentIgnoreCls: "monsido_ignore_download",
+                        documentExt: [],
+                    },
+                },
+            };
+  </script>
+  <script async="" src="https://app-script.monsido.com/v2/monsido-script.js" type="text/javascript">
+  </script>
+  <script src="/js/components/global/alerts.min.js?v=1762986934">
+  </script>
+  <script src="/js/apps/events-calendar/sidebar-calendar.min.js?v=879490495">
+  </script>
+  <script src="/js/libs/foundation.min.js?v=3180500258" type="text/javascript">
+  </script>
+  <script src="/js/libs/foundation.dropdown.js?v=4293946271" type="text/javascript">
+  </script>
+  <script src="/js/libs/countUp.min.js?v=3146610669" type="text/javascript">
+  </script>
+  <script src="/js/libs/fastclick.js?v=2001066425" type="text/javascript">
+  </script>
+  <script src="/js/main.js?v=921859826" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+   window.onload = function () {
+                if (window.location.hash) {
+                    var element = document.getElementById(window.location.hash.substring(1));
+                    if (element) {
+                        element.scrollIntoView(true);
+                    }
+                }
+            }
+  </script>
+ </body>
+</html>
+

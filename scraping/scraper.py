@@ -1,0 +1,77 @@
+import sys
+import bs4 as BeautifulSoup
+import requests
+import psycopg2
+import re
+
+if __name__ == "__main__":
+    limit = 100
+    bills_info = []
+    for i in range(1, limit):
+        res = requests.get(f"https://www.aph.gov.au/Parliamentary_Business/Bills_Legislation/Bills_before_Parliament?Page={i}")
+        soup = BeautifulSoup.BeautifulSoup(res.text, 'html.parser')
+        
+        # No more results
+        if (soup.prettify().find("<ul class=\"search-filter-results\">") == -1):
+            break 
+        
+        # print(f"--- Page {i} ---")
+        # print("")
+
+        li_elements = soup.find_all('li', recursive=True)
+        bills = [li for li in li_elements if li.find('div')]
+        for bill in bills:
+            title = bill.select_one("h4 a").text.strip()
+            date = bill.select_one("dl dd:nth-of-type(1)").text.strip()
+            chamber = bill.select_one("dl dd:nth-of-type(2)").text.strip()
+            status = bill.select_one("dl dd:nth-of-type(3)").text.strip()
+            summary = bill.select_one("dl dd:nth-of-type(5)")
+            summary = summary.text.strip() if summary is not None else "No summary exists."
+            
+            # print(f"Title: {title}")
+            # print(f"Date: {date}")
+            # print(f"Chamber: {chamber}")
+            # print(f"Status: {status}")
+            # print(f"Summary: {summary}")
+            bills_info.append((title, date, chamber, status, summary))
+        
+        # print("")
+    
+    try:
+        db = psycopg2.connect(user="postgres",
+                              password="password",
+                              host="127.0.0.1",
+                              port="5432",
+                              database="parliament")
+        cursor = db.cursor()
+        
+        id_query = """
+            alter table
+                parliament_bill
+            alter column
+                id
+            set default
+                nextval('parliament_sequence')
+        """
+        cursor.execute(id_query)
+        
+        insert_query = """
+            insert into
+                parliament_bill(title, date, chamber, status, summary)
+            values
+                (%s,%s,%s,%s,%s)
+        """
+        # For the real thing, we need to handle inserting a bill which already exists
+        # and maintaining which bills are still in parliament or not.
+        # We can do this pretty easily by querying the db
+        for bill in bills_info:
+            cursor.execute(insert_query, [bill[0], bill[1], bill[2], bill[3], bill[4]])
+        db.commit()
+    except Exception as err:
+        print("DB error: ", err)
+    finally:
+        if db:
+            db.close()
+
+        
+            
