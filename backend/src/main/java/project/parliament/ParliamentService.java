@@ -1,4 +1,4 @@
-package parliament;
+package project.parliament;
 
 import org.springframework.stereotype.Service;
 
