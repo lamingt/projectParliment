@@ -8,8 +8,8 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-@Table
 @Entity
+@Table(name = "users")
 public class User {
 
     @Id
@@ -18,6 +18,9 @@ public class User {
     private String username;
     private String password;
     private String email;
+
+    public User() {
+    }
 
     public User(String username, String password, String email) {
         this.username = username;

@@ -8,10 +8,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/v1/user")
 public class UserController {
-    @PostMapping("/register")
-    public String postMethodName(@RequestBody String username, @RequestBody String password,
-            @RequestBody String email) {
+    private UserService userService;
 
-        return username;
+    public UserController(UserService userService) {
+        this.userService = userService;
+    }
+
+    @PostMapping("/register")
+    public String postMethodName(@RequestBody User user) {
+        // TODO: fix this mess
+        return userService.registerUser(user.getEmail(), user.getPassword(), user.getUsername());
     }
 }

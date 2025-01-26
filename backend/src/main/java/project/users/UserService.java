@@ -27,6 +27,7 @@ public class UserService {
             // throw username too long exception
         }
 
+        // TODO: encrypt passwords
         User user = new User(username, password, email);
         userRepository.save(user);
         Token token = new Token(user.getId(), LocalDate.now());

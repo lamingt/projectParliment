@@ -22,6 +22,9 @@ public class Token {
     private static final SecureRandom secureRandom = new SecureRandom();
     private static final Base64.Encoder base64Encoder = Base64.getUrlEncoder();
 
+    public Token() {
+    }
+
     public Token(UUID userId, LocalDate createdAt) {
         this.userId = userId;
         this.createdAt = createdAt;
