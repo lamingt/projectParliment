@@ -1,4 +1,4 @@
-package parliament;
+package project.parliament;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -15,7 +15,6 @@ public class ParliamentBill {
     @Id
     @SequenceGenerator(name = "parliament_sequence", sequenceName = "parliament_sequence", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "parliament_sequence")
-
     private Integer id;
     private String title;
     private String date;
