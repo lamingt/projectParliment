@@ -4,6 +4,10 @@ import java.time.LocalDate;
 
 import org.springframework.stereotype.Service;
 
+import jakarta.transaction.Transactional;
+import project.utils.PasswordUtils;
+import project.utils.ResponseDto;
+
 @Service
 public class UserService {
     private UserRepository userRepository;
@@ -14,25 +18,25 @@ public class UserService {
         this.tokenRepository = tokenRepository;
     }
 
-    public String registerUser(String email, String password, String username) {
+    @Transactional
+    public ResponseDto registerUser(String email, String password, String username) throws IllegalArgumentException {
         if (userRepository.findUserByEmail(email).isPresent()) {
-            // throw exception
+            throw new IllegalArgumentException("Email is already in use.");
         } else if (userRepository.findUserByUsername(username).isPresent()) {
-            // throw exception
+            throw new IllegalArgumentException("Username is already taken.");
         } else if (password.length() < 5) {
-            // throw password too short exception
+            throw new IllegalArgumentException("Password is less than 5 characters long.");
         } else if (!password.matches("^.*[a-zA-Z0-9].*$")) {
-            // not at least one alphanumeric character
+            throw new IllegalArgumentException("Password does not have at least one alphanumeric character.");
         } else if (username.length() > 20) {
-            // throw username too long exception
+            throw new IllegalArgumentException("Username is greater than 20 characters.");
         }
 
-        // TODO: encrypt passwords
-        User user = new User(username, password, email);
+        User user = new User(username, PasswordUtils.encode(password), email);
         userRepository.save(user);
         Token token = new Token(user.getId(), LocalDate.now());
         tokenRepository.save(token);
 
-        return token.getToken();
+        return new ResponseDto("User registered successfully.", token);
     }
 }
