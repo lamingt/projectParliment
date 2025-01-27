@@ -1,4 +1,4 @@
-package project.utils;
+package project.dto;
 
 public class ResponseDto {
     private final String message;

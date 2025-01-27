@@ -1,12 +1,15 @@
 package project.users;
 
 import java.time.LocalDate;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
-
 import jakarta.transaction.Transactional;
+
 import project.utils.PasswordUtils;
-import project.utils.ResponseDto;
+import project.dto.LoginDto;
+import project.dto.RegisterDto;
+import project.dto.ResponseDto;
 
 @Service
 public class UserService {
@@ -19,7 +22,11 @@ public class UserService {
     }
 
     @Transactional
-    public ResponseDto registerUser(String email, String password, String username) throws IllegalArgumentException {
+    public ResponseDto registerUser(RegisterDto registerDetails) throws IllegalArgumentException {
+        String email = registerDetails.getEmail();
+        String password = registerDetails.getPassword();
+        String username = registerDetails.getUsername();
+
         if (userRepository.findUserByEmail(email).isPresent()) {
             throw new IllegalArgumentException("Email is already in use.");
         } else if (userRepository.findUserByUsername(username).isPresent()) {
@@ -38,5 +45,21 @@ public class UserService {
         tokenRepository.save(token);
 
         return new ResponseDto("User registered successfully.", token);
+    }
+
+    @Transactional
+    public ResponseDto loginUser(LoginDto loginDetails) {
+        String email = loginDetails.getEmail();
+        String password = loginDetails.getPassword();
+
+        Optional<User> user = userRepository.findUserByEmail(email);
+        if (!user.isPresent() || (user.isPresent() && !PasswordUtils.matches(password, user.get().getPassword()))) {
+            throw new IllegalArgumentException("Email or password are incorrect.");
+        }
+
+        Token token = new Token(user.get().getId(), LocalDate.now());
+        tokenRepository.save(token);
+
+        return new ResponseDto("User logged in successfully.", token);
     }
 }
