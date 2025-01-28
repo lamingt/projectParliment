@@ -26,12 +26,14 @@ public class LoginTests {
     private MockMvc mockMvc;
 
     @BeforeEach
-    public void setup() throws Exception {
+    public void setup() {
         JSONObject obj = new JSONObject();
         obj.put("email", "abc@gmail.com");
         obj.put("password", "pass1");
         obj.put("username", "lamington");
-        mockMvc.perform(post("/api/v1/user/register").contentType("application/json").content(obj.toJSONString()));
+        assertDoesNotThrow(() -> {
+            mockMvc.perform(post("/api/v1/user/register").contentType("application/json").content(obj.toJSONString()));
+        });
     }
 
     @Transactional

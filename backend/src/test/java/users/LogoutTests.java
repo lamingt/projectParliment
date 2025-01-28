@@ -37,8 +37,11 @@ public class LogoutTests {
         obj.put("email", "abc@gmail.com");
         obj.put("password", "pass1");
         obj.put("username", "lamington");
-        res = mockMvc.perform(post("/api/v1/user/register").contentType("application/json").content(obj.toJSONString()))
-                .andReturn();
+        assertDoesNotThrow(() -> {
+            res = mockMvc
+                    .perform(post("/api/v1/user/register").contentType("application/json").content(obj.toJSONString()))
+                    .andReturn();
+        });
     }
 
     @Transactional

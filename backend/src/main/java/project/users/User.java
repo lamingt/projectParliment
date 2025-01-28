@@ -4,6 +4,8 @@ import java.util.UUID;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -16,12 +18,19 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
+
     @Column(unique = true, nullable = false)
     private String username;
+
     @Column(nullable = false)
     private String password;
+
     @Column(unique = true, nullable = false)
     private String email;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private UserRoles role;
 
     public User() {
     }
@@ -30,6 +39,7 @@ public class User {
         this.username = username;
         this.password = password;
         this.email = email;
+        this.role = UserRoles.MEMBER;
     }
 
     public String getUsername() {
@@ -58,5 +68,9 @@ public class User {
 
     public UUID getId() {
         return id;
+    }
+
+    public UserRoles getRole() {
+        return role;
     }
 }
