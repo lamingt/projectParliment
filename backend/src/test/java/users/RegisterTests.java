@@ -9,6 +9,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import jakarta.transaction.Transactional;
 import net.minidev.json.JSONObject;
 
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 // import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 // import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
@@ -25,73 +26,90 @@ public class RegisterTests {
 
     @Test
     @Transactional
-    public void succesfulRegistration() throws Exception {
+    public void succesfulRegistration() {
         JSONObject obj = new JSONObject();
         obj.put("email", "abc@gmail.com");
         obj.put("password", "pass1");
         obj.put("username", "lamington");
-        mockMvc.perform(post("/api/v1/user/register").contentType("application/json").content(obj.toJSONString()))
-                .andExpect(status().isOk());
+        assertDoesNotThrow(() -> {
+            mockMvc.perform(post("/api/v1/user/register").contentType("application/json").content(obj.toJSONString()))
+                    .andExpect(status().isOk());
+        });
     }
 
     @Test
     @Transactional
-    public void passwordTooShort() throws Exception {
+    public void passwordTooShort() {
         JSONObject obj = new JSONObject();
         obj.put("email", "abc@gmail.com");
         obj.put("password", "pass");
         obj.put("username", "lamington");
-        mockMvc.perform(post("/api/v1/user/register").contentType("application/json").content(obj.toJSONString()))
-                .andExpect(status().is(400));
+        assertDoesNotThrow(() -> {
+            mockMvc.perform(post("/api/v1/user/register").contentType("application/json").content(obj.toJSONString()))
+                    .andExpect(status().isBadRequest());
+        });
     }
 
     @Test
     @Transactional
-    public void passwordNoAlphanumeric() throws Exception {
+    public void passwordNoAlphanumeric() {
         JSONObject obj = new JSONObject();
         obj.put("email", "abc@gmail.com");
         obj.put("password", "..........");
         obj.put("username", "lamington");
-        mockMvc.perform(post("/api/v1/user/register").contentType("application/json").content(obj.toJSONString()))
-                .andExpect(status().is(400));
+        assertDoesNotThrow(() -> {
+            mockMvc.perform(post("/api/v1/user/register").contentType("application/json").content(obj.toJSONString()))
+                    .andExpect(status().isBadRequest());
+        });
     }
 
     @Test
     @Transactional
-    public void usernameTaken() throws Exception {
+    public void usernameTaken() {
         JSONObject obj = new JSONObject();
         obj.put("email", "abc@gmail.com");
         obj.put("password", "passssssss123");
         obj.put("username", "lamington");
-        mockMvc.perform(post("/api/v1/user/register").contentType("application/json").content(obj.toJSONString()))
-                .andExpect(status().is(200));
+        assertDoesNotThrow(() -> {
+            mockMvc.perform(post("/api/v1/user/register").contentType("application/json").content(obj.toJSONString()))
+                    .andExpect(status().is(200));
+        });
+
         obj.put("email", "123@gmail.com");
-        mockMvc.perform(post("/api/v1/user/register").contentType("application/json").content(obj.toJSONString()))
-                .andExpect(status().is(400));
+        assertDoesNotThrow(() -> {
+            mockMvc.perform(post("/api/v1/user/register").contentType("application/json").content(obj.toJSONString()))
+                    .andExpect(status().isBadRequest());
+        });
     }
 
     @Test
     @Transactional
-    public void emailTaken() throws Exception {
+    public void emailTaken() {
         JSONObject obj = new JSONObject();
         obj.put("email", "abc@gmail.com");
         obj.put("password", "passssssss123");
         obj.put("username", "lamington");
-        mockMvc.perform(post("/api/v1/user/register").contentType("application/json").content(obj.toJSONString()))
-                .andExpect(status().is(200));
+        assertDoesNotThrow(() -> {
+            mockMvc.perform(post("/api/v1/user/register").contentType("application/json").content(obj.toJSONString()))
+                    .andExpect(status().is(200));
+        });
         obj.put("password", "password123");
-        mockMvc.perform(post("/api/v1/user/register").contentType("application/json").content(obj.toJSONString()))
-                .andExpect(status().is(400));
+        assertDoesNotThrow(() -> {
+            mockMvc.perform(post("/api/v1/user/register").contentType("application/json").content(obj.toJSONString()))
+                    .andExpect(status().isBadRequest());
+        });
     }
 
     @Test
     @Transactional
-    public void usernameTooLong() throws Exception {
+    public void usernameTooLong() {
         JSONObject obj = new JSONObject();
         obj.put("email", "abc@gmail.com");
         obj.put("password", "passssssss");
         obj.put("username", "1".repeat(21));
-        mockMvc.perform(post("/api/v1/user/register").contentType("application/json").content(obj.toJSONString()))
-                .andExpect(status().is(400));
+        assertDoesNotThrow(() -> {
+            mockMvc.perform(post("/api/v1/user/register").contentType("application/json").content(obj.toJSONString()))
+                    .andExpect(status().isBadRequest());
+        });
     }
 }

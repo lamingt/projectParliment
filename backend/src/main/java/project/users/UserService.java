@@ -8,6 +8,7 @@ import jakarta.transaction.Transactional;
 
 import project.utils.PasswordUtils;
 import project.dto.LoginDto;
+import project.dto.LogoutDto;
 import project.dto.RegisterDto;
 import project.dto.ResponseDto;
 
@@ -61,5 +62,16 @@ public class UserService {
         tokenRepository.save(token);
 
         return new ResponseDto("User logged in successfully.", token);
+    }
+
+    @Transactional
+    public ResponseDto logoutUser(LogoutDto logoutDetails) {
+        Optional<Token> token = tokenRepository.findByToken(logoutDetails.getToken());
+        if (!token.isPresent() || token.get().isExpired()) {
+            throw new IllegalArgumentException("Token is invalid.");
+        }
+
+        tokenRepository.delete(token.get());
+        return new ResponseDto("User logged out successfully.", null);
     }
 }
