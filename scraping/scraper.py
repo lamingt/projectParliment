@@ -57,15 +57,41 @@ if __name__ == "__main__":
         
         insert_query = """
             insert into
-                parliament_bill(title, date, chamber, status, summary)
+                parliament_bill(title, date, chamber, status, summary, active)
             values
-                (%s,%s,%s,%s,%s)
+                (%s,%s,%s,%s,%s,%s)
+            on conflict
+                (title)
+            do nothing
         """
-        # For the real thing, we need to handle inserting a bill which already exists
-        # and maintaining which bills are still in parliament or not.
-        # We can do this pretty easily by querying the db
-        for bill in bills_info:
-            cursor.execute(insert_query, [bill[0], bill[1], bill[2], bill[3], bill[4]])
+
+        find_active_query = """
+            select
+                b.title
+            from
+                parliament_bill b
+            where
+                b.active = TRUE
+        """
+
+        cursor.executemany(insert_query, [(bill[0], bill[1], bill[2], bill[3], bill[4], True) for bill in bills_info])
+        
+        cursor.execute(find_active_query)
+        stored_active = {row[0] for row in cursor.fetchall()}
+        current_active = {bill[0] for bill in bills_info}
+        new_inactive = stored_active - current_active
+        
+        if new_inactive:
+            update_query = """
+                update
+                    parliament_bill
+                set
+                    active = FALSE
+                where
+                    title = ANY(%s)
+            """
+            cursor.execute(update_query, (list(new_inactive),))
+
         db.commit()
     except Exception as err:
         print("DB error: ", err)
