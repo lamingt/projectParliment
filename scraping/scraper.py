@@ -45,19 +45,24 @@ if __name__ == "__main__":
                               database="parliament")
         cursor = db.cursor()
         
+
+        extension_query = """
+            create extension if not exists "pgcrypto"
+        """
         id_query = """
             alter table
-                parliament_bill
+                threads
             alter column
                 id
             set default
-                nextval('parliament_sequence')
+                gen_random_uuid()
         """
+        cursor.execute(extension_query)
         cursor.execute(id_query)
         
         insert_query = """
             insert into
-                parliament_bill(title, date, chamber, status, summary, active)
+                threads(title, date, chamber, status, summary, active)
             values
                 (%s,%s,%s,%s,%s,%s)
             on conflict
@@ -67,11 +72,11 @@ if __name__ == "__main__":
 
         find_active_query = """
             select
-                b.title
+                t.title
             from
-                parliament_bill b
+                threads t
             where
-                b.active = TRUE
+                t.active = TRUE
         """
 
         cursor.executemany(insert_query, [(bill[0], bill[1], bill[2], bill[3], bill[4], True) for bill in bills_info])
@@ -84,7 +89,7 @@ if __name__ == "__main__":
         if new_inactive:
             update_query = """
                 update
-                    parliament_bill
+                    threads
                 set
                     active = FALSE
                 where

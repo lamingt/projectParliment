@@ -8,6 +8,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 
+@Deprecated
 @Entity
 @Table
 public class ParliamentBill {
