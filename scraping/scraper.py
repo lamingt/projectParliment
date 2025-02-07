@@ -64,7 +64,7 @@ if __name__ == "__main__":
             insert into
                 threads(title, date, chamber, status, summary, active)
             values
-                (%s,%s,%s,%s,%s,%s)
+                (%s,to_date(nullif(%s, ''),'DD Mon YYYY'),%s,%s,%s,%s)
             on conflict
                 (title)
             do nothing

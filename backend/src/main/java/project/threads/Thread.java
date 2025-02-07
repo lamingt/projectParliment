@@ -1,5 +1,6 @@
 package project.threads;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -25,17 +26,12 @@ public class Thread {
 
     @Column(unique = true)
     private String title;
-    private String date;
+    private LocalDate date;
     private String chamber;
     private String status;
     @Column(length = 5000)
     private String summary;
     private Boolean active;
-
-    // Maybe just put all bill info in the thread
-    // @JoinColumn(name = "bill")
-    // @OneToOne
-    // private ParliamentBill parliamentBill;
 
     @OneToMany(mappedBy = "thread", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Comment> comments;
@@ -43,7 +39,10 @@ public class Thread {
     @ManyToMany
     private List<User> likedBy;
 
-    public Thread(String title, String date, String chamber, String status, String summary, Boolean active) {
+    public Thread() {
+    }
+
+    public Thread(String title, LocalDate date, String chamber, String status, String summary, Boolean active) {
         this.title = title;
         this.date = date;
         this.chamber = chamber;
@@ -62,7 +61,7 @@ public class Thread {
         return title;
     }
 
-    public String getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
