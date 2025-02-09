@@ -3,9 +3,10 @@ package project.dto.returns;
 import java.time.LocalDate;
 import java.util.UUID;
 
-public class ThreadListInfoDto {
+public class ThreadInfoReturnDto {
     private UUID id;
     private String title;
+    private String summary;
     private LocalDate date;
     private String chamber;
     private String status;
@@ -13,10 +14,12 @@ public class ThreadListInfoDto {
     private Integer numLikes;
     private Integer numComments;
 
-    public ThreadListInfoDto(UUID id, String title, LocalDate date, String chamber, String status, Boolean active,
+    public ThreadInfoReturnDto(UUID id, String title, String summary, LocalDate date, String chamber, String status,
+            Boolean active,
             Integer numLikes, Integer numComments) {
         this.id = id;
         this.title = title;
+        this.summary = summary;
         this.date = date;
         this.chamber = chamber;
         this.status = status;
@@ -55,5 +58,9 @@ public class ThreadListInfoDto {
 
     public Integer getNumComments() {
         return numComments;
+    }
+
+    public String getSummary() {
+        return summary;
     }
 }

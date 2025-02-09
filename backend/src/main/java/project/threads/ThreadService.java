@@ -5,17 +5,19 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.UUID;
 
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import project.dto.ResponseDto;
+import project.dto.ThreadInfoDto;
 import project.dto.ThreadListDto;
-import project.dto.returns.ThreadListInfoDto;
+import project.dto.returns.ThreadInfoReturnDto;
 import project.dto.returns.ThreadListPaginationDto;
 import project.dto.returns.ThreadListReturnDto;
-import project.users.Token;
 import project.users.TokenRepository;
+import project.utils.TokenUtils;
 
 @Service
 public class ThreadService {
@@ -30,10 +32,11 @@ public class ThreadService {
 
     public ResponseDto getThreads(ThreadListDto dto) {
         Integer pageNum = dto.getPageNum();
-        Optional<Token> token = tokenRepository.findByToken(dto.getToken());
-        if (!token.isPresent() || token.get().isExpired()) {
-            throw new IllegalAccessError("Token is invalid");
-        }
+        TokenUtils.validateToken(tokenRepository, dto.getToken()); // make sure this works
+        // Optional<Token> token = tokenRepository.findByToken(dto.getToken());
+        // if (!token.isPresent() || token.get().isExpired()) {
+        // throw new IllegalAccessError("Token is invalid");
+        // }
 
         PageRequest pageRequest = PageRequest.of(pageNum - 1, 10);
         List<Thread> threads = threadRepository.getThreadsByDate(pageRequest);
@@ -42,9 +45,9 @@ public class ThreadService {
             throw new IllegalArgumentException("No threads exist on this page");
         }
 
-        List<ThreadListInfoDto> pageInfo = new ArrayList<>();
+        List<ThreadInfoReturnDto> pageInfo = new ArrayList<>();
         for (Thread thread : threads) {
-            pageInfo.add(new ThreadListInfoDto(thread.getId(), thread.getTitle(),
+            pageInfo.add(new ThreadInfoReturnDto(thread.getId(), thread.getTitle(), thread.getSummary(),
                     thread.getDate(),
                     thread.getChamber(), thread.getStatus(), thread.getActive(),
                     thread.getComments().size(), thread.getLikedBy().size()));
@@ -57,17 +60,23 @@ public class ThreadService {
 
         ThreadListReturnDto response = new ThreadListReturnDto(pageInfo, pagination);
 
-        // // To act as an index
-        // pageNum--;
-        // for (int i = pageNum * threadsPerPage; i < (pageNum + 1) * threadsPerPage &&
-        // i < threads.size(); i++) {
-        // Thread thread = threads.get(i);
-        // response.add(new ThreadListReturnDto(thread.getId(), thread.getTitle(),
-        // thread.getDate(),
-        // thread.getChamber(), thread.getStatus(), thread.getActive(),
-        // thread.getComments().size(), thread.getLikedBy().size()));
-        // }
-
         return new ResponseDto("Threads obtained successfully", response);
+    }
+
+    public ResponseDto getThreadInfo(ThreadInfoDto threadInfo) {
+        UUID threadId = threadInfo.getThreadId();
+        TokenUtils.validateToken(tokenRepository, threadInfo.getToken());
+
+        Optional<Thread> thread = threadRepository.findById(threadId);
+        if (!thread.isPresent()) {
+            throw new IllegalArgumentException("Invalid thread id");
+        }
+
+        Thread t = thread.get();
+
+        ThreadInfoReturnDto response = new ThreadInfoReturnDto(threadId, t.getTitle(), t.getSummary(), t.getDate(),
+                t.getChamber(), t.getStatus(), t.getActive(), t.getLikedBy().size(), t.getComments().size());
+
+        return new ResponseDto("Thread obtained successfully", response);
     }
 }
