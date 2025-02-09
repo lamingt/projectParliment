@@ -8,6 +8,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 
+@Deprecated
 @Entity
 @Table
 public class ParliamentBill {
@@ -16,22 +17,29 @@ public class ParliamentBill {
     @SequenceGenerator(name = "parliament_sequence", sequenceName = "parliament_sequence", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "parliament_sequence")
     private Integer id;
+    @Column(unique = true)
     private String title;
     private String date;
     private String chamber;
     private String status;
     @Column(length = 5000)
     private String summary;
+    private Boolean active;
 
     public ParliamentBill() {
     }
 
-    public ParliamentBill(String title, String date, String chamber, String status, String summary) {
+    public ParliamentBill(String title, String date, String chamber, String status, String summary, Boolean active) {
         this.title = title;
         this.date = date;
         this.chamber = chamber;
         this.status = status;
         this.summary = summary;
+        this.active = active;
+    }
+
+    public Boolean getActive() {
+        return active;
     }
 
     public Integer getId() {

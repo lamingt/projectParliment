@@ -45,27 +45,58 @@ if __name__ == "__main__":
                               database="parliament")
         cursor = db.cursor()
         
+
+        extension_query = """
+            create extension if not exists "pgcrypto"
+        """
         id_query = """
             alter table
-                parliament_bill
+                threads
             alter column
                 id
             set default
-                nextval('parliament_sequence')
+                gen_random_uuid()
         """
+        cursor.execute(extension_query)
         cursor.execute(id_query)
         
         insert_query = """
             insert into
-                parliament_bill(title, date, chamber, status, summary)
+                threads(title, date, chamber, status, summary, active)
             values
-                (%s,%s,%s,%s,%s)
+                (%s,to_date(nullif(%s, ''),'DD Mon YYYY'),%s,%s,%s,%s)
+            on conflict
+                (title)
+            do nothing
         """
-        # For the real thing, we need to handle inserting a bill which already exists
-        # and maintaining which bills are still in parliament or not.
-        # We can do this pretty easily by querying the db
-        for bill in bills_info:
-            cursor.execute(insert_query, [bill[0], bill[1], bill[2], bill[3], bill[4]])
+
+        find_active_query = """
+            select
+                t.title
+            from
+                threads t
+            where
+                t.active = TRUE
+        """
+
+        cursor.executemany(insert_query, [(bill[0], bill[1], bill[2], bill[3], bill[4], True) for bill in bills_info])
+        
+        cursor.execute(find_active_query)
+        stored_active = {row[0] for row in cursor.fetchall()}
+        current_active = {bill[0] for bill in bills_info}
+        new_inactive = stored_active - current_active
+        
+        if new_inactive:
+            update_query = """
+                update
+                    threads
+                set
+                    active = FALSE
+                where
+                    title = ANY(%s)
+            """
+            cursor.execute(update_query, (list(new_inactive),))
+
         db.commit()
     except Exception as err:
         print("DB error: ", err)
