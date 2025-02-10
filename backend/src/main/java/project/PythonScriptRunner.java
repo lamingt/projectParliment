@@ -1,5 +1,6 @@
 package project;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 import jakarta.annotation.PostConstruct;
@@ -9,6 +10,7 @@ import java.io.File;
 import java.io.InputStreamReader;
 
 @Component
+@Profile("!test")
 public class PythonScriptRunner {
 
     @PostConstruct

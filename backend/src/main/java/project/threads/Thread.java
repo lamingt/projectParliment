@@ -88,4 +88,8 @@ public class Thread {
     public List<User> getLikedBy() {
         return likedBy;
     }
+
+    public void addComment(Comment comment) {
+        comments.add(comment);
+    }
 }
