@@ -11,6 +11,7 @@ import project.dto.LoginDto;
 import project.dto.LogoutDto;
 import project.dto.RegisterDto;
 import project.dto.ResponseDto;
+import project.dto.returns.LoginReturnDto;
 
 @Service
 public class UserService {
@@ -45,7 +46,9 @@ public class UserService {
         Token token = new Token(user.getId(), LocalDate.now());
         tokenRepository.save(token);
 
-        return new ResponseDto("User registered successfully.", token);
+        LoginReturnDto res = new LoginReturnDto(token.getToken(), user.getId());
+
+        return new ResponseDto("User registered successfully.", res);
     }
 
     @Transactional
@@ -61,7 +64,9 @@ public class UserService {
         Token token = new Token(user.get().getId(), LocalDate.now());
         tokenRepository.save(token);
 
-        return new ResponseDto("User logged in successfully.", token);
+        LoginReturnDto res = new LoginReturnDto(token.getToken(), user.get().getId());
+
+        return new ResponseDto("User logged in successfully.", res);
     }
 
     @Transactional

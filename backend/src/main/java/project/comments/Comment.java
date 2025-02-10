@@ -1,5 +1,6 @@
 package project.comments;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -12,7 +13,6 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import project.users.User;
 import project.threads.Thread;
@@ -28,7 +28,7 @@ public class Comment {
     @JoinColumn(name = "thread", nullable = false)
     private Thread thread;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "creator", nullable = false)
     private User creator;
 
@@ -39,6 +39,62 @@ public class Comment {
     @JoinColumn(name = "parent_comment")
     private Comment parentComment;
 
+    // cascade all seems like questionable behaviour but implementing fully correct
+    // behaviour seems too annoying right now
+    // do i even need this?
     @OneToMany(mappedBy = "parentComment", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Comment> replies;
+
+    public Comment() {
+
+    }
+
+    public Comment(Thread thread, User creator, String text, Comment parentComment) {
+        this.thread = thread;
+        this.creator = creator;
+        this.text = text;
+        this.parentComment = parentComment;
+        this.replies = new ArrayList<>();
+    }
+
+    public UUID getId() {
+        return id;
+    }
+
+    public Thread getThread() {
+        return thread;
+    }
+
+    public User getCreator() {
+        return creator;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public Comment getParentComment() {
+        return parentComment;
+    }
+
+    public List<Comment> getReplies() {
+        return replies;
+    }
+
+    public void addReply(Comment comment) {
+        replies.add(comment);
+    }
+
+    public UUID getThreadId() {
+        return thread.getId();
+    }
+
+    public UUID getCreatorId() {
+        return creator.getId();
+    }
+
+    public UUID getParentCommentId() {
+        return parentComment != null ? parentComment.getId() : null;
+    }
+
 }
