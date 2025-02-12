@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
@@ -14,6 +15,7 @@ import project.dto.ResponseDto;
 import project.dto.ThreadInfoDto;
 import project.dto.ThreadListDto;
 import project.dto.returns.ThreadInfoReturnDto;
+import project.dto.returns.ThreadListInfoReturnDto;
 import project.dto.returns.ThreadListPaginationDto;
 import project.dto.returns.ThreadListReturnDto;
 import project.users.TokenRepository;
@@ -45,9 +47,9 @@ public class ThreadService {
             throw new IllegalArgumentException("No threads exist on this page");
         }
 
-        List<ThreadInfoReturnDto> pageInfo = new ArrayList<>();
+        List<ThreadListInfoReturnDto> pageInfo = new ArrayList<>();
         for (Thread thread : threads) {
-            pageInfo.add(new ThreadInfoReturnDto(thread.getId(), thread.getTitle(), thread.getSummary(),
+            pageInfo.add(new ThreadListInfoReturnDto(thread.getId(), thread.getTitle(), thread.getSummary(),
                     thread.getDate(),
                     thread.getChamber(), thread.getStatus(), thread.getActive(),
                     thread.getComments().size(), thread.getLikedBy().size()));
@@ -75,7 +77,9 @@ public class ThreadService {
         Thread t = thread.get();
 
         ThreadInfoReturnDto response = new ThreadInfoReturnDto(threadId, t.getTitle(), t.getSummary(), t.getDate(),
-                t.getChamber(), t.getStatus(), t.getActive(), t.getLikedBy().size(), t.getComments().size());
+                t.getChamber(), t.getStatus(), t.getActive(),
+                t.getLikedBy().stream().map(user -> user.getId()).collect(Collectors.toList()),
+                t.getDislikedBy().stream().map(user -> user.getId()).collect(Collectors.toList()));
 
         return new ResponseDto("Thread obtained successfully", response);
     }

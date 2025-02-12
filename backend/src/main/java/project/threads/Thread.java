@@ -39,6 +39,9 @@ public class Thread {
     @ManyToMany
     private List<User> likedBy;
 
+    @ManyToMany
+    private List<User> dislikedBy;
+
     public Thread() {
     }
 
@@ -91,5 +94,9 @@ public class Thread {
 
     public void addComment(Comment comment) {
         comments.add(comment);
+    }
+
+    public List<User> getDislikedBy() {
+        return dislikedBy;
     }
 }

@@ -73,7 +73,7 @@ public class CommentCreateTests {
             data.put("text", "God this bill is terrible!");
 
             mockMvc.perform(
-                    post("/api/v1/comments/create").contentType("application/json").content(data.toJSONString())
+                    post("/api/v1/comments").contentType("application/json").content(data.toJSONString())
                             .header("Authorization", token))
                     .andExpect(status().isOk());
         });

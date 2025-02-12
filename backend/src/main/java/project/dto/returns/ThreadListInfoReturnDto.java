@@ -1,10 +1,9 @@
 package project.dto.returns;
 
 import java.time.LocalDate;
-import java.util.List;
 import java.util.UUID;
 
-public class ThreadInfoReturnDto {
+public class ThreadListInfoReturnDto {
     private UUID id;
     private String title;
     private String summary;
@@ -12,11 +11,12 @@ public class ThreadInfoReturnDto {
     private String chamber;
     private String status;
     private Boolean active;
-    private List<UUID> likedBy;
-    private List<UUID> dislikedBy;
+    private Integer numLikes;
+    private Integer numComments;
 
-    public ThreadInfoReturnDto(UUID id, String title, String summary, LocalDate date, String chamber, String status,
-            Boolean active, List<UUID> likedBy, List<UUID> dislikedBy) {
+    public ThreadListInfoReturnDto(UUID id, String title, String summary, LocalDate date, String chamber, String status,
+            Boolean active,
+            Integer numLikes, Integer numComments) {
         this.id = id;
         this.title = title;
         this.summary = summary;
@@ -24,8 +24,8 @@ public class ThreadInfoReturnDto {
         this.chamber = chamber;
         this.status = status;
         this.active = active;
-        this.likedBy = likedBy;
-        this.dislikedBy = dislikedBy;
+        this.numLikes = numLikes;
+        this.numComments = numComments;
     }
 
     public UUID getId() {
@@ -52,12 +52,12 @@ public class ThreadInfoReturnDto {
         return active;
     }
 
-    public List<UUID> getLikedBy() {
-        return likedBy;
+    public Integer getNumLikes() {
+        return numLikes;
     }
 
-    public List<UUID> getDislikedBy() {
-        return dislikedBy;
+    public Integer getNumComments() {
+        return numComments;
     }
 
     public String getSummary() {

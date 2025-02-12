@@ -79,7 +79,7 @@ public class CommentService {
         List<Comment> comments = thread.getComments();
         List<CommentGetReturnDto> res = new ArrayList<>();
         comments.forEach(c -> res.add(new CommentGetReturnDto(c.getId(), c.getThreadId(), c.getCreatorId(), c.getText(),
-                c.getParentCommentId())));
+                c.getParentCommentId(), c.getLikedBy(), c.getDislikedBy())));
 
         return new ResponseDto("Comments retrieved successfuly", res);
     }

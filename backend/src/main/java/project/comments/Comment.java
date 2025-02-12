@@ -1,5 +1,6 @@
 package project.comments;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -11,6 +12,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
@@ -39,6 +41,14 @@ public class Comment {
     @JoinColumn(name = "parent_comment")
     private Comment parentComment;
 
+    @ManyToMany
+    private List<User> likedBy;
+
+    @ManyToMany
+    private List<User> dislikedBy;
+
+    private LocalDate createdAt;
+
     // cascade all seems like questionable behaviour but implementing fully correct
     // behaviour seems too annoying right now
     // do i even need this?
@@ -55,6 +65,7 @@ public class Comment {
         this.text = text;
         this.parentComment = parentComment;
         this.replies = new ArrayList<>();
+        this.createdAt = LocalDate.now();
     }
 
     public UUID getId() {
@@ -95,6 +106,18 @@ public class Comment {
 
     public UUID getParentCommentId() {
         return parentComment != null ? parentComment.getId() : null;
+    }
+
+    public List<User> getLikedBy() {
+        return likedBy;
+    }
+
+    public List<User> getDislikedBy() {
+        return dislikedBy;
+    }
+
+    public LocalDate getCreatedAt() {
+        return createdAt;
     }
 
 }
