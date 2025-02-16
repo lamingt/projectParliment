@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import project.dto.CommentCreateDto;
 import project.dto.CommentGetDto;
+import project.dto.CommentVoteDto;
 import project.dto.ResponseDto;
 import project.dto.ThreadInfoDto;
 
@@ -28,7 +29,7 @@ public class CommentController {
     }
 
     @PostMapping("")
-    public ResponseEntity<ResponseDto> postMethodName(@RequestBody CommentCreateDto dto,
+    public ResponseEntity<ResponseDto> createComment(@RequestBody CommentCreateDto dto,
             @RequestHeader("Authorization") String token) {
         try {
             return new ResponseEntity<ResponseDto>(commentService.createComment(dto, token), HttpStatus.OK);
@@ -52,4 +53,27 @@ public class CommentController {
         }
     }
 
+    @PostMapping("/like")
+    public ResponseEntity<ResponseDto> likeComment(@RequestBody CommentVoteDto data,
+            @RequestHeader("Authorization") String token) {
+        try {
+            return new ResponseEntity<ResponseDto>(commentService.likeComment(data, token), HttpStatus.OK);
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ResponseDto(e.getMessage(), null));
+        } catch (IllegalAccessError e) {
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).body(new ResponseDto(e.getMessage(), null));
+        }
+    }
+
+    @PostMapping("/dislike")
+    public ResponseEntity<ResponseDto> dislikeComment(@RequestBody CommentVoteDto data,
+            @RequestHeader("Authorization") String token) {
+        try {
+            return new ResponseEntity<ResponseDto>(commentService.dislikeComment(data, token), HttpStatus.OK);
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ResponseDto(e.getMessage(), null));
+        } catch (IllegalAccessError e) {
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).body(new ResponseDto(e.getMessage(), null));
+        }
+    }
 }
