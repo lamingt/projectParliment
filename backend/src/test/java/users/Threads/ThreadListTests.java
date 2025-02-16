@@ -1,4 +1,4 @@
-package users;
+package users.Threads;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -17,24 +17,31 @@ import net.minidev.json.JSONObject;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 // import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 // import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import java.time.LocalDate;
+
 import project.Main;
+import project.threads.Thread;
+import project.threads.ThreadRepository;
 
 @SpringBootTest(classes = Main.class)
 @ActiveProfiles("test")
 @AutoConfigureMockMvc
-public class LogoutTests {
+public class ThreadListTests {
 
     @Autowired
     private MockMvc mockMvc;
     private MvcResult res;
+    @Autowired
+    private ThreadRepository threadRepository;
 
     @BeforeEach
-    public void setup() {
+    private void setup() {
         JSONObject obj = new JSONObject();
         obj.put("email", "abc@gmail.com");
         obj.put("password", "pass1");
@@ -42,33 +49,40 @@ public class LogoutTests {
         assertDoesNotThrow(() -> {
             res = mockMvc
                     .perform(post("/api/v1/user/register").contentType("application/json").content(obj.toJSONString()))
-                    .andReturn();
+                    .andExpect(status().isOk()).andReturn();
         });
+
+        threadRepository.save(new Thread("Parliament Bill", LocalDate.now(), "Senate", "Before Senate",
+                "This is a parliament bill.", true));
     }
 
     @Transactional
     @Test
-    public void successfulLogout() {
+    public void successfulList() {
         assertDoesNotThrow(() -> {
             ObjectMapper objectMapper = new ObjectMapper();
             JsonNode obj = objectMapper.readTree(res.getResponse().getContentAsString());
 
-            JSONObject data = new JSONObject();
             String token = obj.get("data").get("token").asText();
-            data.put("token", token);
-            mockMvc.perform(delete("/api/v1/user/logout").contentType("application/json").content(data.toJSONString()))
-                    .andExpect(status().isOk());
+            mockMvc.perform(get("/api/v1/threads/list?pageNum=1").header("Authorization", token))
+                    .andExpect(status().isOk())
+                    .andExpect(jsonPath("$.data.pageInfo[0].title").value("Parliament Bill"))
+                    .andExpect(jsonPath("$.data.pagination.totalThreads").value(1))
+                    .andExpect(jsonPath("$.data.pagination.totalPages").value(1));
         });
     }
 
     @Transactional
     @Test
-    public void invalidLogout() {
+    public void invalidPageNum() {
         assertDoesNotThrow(() -> {
-            JSONObject data = new JSONObject();
-            data.put("token", "4gAjVOL86fRjgBcYPNHOI3-VTfEejw_P");
-            mockMvc.perform(delete("/api/v1/user/logout").contentType("application/json").content(data.toJSONString()))
+            ObjectMapper objectMapper = new ObjectMapper();
+            JsonNode obj = objectMapper.readTree(res.getResponse().getContentAsString());
+
+            String token = obj.get("data").get("token").asText();
+            mockMvc.perform(get("/api/v1/threads/list?pageNum=2").header("Authorization", token))
                     .andExpect(status().isBadRequest());
         });
     }
+
 }

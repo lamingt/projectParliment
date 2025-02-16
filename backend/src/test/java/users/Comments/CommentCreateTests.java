@@ -1,4 +1,4 @@
-package users;
+package users.Comments;
 
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.BeforeEach;

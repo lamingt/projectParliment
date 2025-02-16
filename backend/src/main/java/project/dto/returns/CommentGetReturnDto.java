@@ -3,19 +3,17 @@ package project.dto.returns;
 import java.util.List;
 import java.util.UUID;
 
-import project.users.User;
-
 public class CommentGetReturnDto {
     private UUID id;
     private UUID threadId;
     private UUID creatorId;
     private String text;
     private UUID parentCommentId;
-    private List<User> likedBy;
-    private List<User> dislikedBy;
+    private List<UUID> likedBy;
+    private List<UUID> dislikedBy;
 
     public CommentGetReturnDto(UUID id, UUID threadId, UUID creatorId, String text, UUID parentCommentId,
-            List<User> likedBy, List<User> dislikedBy) {
+            List<UUID> likedBy, List<UUID> dislikedBy) {
         this.id = id;
         this.threadId = threadId;
         this.creatorId = creatorId;
@@ -45,11 +43,11 @@ public class CommentGetReturnDto {
         return parentCommentId;
     }
 
-    public List<User> getLikedBy() {
+    public List<UUID> getLikedBy() {
         return likedBy;
     }
 
-    public List<User> getDislikedBy() {
+    public List<UUID> getDislikedBy() {
         return dislikedBy;
     }
 

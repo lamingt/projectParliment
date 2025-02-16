@@ -1,9 +1,7 @@
 package project.threads;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 import java.util.UUID;
 import java.util.stream.Collectors;
@@ -14,31 +12,34 @@ import org.springframework.stereotype.Service;
 import project.dto.ResponseDto;
 import project.dto.ThreadInfoDto;
 import project.dto.ThreadListDto;
+import project.dto.ThreadVoteDto;
 import project.dto.returns.ThreadInfoReturnDto;
 import project.dto.returns.ThreadListInfoReturnDto;
 import project.dto.returns.ThreadListPaginationDto;
 import project.dto.returns.ThreadListReturnDto;
+import project.users.Token;
 import project.users.TokenRepository;
+import project.users.User;
+import project.users.UserRepository;
 import project.utils.TokenUtils;
 
 @Service
 public class ThreadService {
     private ThreadRepository threadRepository;
     private TokenRepository tokenRepository;
+    private UserRepository userRepository;
     private static final int threadsPerPage = 10;
 
-    public ThreadService(ThreadRepository threadRepository, TokenRepository tokenRepository) {
+    public ThreadService(ThreadRepository threadRepository, TokenRepository tokenRepository,
+            UserRepository userRepository) {
         this.threadRepository = threadRepository;
         this.tokenRepository = tokenRepository;
+        this.userRepository = userRepository;
     }
 
     public ResponseDto getThreads(ThreadListDto dto) {
         Integer pageNum = dto.getPageNum();
-        TokenUtils.validateToken(tokenRepository, dto.getToken()); // make sure this works
-        // Optional<Token> token = tokenRepository.findByToken(dto.getToken());
-        // if (!token.isPresent() || token.get().isExpired()) {
-        // throw new IllegalAccessError("Token is invalid");
-        // }
+        TokenUtils.validateToken(tokenRepository, dto.getToken());
 
         PageRequest pageRequest = PageRequest.of(pageNum - 1, 10);
         List<Thread> threads = threadRepository.getThreadsByDate(pageRequest);
@@ -82,5 +83,59 @@ public class ThreadService {
                 t.getDislikedBy().stream().map(user -> user.getId()).collect(Collectors.toList()));
 
         return new ResponseDto("Thread obtained successfully", response);
+    }
+
+    public ResponseDto likeThread(ThreadVoteDto data, String tokenString) {
+        UUID threadId = data.getThreadId();
+        UUID userId = data.getUserId();
+
+        Thread thread = threadRepository.findById(threadId)
+                .orElseThrow(() -> new IllegalArgumentException("Invalid thread id"));
+
+        TokenUtils.validateToken(tokenRepository, tokenString);
+        Optional<Token> token = tokenRepository.findById(tokenString);
+        if (!token.get().getUserId().equals(userId)) {
+            throw new IllegalArgumentException("Invalid token");
+        }
+
+        User user = userRepository.findById(userId).orElseThrow(() -> new IllegalArgumentException("Invalid user id"));
+        if (thread.likedBy(user)) {
+            thread.unlike(user);
+        } else {
+            if (thread.dislikedBy(user)) {
+                thread.undislike(user);
+            }
+            thread.addLike(user);
+        }
+        threadRepository.save(thread);
+
+        return new ResponseDto("Thread updated successfully", null);
+    }
+
+    public ResponseDto dislikeThread(ThreadVoteDto data, String tokenString) {
+        UUID threadId = data.getThreadId();
+        UUID userId = data.getUserId();
+
+        Thread thread = threadRepository.findById(threadId)
+                .orElseThrow(() -> new IllegalArgumentException("Invalid thread id"));
+
+        TokenUtils.validateToken(tokenRepository, tokenString);
+        Optional<Token> token = tokenRepository.findById(tokenString);
+        if (!token.get().getUserId().equals(userId)) {
+            throw new IllegalArgumentException("Invalid token");
+        }
+
+        User user = userRepository.findById(userId).orElseThrow(() -> new IllegalArgumentException("Invalid user id"));
+        if (thread.dislikedBy(user)) {
+            thread.undislike(user);
+        } else {
+            if (thread.likedBy(user)) {
+                thread.unlike(user);
+            }
+            thread.addDislike(user);
+        }
+        threadRepository.save(thread);
+
+        return new ResponseDto("Thread updated successfully", null);
     }
 }

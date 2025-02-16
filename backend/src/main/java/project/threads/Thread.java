@@ -54,6 +54,7 @@ public class Thread {
         this.active = active;
         this.comments = new ArrayList<>();
         this.likedBy = new ArrayList<>();
+        this.dislikedBy = new ArrayList<>();
     }
 
     public UUID getId() {
@@ -98,5 +99,29 @@ public class Thread {
 
     public List<User> getDislikedBy() {
         return dislikedBy;
+    }
+
+    public void addLike(User user) {
+        likedBy.add(user);
+    }
+
+    public void addDislike(User user) {
+        dislikedBy.add(user);
+    }
+
+    public void unlike(User user) {
+        likedBy.remove(user);
+    }
+
+    public boolean likedBy(User user) {
+        return likedBy.contains(user);
+    }
+
+    public boolean dislikedBy(User user) {
+        return dislikedBy.contains(user);
+    }
+
+    public void undislike(User user) {
+        dislikedBy.remove(user);
     }
 }

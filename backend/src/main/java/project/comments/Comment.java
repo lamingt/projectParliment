@@ -66,6 +66,8 @@ public class Comment {
         this.parentComment = parentComment;
         this.replies = new ArrayList<>();
         this.createdAt = LocalDate.now();
+        this.likedBy = new ArrayList<>();
+        this.dislikedBy = new ArrayList<>();
     }
 
     public UUID getId() {
@@ -118,6 +120,30 @@ public class Comment {
 
     public LocalDate getCreatedAt() {
         return createdAt;
+    }
+
+    public void addLike(User user) {
+        likedBy.add(user);
+    }
+
+    public void addDislike(User user) {
+        dislikedBy.add(user);
+    }
+
+    public void unlike(User user) {
+        likedBy.remove(user);
+    }
+
+    public boolean likedBy(User user) {
+        return likedBy.contains(user);
+    }
+
+    public boolean dislikedBy(User user) {
+        return dislikedBy.contains(user);
+    }
+
+    public void undislike(User user) {
+        dislikedBy.remove(user);
     }
 
 }

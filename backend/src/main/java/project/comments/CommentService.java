@@ -4,11 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
 import project.dto.CommentCreateDto;
 import project.dto.CommentGetDto;
+import project.dto.CommentVoteDto;
 import project.dto.ResponseDto;
 import project.dto.returns.CommentCreateReturnDto;
 import project.dto.returns.CommentGetReturnDto;
@@ -44,7 +47,7 @@ public class CommentService {
         TokenUtils.validateToken(tokenRepository, tokenString);
         Optional<Token> token = tokenRepository.findByToken(tokenString);
         if (!token.get().getUserId().equals(userId)) {
-            throw new IllegalArgumentException("Invalid user id");
+            throw new IllegalArgumentException("Invalid token");
         }
 
         Thread thread = threadRepository.findById(threadId)
@@ -79,8 +82,63 @@ public class CommentService {
         List<Comment> comments = thread.getComments();
         List<CommentGetReturnDto> res = new ArrayList<>();
         comments.forEach(c -> res.add(new CommentGetReturnDto(c.getId(), c.getThreadId(), c.getCreatorId(), c.getText(),
-                c.getParentCommentId(), c.getLikedBy(), c.getDislikedBy())));
+                c.getParentCommentId(), c.getLikedBy().stream().map(u -> u.getId()).collect(Collectors.toList()),
+                c.getDislikedBy().stream().map(u -> u.getId()).collect(Collectors.toList()))));
 
         return new ResponseDto("Comments retrieved successfuly", res);
+    }
+
+    public ResponseDto likeComment(CommentVoteDto data, String tokenString) {
+        UUID commentId = data.getCommentId();
+        UUID userId = data.getUserId();
+
+        Comment comment = commentRepository.findById(commentId)
+                .orElseThrow(() -> new IllegalArgumentException("Invalid comment id"));
+
+        TokenUtils.validateToken(tokenRepository, tokenString);
+        Optional<Token> token = tokenRepository.findById(tokenString);
+        if (!token.get().getUserId().equals(userId)) {
+            throw new IllegalArgumentException("Invalid token");
+        }
+
+        User user = userRepository.findById(userId).orElseThrow(() -> new IllegalArgumentException("Invalid user id"));
+        if (comment.likedBy(user)) {
+            comment.unlike(user);
+        } else {
+            if (comment.dislikedBy(user)) {
+                comment.undislike(user);
+            }
+            comment.addLike(user);
+        }
+        commentRepository.save(comment);
+
+        return new ResponseDto("Thread updated successfully", null);
+    }
+
+    public ResponseDto dislikeComment(CommentVoteDto data, String tokenString) {
+        UUID commentId = data.getCommentId();
+        UUID userId = data.getUserId();
+
+        Comment comment = commentRepository.findById(commentId)
+                .orElseThrow(() -> new IllegalArgumentException("Invalid comment id"));
+
+        TokenUtils.validateToken(tokenRepository, tokenString);
+        Optional<Token> token = tokenRepository.findById(tokenString);
+        if (!token.get().getUserId().equals(userId)) {
+            throw new IllegalArgumentException("Invalid token");
+        }
+
+        User user = userRepository.findById(userId).orElseThrow(() -> new IllegalArgumentException("Invalid user id"));
+        if (comment.dislikedBy(user)) {
+            comment.undislike(user);
+        } else {
+            if (comment.likedBy(user)) {
+                comment.unlike(user);
+            }
+            comment.addDislike(user);
+        }
+        commentRepository.save(comment);
+
+        return new ResponseDto("Thread updated successfully", null);
     }
 }
