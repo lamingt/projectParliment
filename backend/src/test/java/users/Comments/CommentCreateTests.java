@@ -65,9 +65,7 @@ public class CommentCreateTests {
             JsonNode jsonObj = objectMapper.readTree(res.getResponse().getContentAsString());
 
             String token = jsonObj.get("data").get("token").asText();
-            String userId = jsonObj.get("data").get("userId").asText();
             data.put("token", token);
-            data.put("userId", userId);
             data.put("threadId", thread.getId().toString());
             data.put("parentComment", null);
             data.put("text", "God this bill is terrible!");
@@ -91,7 +89,6 @@ public class CommentCreateTests {
             String token = jsonObj.get("data").get("token").asText();
             String userId = jsonObj.get("data").get("userId").asText();
             data.put("token", token);
-            data.put("userId", userId);
             data.put("threadId", thread.getId().toString());
             data.put("parentComment", null);
             data.put("text", "God this bill is terrible!");
@@ -124,8 +121,7 @@ public class CommentCreateTests {
                             .header("Authorization", token))
                     .andExpect(status().isOk());
 
-            mockMvc.perform(get("/api/v1/comments?threadId=" + thread.getId().toString())
-                    .header("Authorization", token))
+            mockMvc.perform(get("/api/v1/comments?threadId=" + thread.getId().toString()))
                     .andExpect(status().isOk())
                     .andExpect(jsonPath("$.data[*].text",
                             Matchers.containsInAnyOrder("God this bill is terrible!", "No it isnt!",

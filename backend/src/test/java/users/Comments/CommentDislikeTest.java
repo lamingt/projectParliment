@@ -67,9 +67,7 @@ public class CommentDislikeTest {
             JsonNode jsonObj = objectMapper.readTree(res.getResponse().getContentAsString());
 
             String token = jsonObj.get("data").get("token").asText();
-            String userId = jsonObj.get("data").get("userId").asText();
             data.put("token", token);
-            data.put("userId", userId);
             data.put("threadId", thread.getId().toString());
             data.put("parentComment", null);
             data.put("text", "God this bill is terrible!");
@@ -88,7 +86,7 @@ public class CommentDislikeTest {
         assertDoesNotThrow(() -> {
             JSONObject data = new JSONObject();
             data.put("commentId", commentId);
-            data.put("userId", userId);
+
             mockMvc.perform(
                     post("/api/v1/comments/dislike").contentType("application/json").header("Authorization", "123")
                             .content(data.toJSONString()))
@@ -102,14 +100,13 @@ public class CommentDislikeTest {
         assertDoesNotThrow(() -> {
             JSONObject data = new JSONObject();
             data.put("commentId", commentId);
-            data.put("userId", userId);
+
             mockMvc.perform(
                     post("/api/v1/comments/dislike").contentType("application/json").header("Authorization", token)
                             .content(data.toJSONString()))
                     .andExpect(status().isOk());
             mockMvc.perform(
-                    get("/api/v1/comments?threadId=" + thread.getId().toString()).header("Authorization",
-                            token))
+                    get("/api/v1/comments?threadId=" + thread.getId().toString()))
                     .andExpect(status().isOk())
                     .andExpect(jsonPath("$.data[0].dislikedBy[0]").value(userId));
         });
@@ -121,7 +118,7 @@ public class CommentDislikeTest {
         assertDoesNotThrow(() -> {
             JSONObject data = new JSONObject();
             data.put("commentId", commentId);
-            data.put("userId", userId);
+
             mockMvc.perform(
                     post("/api/v1/comments/dislike").contentType("application/json").header("Authorization", token)
                             .content(data.toJSONString()))
@@ -131,8 +128,7 @@ public class CommentDislikeTest {
                             .content(data.toJSONString()))
                     .andExpect(status().isOk());
             mockMvc.perform(
-                    get("/api/v1/comments?threadId=" + thread.getId().toString()).header("Authorization",
-                            token))
+                    get("/api/v1/comments?threadId=" + thread.getId().toString()))
                     .andExpect(status().isOk())
                     .andExpect(jsonPath("$.data[0].dislikedBy", Matchers.empty()));
         });
@@ -144,7 +140,7 @@ public class CommentDislikeTest {
         assertDoesNotThrow(() -> {
             JSONObject data = new JSONObject();
             data.put("commentId", commentId);
-            data.put("userId", userId);
+
             mockMvc.perform(
                     post("/api/v1/comments/like").contentType("application/json").header("Authorization", token)
                             .content(data.toJSONString()))
@@ -154,13 +150,11 @@ public class CommentDislikeTest {
                             .content(data.toJSONString()))
                     .andExpect(status().isOk());
             mockMvc.perform(
-                    get("/api/v1/comments?threadId=" + thread.getId().toString()).header("Authorization",
-                            token))
+                    get("/api/v1/comments?threadId=" + thread.getId().toString()))
                     .andExpect(status().isOk())
                     .andExpect(jsonPath("$.data[0].dislikedBy[0]").value(userId));
             mockMvc.perform(
-                    get("/api/v1/comments?threadId=" + thread.getId().toString()).header("Authorization",
-                            token))
+                    get("/api/v1/comments?threadId=" + thread.getId().toString()))
                     .andExpect(status().isOk())
                     .andExpect(jsonPath("$.data[0].likedBy", Matchers.empty()));
         });

@@ -29,9 +29,8 @@ public class ThreadController {
 
     // Gets a list of all threads ordered by date on page num
     @GetMapping("/list")
-    public ResponseEntity<ResponseDto> getThreads(@RequestParam Integer pageNum,
-            @RequestHeader("Authorization") String token) {
-        ThreadListDto dto = new ThreadListDto(token, pageNum);
+    public ResponseEntity<ResponseDto> getThreads(@RequestParam Integer pageNum) {
+        ThreadListDto dto = new ThreadListDto(pageNum);
         try {
             return new ResponseEntity<ResponseDto>(threadService.getThreads(dto), HttpStatus.OK);
         } catch (IllegalArgumentException e) {
@@ -42,9 +41,8 @@ public class ThreadController {
     }
 
     @GetMapping("/thread")
-    public ResponseEntity<ResponseDto> getThreadInfo(@RequestParam UUID threadId,
-            @RequestHeader("Authorization") String token) {
-        ThreadInfoDto dto = new ThreadInfoDto(threadId, token);
+    public ResponseEntity<ResponseDto> getThreadInfo(@RequestParam UUID threadId) {
+        ThreadInfoDto dto = new ThreadInfoDto(threadId);
         try {
             return new ResponseEntity<ResponseDto>(threadService.getThreadInfo(dto), HttpStatus.OK);
         } catch (IllegalArgumentException e) {

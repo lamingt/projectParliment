@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
@@ -39,16 +38,13 @@ public class CommentService {
     }
 
     public ResponseDto createComment(CommentCreateDto dto, String tokenString) {
-        UUID userId = dto.getUserId();
         UUID threadId = dto.getThreadId();
         UUID parentCommentId = dto.getParentComment();
         String text = dto.getText();
 
         TokenUtils.validateToken(tokenRepository, tokenString);
         Optional<Token> token = tokenRepository.findByToken(tokenString);
-        if (!token.get().getUserId().equals(userId)) {
-            throw new IllegalArgumentException("Invalid token");
-        }
+        UUID userId = token.get().getUserId();
 
         Thread thread = threadRepository.findById(threadId)
                 .orElseThrow(() -> new IllegalArgumentException("Invalid thread id"));
@@ -73,10 +69,8 @@ public class CommentService {
     }
 
     public ResponseDto getComments(CommentGetDto dto) {
-        String token = dto.getToken();
         UUID threadID = dto.getThreadId();
 
-        TokenUtils.validateToken(tokenRepository, token);
         Thread thread = threadRepository.findById(threadID)
                 .orElseThrow(() -> new IllegalArgumentException("Invalid thread id"));
         List<Comment> comments = thread.getComments();
@@ -90,17 +84,14 @@ public class CommentService {
 
     public ResponseDto likeComment(CommentVoteDto data, String tokenString) {
         UUID commentId = data.getCommentId();
-        UUID userId = data.getUserId();
 
         Comment comment = commentRepository.findById(commentId)
                 .orElseThrow(() -> new IllegalArgumentException("Invalid comment id"));
 
         TokenUtils.validateToken(tokenRepository, tokenString);
         Optional<Token> token = tokenRepository.findById(tokenString);
-        if (!token.get().getUserId().equals(userId)) {
-            throw new IllegalArgumentException("Invalid token");
-        }
 
+        UUID userId = token.get().getUserId();
         User user = userRepository.findById(userId).orElseThrow(() -> new IllegalArgumentException("Invalid user id"));
         if (comment.likedBy(user)) {
             comment.unlike(user);
@@ -117,17 +108,14 @@ public class CommentService {
 
     public ResponseDto dislikeComment(CommentVoteDto data, String tokenString) {
         UUID commentId = data.getCommentId();
-        UUID userId = data.getUserId();
 
         Comment comment = commentRepository.findById(commentId)
                 .orElseThrow(() -> new IllegalArgumentException("Invalid comment id"));
 
         TokenUtils.validateToken(tokenRepository, tokenString);
         Optional<Token> token = tokenRepository.findById(tokenString);
-        if (!token.get().getUserId().equals(userId)) {
-            throw new IllegalArgumentException("Invalid token");
-        }
 
+        UUID userId = token.get().getUserId();
         User user = userRepository.findById(userId).orElseThrow(() -> new IllegalArgumentException("Invalid user id"));
         if (comment.dislikedBy(user)) {
             comment.undislike(user);

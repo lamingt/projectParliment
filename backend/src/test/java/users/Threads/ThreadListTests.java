@@ -36,7 +36,6 @@ public class ThreadListTests {
 
     @Autowired
     private MockMvc mockMvc;
-    private MvcResult res;
     @Autowired
     private ThreadRepository threadRepository;
 
@@ -47,10 +46,10 @@ public class ThreadListTests {
         obj.put("password", "pass1");
         obj.put("username", "lamington");
         assertDoesNotThrow(() -> {
-            res = mockMvc
-                    .perform(post("/api/v1/user/register").contentType("application/json").content(obj.toJSONString()))
-                    .andExpect(status().isOk()).andReturn();
-        });
+            mockMvc
+                .perform(post("/api/v1/user/register").contentType("application/json").content(obj.toJSONString()))
+                .andExpect(status().isOk()).andReturn();
+    });
 
         threadRepository.save(new Thread("Parliament Bill", LocalDate.now(), "Senate", "Before Senate",
                 "This is a parliament bill.", true));
@@ -60,11 +59,7 @@ public class ThreadListTests {
     @Test
     public void successfulList() {
         assertDoesNotThrow(() -> {
-            ObjectMapper objectMapper = new ObjectMapper();
-            JsonNode obj = objectMapper.readTree(res.getResponse().getContentAsString());
-
-            String token = obj.get("data").get("token").asText();
-            mockMvc.perform(get("/api/v1/threads/list?pageNum=1").header("Authorization", token))
+            mockMvc.perform(get("/api/v1/threads/list?pageNum=1"))
                     .andExpect(status().isOk())
                     .andExpect(jsonPath("$.data.pageInfo[0].title").value("Parliament Bill"))
                     .andExpect(jsonPath("$.data.pagination.totalThreads").value(1))
@@ -76,11 +71,7 @@ public class ThreadListTests {
     @Test
     public void invalidPageNum() {
         assertDoesNotThrow(() -> {
-            ObjectMapper objectMapper = new ObjectMapper();
-            JsonNode obj = objectMapper.readTree(res.getResponse().getContentAsString());
-
-            String token = obj.get("data").get("token").asText();
-            mockMvc.perform(get("/api/v1/threads/list?pageNum=2").header("Authorization", token))
+            mockMvc.perform(get("/api/v1/threads/list?pageNum=2"))
                     .andExpect(status().isBadRequest());
         });
     }

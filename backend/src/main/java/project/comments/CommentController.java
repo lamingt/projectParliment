@@ -7,7 +7,6 @@ import project.dto.CommentCreateDto;
 import project.dto.CommentGetDto;
 import project.dto.CommentVoteDto;
 import project.dto.ResponseDto;
-import project.dto.ThreadInfoDto;
 
 import java.util.UUID;
 
@@ -41,9 +40,8 @@ public class CommentController {
     }
 
     @GetMapping("")
-    public ResponseEntity<ResponseDto> getComments(@RequestParam UUID threadId,
-            @RequestHeader("Authorization") String token) {
-        CommentGetDto dto = new CommentGetDto(threadId, token);
+    public ResponseEntity<ResponseDto> getComments(@RequestParam UUID threadId) {
+        CommentGetDto dto = new CommentGetDto(threadId);
         try {
             return new ResponseEntity<ResponseDto>(commentService.getComments(dto), HttpStatus.OK);
         } catch (IllegalArgumentException e) {

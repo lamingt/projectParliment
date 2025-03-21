@@ -54,18 +54,14 @@ public class DislikeThreadTest {
                 "This is a parliament bill.", true);
         threadRepository.save(thread);
     }
-    
+
     @Transactional
     @Test
     public void invalidToken() {
         assertDoesNotThrow(() -> {
-            ObjectMapper objectMapper = new ObjectMapper();
-            JsonNode obj = objectMapper.readTree(res.getResponse().getContentAsString());
-
-            String userId = obj.get("data").get("userId").asText();
             JSONObject data = new JSONObject();
             data.put("threadId", thread.getId().toString());
-            data.put("userId", userId);
+
             mockMvc.perform(post("/api/v1/threads/like").contentType("application/json").header("Authorization", "123")
                     .content(data.toJSONString())).andExpect(status().isForbidden());
         });
@@ -77,18 +73,17 @@ public class DislikeThreadTest {
         assertDoesNotThrow(() -> {
             ObjectMapper objectMapper = new ObjectMapper();
             JsonNode obj = objectMapper.readTree(res.getResponse().getContentAsString());
-
             String token = obj.get("data").get("token").asText();
             String userId = obj.get("data").get("userId").asText();
             JSONObject data = new JSONObject();
             data.put("threadId", thread.getId().toString());
-            data.put("userId", userId);
+
             mockMvc.perform(
                     post("/api/v1/threads/dislike").contentType("application/json").header("Authorization", token)
                             .content(data.toJSONString()))
                     .andExpect(status().isOk());
             mockMvc.perform(
-                    get("/api/v1/threads/thread?threadId=" + thread.getId().toString()).header("Authorization", token))
+                    get("/api/v1/threads/thread?threadId=" + thread.getId().toString()))
                     .andExpect(status().isOk())
                     .andExpect(jsonPath("$.data.dislikedBy[0]").value(userId));
         });
@@ -102,10 +97,9 @@ public class DislikeThreadTest {
             JsonNode obj = objectMapper.readTree(res.getResponse().getContentAsString());
 
             String token = obj.get("data").get("token").asText();
-            String userId = obj.get("data").get("userId").asText();
             JSONObject data = new JSONObject();
             data.put("threadId", thread.getId().toString());
-            data.put("userId", userId);
+
             mockMvc.perform(
                     post("/api/v1/threads/dislike").contentType("application/json").header("Authorization", token)
                             .content(data.toJSONString()))
@@ -115,7 +109,7 @@ public class DislikeThreadTest {
                             .content(data.toJSONString()))
                     .andExpect(status().isOk());
             mockMvc.perform(
-                    get("/api/v1/threads/thread?threadId=" + thread.getId().toString()).header("Authorization", token))
+                    get("/api/v1/threads/thread?threadId=" + thread.getId().toString()))
                     .andExpect(status().isOk())
                     .andExpect(jsonPath("$.data.dislikedBy", Matchers.empty()));
         });
@@ -132,7 +126,7 @@ public class DislikeThreadTest {
             String userId = obj.get("data").get("userId").asText();
             JSONObject data = new JSONObject();
             data.put("threadId", thread.getId().toString());
-            data.put("userId", userId);
+
             mockMvc.perform(
                     post("/api/v1/threads/like").contentType("application/json").header("Authorization", token)
                             .content(data.toJSONString()))
@@ -142,11 +136,11 @@ public class DislikeThreadTest {
                             .content(data.toJSONString()))
                     .andExpect(status().isOk());
             mockMvc.perform(
-                    get("/api/v1/threads/thread?threadId=" + thread.getId().toString()).header("Authorization", token))
+                    get("/api/v1/threads/thread?threadId=" + thread.getId().toString()))
                     .andExpect(status().isOk())
                     .andExpect(jsonPath("$.data.dislikedBy[0]").value(userId));
             mockMvc.perform(
-                    get("/api/v1/threads/thread?threadId=" + thread.getId().toString()).header("Authorization", token))
+                    get("/api/v1/threads/thread?threadId=" + thread.getId().toString()))
                     .andExpect(status().isOk())
                     .andExpect(jsonPath("$.data.likedBy", Matchers.empty()));
         });
