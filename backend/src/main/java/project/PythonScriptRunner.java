@@ -2,12 +2,9 @@ package project;
 
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
-
 import jakarta.annotation.PostConstruct;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.InputStreamReader;
+import java.io.*;
 
 @Component
 @Profile("!test")
@@ -16,17 +13,26 @@ public class PythonScriptRunner {
     @PostConstruct
     public void runPythonScript() {
         try {
-            // Command to activate venv and run the script
-            String[] command = { "/bin/bash", "-c", "source .venv/bin/activate && python scraping/scraper.py" };
+            String projectRoot = new File(System.getProperty("user.dir")).getParent(); // Go up from backend/
+            File venvPython = new File(projectRoot, ".venv/bin/python");
+            File scriptFile = new File(projectRoot, "scraping/scraper.py");
 
-            System.out.println("Current Working Directory: " + System.getProperty("user.dir"));
-            String userDir = System.getProperty("user.dir");
+            if (!venvPython.exists()) {
+                System.err.println("Python virtual environment not found at: " + venvPython.getAbsolutePath());
+                return;
+            }
+            if (!scriptFile.exists()) {
+                System.err.println("Python script not found at: " + scriptFile.getAbsolutePath());
+                return;
+            }
+
+            String[] command = { venvPython.getAbsolutePath(), scriptFile.getAbsolutePath() };
+
             ProcessBuilder processBuilder = new ProcessBuilder(command);
-            processBuilder.directory(new File(userDir));
+            processBuilder.directory(new File(projectRoot)); // Run from projectParliment/
             processBuilder.redirectErrorStream(true);
             Process process = processBuilder.start();
 
-            // Read output
             BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
             String line;
             while ((line = reader.readLine()) != null) {
