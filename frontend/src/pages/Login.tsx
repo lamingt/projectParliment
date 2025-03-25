@@ -1,23 +1,20 @@
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
-import { Link, Navigate } from "react-router";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { authRegister } from "../api";
+import { Link, Navigate } from "react-router";
+import { authLogin } from "../api";
 
 type FormFields = {
   email: string;
-  username: string;
   password: string;
-  confirmPassword: string;
 };
 
-function Register() {
+function Login() {
   const { token, setToken } = useContext(AuthContext);
   const {
-    handleSubmit,
     register,
+    handleSubmit,
     setError,
-    watch,
     formState: { errors, isSubmitting },
   } = useForm<FormFields>();
 
@@ -27,34 +24,17 @@ function Register() {
 
   const onSubmit: SubmitHandler<FormFields> = async (data) => {
     try {
-      const res = await authRegister(data.email, data.username, data.password);
+      const res = await authLogin(data.email, data.password);
       console.log(res);
       setToken(res.data.token);
     } catch (error: any) {
       if (error?.response?.data?.message) {
         const errorMessage: string = error.response.data.message.toLowerCase();
 
-        if (errorMessage.includes("email")) {
-          setError("email", {
-            type: "manual",
-            message: errorMessage,
-          });
-        } else if (errorMessage.includes("Username")) {
-          setError("username", {
-            type: "manual",
-            message: errorMessage,
-          });
-        } else if (errorMessage.includes("Password")) {
-          setError("password", {
-            type: "manual",
-            message: errorMessage,
-          });
-        } else {
-          setError("root", {
-            type: "manual",
-            message: errorMessage || "An unexpected error occurred. Please try again.",
-          });
-        }
+        setError("root", {
+          type: "manual",
+          message: errorMessage,
+        });
       } else {
         setError("root", {
           type: "manual",
@@ -65,7 +45,7 @@ function Register() {
   };
 
   return (
-    <div className="h-screen flex flex-col items-center justify-center">
+    <div>
       <form onSubmit={handleSubmit(onSubmit)}>
         <input
           {...register("email", {
@@ -79,22 +59,6 @@ function Register() {
           placeholder="Email"
         />
         {errors.email && <p className="text-red-600">{errors.email.message}</p>}
-        <input
-          {...register("username", {
-            required: "Username is required",
-            minLength: {
-              value: 3,
-              message: "Username must be at least 3 characters",
-            },
-            maxLength: {
-              value: 20,
-              message: "Username length cannot exceed 20 characters",
-            },
-          })}
-          type="text"
-          placeholder="Username"
-        />
-        {errors.username && <p className="text-red-600">{errors.username.message}</p>}
         <input
           {...register("password", {
             required: "Password is required",
@@ -110,21 +74,9 @@ function Register() {
           type="password"
           placeholder="Password"
         />
-        <input
-          {...register("confirmPassword", {
-            required: "Confirm password",
-            validate: (value: string) => {
-              if (watch("password") != value) {
-                return "Passwords do not match";
-              }
-            },
-          })}
-          type="password"
-          placeholder="Confirm Password"
-        />
-        {errors.confirmPassword && <p className="text-red-600">{errors.confirmPassword.message}</p>}
+        {errors.password && <p className="text-red-600">{errors.password.message}</p>}
         <button disabled={isSubmitting} type="submit">
-          Register
+          Login
         </button>
         {isSubmitting && (
           <div role="status" className="h-screen flex items-center justify-center">
@@ -150,10 +102,10 @@ function Register() {
         {errors.root && <p className="text-red-600">{errors.root.message}</p>}
       </form>
       <p>
-        Have an account? <Link to="/login">Login</Link>
+        Don&apos;t have an account? <Link to="/register">Register</Link>
       </p>
     </div>
   );
 }
 
-export default Register;
+export default Login;
