@@ -1,20 +1,17 @@
 import { useLocation } from "react-router";
-
-type threadInfoType = {
-  id: string;
-  title: string;
-  summary: string;
-  date: string;
-  chamber: string;
-  active: boolean;
-  numLikes: number;
-  numComments: number;
-};
+import { ThreadInfoType } from "../types";
+import ThreadBody from "../components/ThreadBody";
 
 function Thread() {
   const location = useLocation();
-  const threadInfo: threadInfoType = location.state;
-  return <div>{JSON.stringify(threadInfo)}</div>;
+  const threadInfo: ThreadInfoType = location.state;
+
+  return (
+    <div className="flex flex-row min-h-[96vh] max-w-[70vw] bg-slate-500 mx-auto">
+      <ThreadBody />
+      <div>{JSON.stringify(threadInfo)}</div>
+    </div>
+  );
 }
 
 export default Thread;

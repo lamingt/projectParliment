@@ -1,5 +1,4 @@
 import { Suspense } from "react";
-import Header from "../components/Header";
 import ThreadList from "../components/ThreadList";
 
 function Home() {

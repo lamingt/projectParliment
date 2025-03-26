@@ -1,25 +1,14 @@
-import { Suspense, useEffect } from "react";
 import usePromise from "react-promise-suspense";
 import { getThreadList } from "../api";
 import { useNavigate, useParams } from "react-router";
-
-type threadInfoType = {
-  id: string;
-  title: string;
-  summary: string;
-  date: string;
-  chamber: string;
-  active: boolean;
-  numLikes: number;
-  numComments: number;
-};
+import { ThreadInfoType } from "../types";
 
 function ThreadList() {
   const { pageNum = "1" } = useParams<{ pageNum?: string }>();
   const data = usePromise(getThreadList, [pageNum]);
   const navigate = useNavigate();
 
-  const handleThreadClick = (threadInfo: threadInfoType) => {
+  const handleThreadClick = (threadInfo: ThreadInfoType) => {
     navigate(`/thread/${threadInfo.title.replaceAll(" ", "-")}`, { state: threadInfo });
   };
 
@@ -34,7 +23,7 @@ function ThreadList() {
   return (
     <div className="flex flex-col justify-center items-center min-h-[96vh]">
       <div className="border border-black min-w-[40vw]">
-        {data.data.pageInfo.map((threadInfo: threadInfoType) => (
+        {data.data.pageInfo.map((threadInfo: ThreadInfoType) => (
           <div
             className="flex justify-between border cursor-pointer"
             key={threadInfo.title}
@@ -50,7 +39,6 @@ function ThreadList() {
               <p>{`Likes: ${threadInfo.numLikes}`}</p>
               <p>{`Comments: ${threadInfo.numComments}`}</p>
             </div>
-            {/* <p>{JSON.stringify(threadInfo)}</p> */}
           </div>
         ))}
       </div>
