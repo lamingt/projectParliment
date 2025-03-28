@@ -39,7 +39,6 @@ public class ThreadService {
 
     public ResponseDto getThreads(ThreadListDto dto) {
         Integer pageNum = dto.getPageNum();
-        TokenUtils.validateToken(tokenRepository, dto.getToken());
 
         PageRequest pageRequest = PageRequest.of(pageNum - 1, 10);
         List<Thread> threads = threadRepository.getThreadsByDate(pageRequest);
@@ -68,7 +67,6 @@ public class ThreadService {
 
     public ResponseDto getThreadInfo(ThreadInfoDto threadInfo) {
         UUID threadId = threadInfo.getThreadId();
-        TokenUtils.validateToken(tokenRepository, threadInfo.getToken());
 
         Optional<Thread> thread = threadRepository.findById(threadId);
         if (!thread.isPresent()) {
@@ -87,17 +85,14 @@ public class ThreadService {
 
     public ResponseDto likeThread(ThreadVoteDto data, String tokenString) {
         UUID threadId = data.getThreadId();
-        UUID userId = data.getUserId();
 
         Thread thread = threadRepository.findById(threadId)
                 .orElseThrow(() -> new IllegalArgumentException("Invalid thread id"));
 
         TokenUtils.validateToken(tokenRepository, tokenString);
         Optional<Token> token = tokenRepository.findById(tokenString);
-        if (!token.get().getUserId().equals(userId)) {
-            throw new IllegalArgumentException("Invalid token");
-        }
 
+        UUID userId = token.get().getUserId();
         User user = userRepository.findById(userId).orElseThrow(() -> new IllegalArgumentException("Invalid user id"));
         if (thread.likedBy(user)) {
             thread.unlike(user);
@@ -114,17 +109,13 @@ public class ThreadService {
 
     public ResponseDto dislikeThread(ThreadVoteDto data, String tokenString) {
         UUID threadId = data.getThreadId();
-        UUID userId = data.getUserId();
-
         Thread thread = threadRepository.findById(threadId)
                 .orElseThrow(() -> new IllegalArgumentException("Invalid thread id"));
 
         TokenUtils.validateToken(tokenRepository, tokenString);
         Optional<Token> token = tokenRepository.findById(tokenString);
-        if (!token.get().getUserId().equals(userId)) {
-            throw new IllegalArgumentException("Invalid token");
-        }
 
+        UUID userId = token.get().getUserId();
         User user = userRepository.findById(userId).orElseThrow(() -> new IllegalArgumentException("Invalid user id"));
         if (thread.dislikedBy(user)) {
             thread.undislike(user);

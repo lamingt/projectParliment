@@ -17,8 +17,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
-import org.springframework.test.web.servlet.ResultActions;
-import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -84,11 +82,11 @@ public class LikeThreadTest {
             String userId = obj.get("data").get("userId").asText();
             JSONObject data = new JSONObject();
             data.put("threadId", thread.getId().toString());
-            data.put("userId", userId);
+
             mockMvc.perform(post("/api/v1/threads/like").contentType("application/json").header("Authorization", token)
                     .content(data.toJSONString())).andExpect(status().isOk());
             mockMvc.perform(
-                    get("/api/v1/threads/thread?threadId=" + thread.getId().toString()).header("Authorization", token))
+                    get("/api/v1/threads/thread?threadId=" + thread.getId().toString()))
                     .andExpect(status().isOk())
                     .andExpect(jsonPath("$.data.likedBy[0]").value(userId));
         });
@@ -102,16 +100,15 @@ public class LikeThreadTest {
             JsonNode obj = objectMapper.readTree(res.getResponse().getContentAsString());
 
             String token = obj.get("data").get("token").asText();
-            String userId = obj.get("data").get("userId").asText();
             JSONObject data = new JSONObject();
             data.put("threadId", thread.getId().toString());
-            data.put("userId", userId);
+
             mockMvc.perform(post("/api/v1/threads/like").contentType("application/json").header("Authorization", token)
                     .content(data.toJSONString())).andExpect(status().isOk());
             mockMvc.perform(post("/api/v1/threads/like").contentType("application/json").header("Authorization", token)
                     .content(data.toJSONString())).andExpect(status().isOk());
             mockMvc.perform(
-                    get("/api/v1/threads/thread?threadId=" + thread.getId().toString()).header("Authorization", token))
+                    get("/api/v1/threads/thread?threadId=" + thread.getId().toString()))
                     .andExpect(status().isOk())
                     .andExpect(jsonPath("$.data.likedBy", Matchers.empty()));
         });
@@ -128,7 +125,7 @@ public class LikeThreadTest {
             String userId = obj.get("data").get("userId").asText();
             JSONObject data = new JSONObject();
             data.put("threadId", thread.getId().toString());
-            data.put("userId", userId);
+
             mockMvc.perform(
                     post("/api/v1/threads/dislike").contentType("application/json").header("Authorization", token)
                             .content(data.toJSONString()))
@@ -138,11 +135,11 @@ public class LikeThreadTest {
                             .content(data.toJSONString()))
                     .andExpect(status().isOk());
             mockMvc.perform(
-                    get("/api/v1/threads/thread?threadId=" + thread.getId().toString()).header("Authorization", token))
+                    get("/api/v1/threads/thread?threadId=" + thread.getId().toString()))
                     .andExpect(status().isOk())
                     .andExpect(jsonPath("$.data.likedBy[0]").value(userId));
             mockMvc.perform(
-                    get("/api/v1/threads/thread?threadId=" + thread.getId().toString()).header("Authorization", token))
+                    get("/api/v1/threads/thread?threadId=" + thread.getId().toString()))
                     .andExpect(status().isOk())
                     .andExpect(jsonPath("$.data.dislikedBy", Matchers.empty()));
         });
