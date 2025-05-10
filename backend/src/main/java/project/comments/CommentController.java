@@ -51,6 +51,18 @@ public class CommentController {
         }
     }
 
+    @GetMapping("/root")
+    public ResponseEntity<ResponseDto> getRootComments(@RequestParam UUID threadId) {
+        CommentGetDto dto = new CommentGetDto(threadId);
+        try {
+            return new ResponseEntity<ResponseDto>(commentService.getComments(dto), HttpStatus.OK);
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ResponseDto(e.getMessage(), null));
+        } catch (IllegalAccessError e) {
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).body(new ResponseDto(e.getMessage(), null));
+        }
+    }
+
     @PostMapping("/like")
     public ResponseEntity<ResponseDto> likeComment(@RequestBody CommentVoteDto data,
             @RequestHeader("Authorization") String token) {

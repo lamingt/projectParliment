@@ -21,7 +21,7 @@ import project.users.Token;
 import project.users.TokenRepository;
 import project.users.User;
 import project.users.UserRepository;
-import project.utils.TokenUtils;
+import project.utils.AuthUtils;
 
 @Service
 public class ThreadService {
@@ -89,7 +89,7 @@ public class ThreadService {
         Thread thread = threadRepository.findById(threadId)
                 .orElseThrow(() -> new IllegalArgumentException("Invalid thread id"));
 
-        TokenUtils.validateToken(tokenRepository, tokenString);
+        AuthUtils.validateToken(tokenRepository, tokenString);
         Optional<Token> token = tokenRepository.findById(tokenString);
 
         UUID userId = token.get().getUserId();
@@ -112,7 +112,7 @@ public class ThreadService {
         Thread thread = threadRepository.findById(threadId)
                 .orElseThrow(() -> new IllegalArgumentException("Invalid thread id"));
 
-        TokenUtils.validateToken(tokenRepository, tokenString);
+        AuthUtils.validateToken(tokenRepository, tokenString);
         Optional<Token> token = tokenRepository.findById(tokenString);
 
         UUID userId = token.get().getUserId();

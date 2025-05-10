@@ -64,7 +64,7 @@ public class ThreadController {
             return ResponseEntity.status(HttpStatus.FORBIDDEN).body(new ResponseDto(e.getMessage(), null));
         }
     }
-
+ 
     @PostMapping("/dislike")
     public ResponseEntity<ResponseDto> dislikeThread(@RequestBody ThreadVoteDto data,
             @RequestHeader("Authorization") String token) {

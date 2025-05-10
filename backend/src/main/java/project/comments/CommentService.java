@@ -20,7 +20,8 @@ import project.threads.Thread;
 import project.users.TokenRepository;
 import project.users.User;
 import project.users.UserRepository;
-import project.utils.TokenUtils;
+import project.utils.AuthUtils;
+import project.utils.ThreadUtils;
 
 @Service
 public class CommentService {
@@ -42,19 +43,16 @@ public class CommentService {
         UUID parentCommentId = dto.getParentComment();
         String text = dto.getText();
 
-        TokenUtils.validateToken(tokenRepository, tokenString);
-        Optional<Token> token = tokenRepository.findByToken(tokenString);
-        UUID userId = token.get().getUserId();
+        Thread thread = ThreadUtils.loadThread(threadRepository, threadId);
+        User user = AuthUtils.authenticate(tokenRepository, userRepository, tokenString);
 
-        Thread thread = threadRepository.findById(threadId)
-                .orElseThrow(() -> new IllegalArgumentException("Invalid thread id"));
-        User user = userRepository.findById(userId).orElseThrow(() -> new IllegalArgumentException("Invalid user id"));
+        Comment parentComment = findParentComment(thread, parentCommentId);
 
-        Comment parentComment = thread.getComments().stream().filter(c -> c.getId().equals(parentCommentId))
-                .findFirst().orElse(null);
-        if (parentCommentId != null && parentComment == null) {
-            throw new IllegalArgumentException("Invalid parent comment id");
-        }
+        // thread.getComments().stream().filter(c -> c.getId().equals(parentCommentId))
+        // .findFirst().orElse(null);
+        // if (parentCommentId != null && parentComment == null) {
+        // throw new IllegalArgumentException("Invalid parent comment id");
+        // }
 
         Comment comment = new Comment(thread, user, text, parentComment);
         if (parentComment != null) {
@@ -71,8 +69,8 @@ public class CommentService {
     public ResponseDto getComments(CommentGetDto dto) {
         UUID threadID = dto.getThreadId();
 
-        Thread thread = threadRepository.findById(threadID)
-                .orElseThrow(() -> new IllegalArgumentException("Invalid thread id"));
+        Thread thread = ThreadUtils.loadThread(threadRepository, threadID);
+
         List<Comment> comments = thread.getComments();
         List<CommentGetReturnDto> res = new ArrayList<>();
         comments.forEach(c -> res.add(new CommentGetReturnDto(c.getId(), c.getThreadId(), c.getCreatorId(), c.getText(),
@@ -88,11 +86,7 @@ public class CommentService {
         Comment comment = commentRepository.findById(commentId)
                 .orElseThrow(() -> new IllegalArgumentException("Invalid comment id"));
 
-        TokenUtils.validateToken(tokenRepository, tokenString);
-        Optional<Token> token = tokenRepository.findById(tokenString);
-
-        UUID userId = token.get().getUserId();
-        User user = userRepository.findById(userId).orElseThrow(() -> new IllegalArgumentException("Invalid user id"));
+        User user = AuthUtils.authenticate(tokenRepository, userRepository, tokenString);
         if (comment.likedBy(user)) {
             comment.unlike(user);
         } else {
@@ -112,11 +106,7 @@ public class CommentService {
         Comment comment = commentRepository.findById(commentId)
                 .orElseThrow(() -> new IllegalArgumentException("Invalid comment id"));
 
-        TokenUtils.validateToken(tokenRepository, tokenString);
-        Optional<Token> token = tokenRepository.findById(tokenString);
-
-        UUID userId = token.get().getUserId();
-        User user = userRepository.findById(userId).orElseThrow(() -> new IllegalArgumentException("Invalid user id"));
+        User user = AuthUtils.authenticate(tokenRepository, userRepository, tokenString);
         if (comment.dislikedBy(user)) {
             comment.undislike(user);
         } else {
@@ -128,5 +118,14 @@ public class CommentService {
         commentRepository.save(comment);
 
         return new ResponseDto("Thread updated successfully", null);
+    }
+
+    private Comment findParentComment(Thread thread, UUID parentId) {
+        if (parentId == null)
+            return null;
+        return thread.getComments().stream()
+                .filter(c -> c.getId().equals(parentId))
+                .findFirst()
+                .orElseThrow(() -> new IllegalArgumentException("Invalid parent comment id"));
     }
 }
