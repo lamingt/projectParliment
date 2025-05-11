@@ -15,7 +15,7 @@ import project.dto.ThreadListDto;
 import project.dto.ThreadVoteDto;
 import project.dto.returns.ThreadInfoReturnDto;
 import project.dto.returns.ThreadListInfoReturnDto;
-import project.dto.returns.ThreadListPaginationDto;
+import project.dto.returns.PaginationDto;
 import project.dto.returns.ThreadListReturnDto;
 import project.users.Token;
 import project.users.TokenRepository;
@@ -28,7 +28,7 @@ public class ThreadService {
     private ThreadRepository threadRepository;
     private TokenRepository tokenRepository;
     private UserRepository userRepository;
-    private static final int threadsPerPage = 10;
+    private static final int THREADS_PER_PAGE = 10;
 
     public ThreadService(ThreadRepository threadRepository, TokenRepository tokenRepository,
             UserRepository userRepository) {
@@ -40,10 +40,10 @@ public class ThreadService {
     public ResponseDto getThreads(ThreadListDto dto) {
         Integer pageNum = dto.getPageNum();
 
-        PageRequest pageRequest = PageRequest.of(pageNum - 1, 10);
+        PageRequest pageRequest = PageRequest.of(pageNum - 1, THREADS_PER_PAGE);
         List<Thread> threads = threadRepository.getThreadsByDate(pageRequest);
         long numThreads = threadRepository.count();
-        if ((pageNum - 1) * threadsPerPage >= numThreads) {
+        if ((pageNum - 1) * THREADS_PER_PAGE >= numThreads) {
             throw new IllegalArgumentException("No threads exist on this page");
         }
 
@@ -55,8 +55,8 @@ public class ThreadService {
                     thread.getComments().size(), thread.getLikedBy().size()));
         }
 
-        ThreadListPaginationDto pagination = new ThreadListPaginationDto(
-                Integer.valueOf((int) Math.ceil((double) numThreads / 10)),
+        PaginationDto pagination = new PaginationDto(
+                Integer.valueOf((int) Math.ceil((double) numThreads / THREADS_PER_PAGE)),
                 pageNum,
                 numThreads);
 

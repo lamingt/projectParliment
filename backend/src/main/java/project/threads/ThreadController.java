@@ -29,7 +29,7 @@ public class ThreadController {
 
     // Gets a list of all threads ordered by date on page num
     @GetMapping("/list")
-    public ResponseEntity<ResponseDto> getThreads(@RequestParam Integer pageNum) {
+    public ResponseEntity<ResponseDto> getThreads(@RequestParam("pageNum") Integer pageNum) {
         ThreadListDto dto = new ThreadListDto(pageNum);
         try {
             return new ResponseEntity<ResponseDto>(threadService.getThreads(dto), HttpStatus.OK);
@@ -41,7 +41,7 @@ public class ThreadController {
     }
 
     @GetMapping("/thread")
-    public ResponseEntity<ResponseDto> getThreadInfo(@RequestParam UUID threadId) {
+    public ResponseEntity<ResponseDto> getThreadInfo(@RequestParam("threadId") UUID threadId) {
         ThreadInfoDto dto = new ThreadInfoDto(threadId);
         try {
             return new ResponseEntity<ResponseDto>(threadService.getThreadInfo(dto), HttpStatus.OK);
@@ -64,7 +64,7 @@ public class ThreadController {
             return ResponseEntity.status(HttpStatus.FORBIDDEN).body(new ResponseDto(e.getMessage(), null));
         }
     }
- 
+
     @PostMapping("/dislike")
     public ResponseEntity<ResponseDto> dislikeThread(@RequestBody ThreadVoteDto data,
             @RequestHeader("Authorization") String token) {

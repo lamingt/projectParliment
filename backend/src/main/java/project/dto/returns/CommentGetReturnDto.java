@@ -3,6 +3,8 @@ package project.dto.returns;
 import java.util.List;
 import java.util.UUID;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class CommentGetReturnDto {
     private UUID id;
     private UUID threadId;
@@ -12,8 +14,10 @@ public class CommentGetReturnDto {
     private List<UUID> likedBy;
     private List<UUID> dislikedBy;
 
-    public CommentGetReturnDto(UUID id, UUID threadId, UUID creatorId, String text, UUID parentCommentId,
-            List<UUID> likedBy, List<UUID> dislikedBy) {
+    public CommentGetReturnDto(@JsonProperty("id") UUID id, @JsonProperty("threadId") UUID threadId,
+            @JsonProperty("creatorId") UUID creatorId, @JsonProperty("text") String text,
+            @JsonProperty("parentCommentId") UUID parentCommentId,
+            @JsonProperty("likedBy") List<UUID> likedBy, @JsonProperty("dislikedBy") List<UUID> dislikedBy) {
         this.id = id;
         this.threadId = threadId;
         this.creatorId = creatorId;

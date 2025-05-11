@@ -2,10 +2,12 @@ package project.dto;
 
 import java.util.UUID;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class CommentVoteDto {
     private UUID commentId;
 
-    public CommentVoteDto(UUID commentId, UUID userId) {
+    public CommentVoteDto(@JsonProperty("commentId") UUID commentId, @JsonProperty("userId") UUID userId) {
         this.commentId = commentId;
     }
 

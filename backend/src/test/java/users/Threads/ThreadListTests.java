@@ -47,9 +47,9 @@ public class ThreadListTests {
         obj.put("username", "lamington");
         assertDoesNotThrow(() -> {
             mockMvc
-                .perform(post("/api/v1/user/register").contentType("application/json").content(obj.toJSONString()))
-                .andExpect(status().isOk()).andReturn();
-    });
+                    .perform(post("/api/v1/user/register").contentType("application/json").content(obj.toJSONString()))
+                    .andExpect(status().isOk()).andReturn();
+        });
 
         threadRepository.save(new Thread("Parliament Bill", LocalDate.now(), "Senate", "Before Senate",
                 "This is a parliament bill.", true));
@@ -62,8 +62,8 @@ public class ThreadListTests {
             mockMvc.perform(get("/api/v1/threads/list?pageNum=1"))
                     .andExpect(status().isOk())
                     .andExpect(jsonPath("$.data.pageInfo[0].title").value("Parliament Bill"))
-                    .andExpect(jsonPath("$.data.pagination.totalThreads").value(1))
-                    .andExpect(jsonPath("$.data.pagination.totalPages").value(1));
+                    .andExpect(jsonPath("$.data.pagination.numItems").value(1))
+                    .andExpect(jsonPath("$.data.pagination.numPages").value(1));
         });
     }
 

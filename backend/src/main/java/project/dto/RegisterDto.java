@@ -1,11 +1,18 @@
 package project.dto;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class RegisterDto {
     private final String username;
     private final String password;
     private final String email;
 
-    public RegisterDto(String email, String username, String password) {
+    @JsonCreator
+    public RegisterDto(
+            @JsonProperty("email") String email,
+            @JsonProperty("username") String username,
+            @JsonProperty("password") String password) {
         this.username = username;
         this.password = password;
         this.email = email;

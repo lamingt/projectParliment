@@ -4,9 +4,9 @@ import java.util.List;
 
 public class ThreadListReturnDto {
     private List<ThreadListInfoReturnDto> pageInfo;
-    private ThreadListPaginationDto pagination;
+    private PaginationDto pagination;
 
-    public ThreadListReturnDto(List<ThreadListInfoReturnDto> pageInfo, ThreadListPaginationDto pagination) {
+    public ThreadListReturnDto(List<ThreadListInfoReturnDto> pageInfo, PaginationDto pagination) {
         this.pageInfo = pageInfo;
         this.pagination = pagination;
     }
@@ -15,7 +15,7 @@ public class ThreadListReturnDto {
         return pageInfo;
     }
 
-    public ThreadListPaginationDto getPagination() {
+    public PaginationDto getPagination() {
         return pagination;
     }
 

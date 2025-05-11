@@ -9,6 +9,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
+import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -43,9 +44,12 @@ public class CommentGetTest {
     private MockMvc mockMvc;
     private MvcResult res;
     private Thread thread;
-    private UUID userId;
+    private String userId;
     private User user;
-    private Token token;
+    private String token;
+    private Comment comment1;
+    private Comment comment2;
+    private Comment comment3;
     @Autowired
     private ThreadRepository threadRepository;
     @Autowired
@@ -65,26 +69,80 @@ public class CommentGetTest {
                     .andExpect(status().isOk()).andReturn();
             token = JsonPath.read(res.getResponse().getContentAsString(), "$.data.token");
             userId = JsonPath.read(res.getResponse().getContentAsString(), "$.data.userId");
-            user = userRepository.findById(userId).get();
+            user = userRepository.findById(UUID.fromString(userId)).get();
+
+            thread = new Thread("Parliament Bill", LocalDate.now(), "Senate", "Before Senate",
+                    "This is a parliament bill.", true);
+            threadRepository.save(thread);
+            comment1 = new Comment(thread, user, "This is the first comment.", null);
+            commentRepository.save(comment1);
+            java.lang.Thread.sleep(500);
+            comment2 = new Comment(thread, user, "This is the second comment.", null);
+            commentRepository.save(comment2);
+            java.lang.Thread.sleep(500);
+            comment3 = new Comment(thread, user, "This is the third comment.", null);
+            commentRepository.save(comment3);
+            commentRepository.save(new Comment(thread, user, "This is a reply.", comment3));
         });
-        thread = new Thread("Parliament Bill", LocalDate.now(), "Senate", "Before Senate",
-                "This is a parliament bill.", true);
-        threadRepository.save(thread);
-        commentRepository.save(new Comment(thread, user, "This is the first comment.", null));
-        commentRepository.save(new Comment(thread, user, "This is the second comment.", null));
-        Comment comment = new Comment(thread, user, "This is the third comment.", null);
-        commentRepository.save(comment);
-        commentRepository.save(new Comment(thread, user, "This is a reply.", comment));
+
     }
 
     @Test
     @Transactional
-    public void getRootComments() {
+    public void getRootCommentsOrderedByTime() {
         assertDoesNotThrow(() -> {
-            mockMvc.perform(get("/api/v1/comments/root?pageNum=1" + thread.getId().toString()))
-                    .andExpect(status().isOk())
-                    .andExpect(jsonPath("$.data[*].text", Matchers.containsInAnyOrder("This is the first comment.",
-                            "This is the second comment.", "This is the third comment.")));
+            mockMvc.perform(get("/api/v1/comments/root?pageNum=1&sort=recent&threadId=" + thread.getId().toString()))
+                .andDo(MockMvcResultHandlers.print())
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.data.commentInfo[*].text",
+                    Matchers.contains(
+                        "This is the third comment.",
+                        "This is the second comment.",
+                        "This is the first comment."
+                    )));
+
+            mockMvc.perform(get("/api/v1/comments/root?pageNum=1&sort=oldest&threadId=" + thread.getId().toString()))
+                .andDo(MockMvcResultHandlers.print())
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.data.commentInfo[*].text",
+                    Matchers.contains(
+                        "This is the first comment.",
+                        "This is the second comment.",
+                        "This is the third comment."
+                    )));
+        });
+    }
+
+    @Test
+    @Transactional
+    public void getRootCommentsOrderedByLikes() {
+        assertDoesNotThrow(() -> {
+            JSONObject data = new JSONObject();
+            data.put("commentId", comment3.getId().toString());
+
+            mockMvc.perform(post("/api/v1/comments/like").contentType("application/json").header("Authorization", token)
+                .content(data.toJSONString()))
+                .andExpect(status().isOk());
+            
+            data = new JSONObject();
+            data.put("commentId", comment1.getId().toString());
+            mockMvc.perform(
+                        post("/api/v1/comments/dislike")
+                            .contentType("application/json")
+                            .header("Authorization", token)
+                            .content(data.toJSONString())
+                    )
+                    .andExpect(status().isOk());
+
+            mockMvc.perform(get("/api/v1/comments/root?pageNum=1&sort=likes&threadId=" + thread.getId().toString()))
+                .andDo(MockMvcResultHandlers.print())
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.data.commentInfo[*].text",
+                    Matchers.contains(
+                        "This is the third comment.",
+                        "This is the second comment.",
+                        "This is the first comment."
+                    )));
         });
     }
 }

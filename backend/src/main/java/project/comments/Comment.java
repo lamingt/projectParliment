@@ -1,7 +1,10 @@
 package project.comments;
 
+import java.time.Instant;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
@@ -11,6 +14,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Index;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
@@ -20,7 +24,12 @@ import project.users.User;
 import project.threads.Thread;
 
 @Entity
-@Table(name = "comments")
+@Table(name = "comments", indexes = {
+    @Index(name = "idx_comments_thread", columnList = "thread"),
+    @Index(name = "idx_comments_parent", columnList = "parent"),
+    @Index(name = "idx_comments_created", columnList = "thread, createdAt"),
+    @Index(name = "idx_comments_likes", columnList = "thread, netLikeCount")
+})
 public class Comment {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -47,7 +56,9 @@ public class Comment {
     @ManyToMany
     private List<User> dislikedBy;
 
-    private LocalDate createdAt;
+    private Date createdAt;
+
+    private Integer netLikeCount;
 
     // cascade all seems like questionable behaviour but implementing fully correct
     // behaviour seems too annoying right now
@@ -65,9 +76,10 @@ public class Comment {
         this.text = text;
         this.parentComment = parentComment;
         this.replies = new ArrayList<>();
-        this.createdAt = LocalDate.now();
+        this.createdAt = Date.from(Instant.now());
         this.likedBy = new ArrayList<>();
         this.dislikedBy = new ArrayList<>();
+        this.netLikeCount = 0;
     }
 
     public UUID getId() {
@@ -118,20 +130,23 @@ public class Comment {
         return dislikedBy;
     }
 
-    public LocalDate getCreatedAt() {
+    public Date getCreatedAt() {
         return createdAt;
     }
 
     public void addLike(User user) {
         likedBy.add(user);
+        netLikeCount += 1;
     }
 
     public void addDislike(User user) {
         dislikedBy.add(user);
+        netLikeCount -= 1;
     }
 
     public void unlike(User user) {
         likedBy.remove(user);
+        netLikeCount -= 1;
     }
 
     public boolean likedBy(User user) {
@@ -144,6 +159,10 @@ public class Comment {
 
     public void undislike(User user) {
         dislikedBy.remove(user);
+        netLikeCount += 1;
     }
 
+    public Integer getNetLikeCount() {
+        return netLikeCount;
+    }
 }

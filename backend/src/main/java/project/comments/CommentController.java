@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import project.dto.CommentCreateDto;
 import project.dto.CommentGetDto;
+import project.dto.CommentRootDto;
 import project.dto.CommentVoteDto;
 import project.dto.ResponseDto;
 
@@ -40,7 +41,7 @@ public class CommentController {
     }
 
     @GetMapping("")
-    public ResponseEntity<ResponseDto> getComments(@RequestParam UUID threadId) {
+    public ResponseEntity<ResponseDto> getComments(@RequestParam("threadId") UUID threadId) {
         CommentGetDto dto = new CommentGetDto(threadId);
         try {
             return new ResponseEntity<ResponseDto>(commentService.getComments(dto), HttpStatus.OK);
@@ -52,10 +53,12 @@ public class CommentController {
     }
 
     @GetMapping("/root")
-    public ResponseEntity<ResponseDto> getRootComments(@RequestParam UUID threadId) {
-        CommentGetDto dto = new CommentGetDto(threadId);
+    public ResponseEntity<ResponseDto> getRootComments(@RequestParam("threadId") UUID threadId,
+            @RequestParam(name = "pageNum", defaultValue = "1") Integer pageNum,
+            @RequestParam(name = "sort", defaultValue = "recent") String sort) {
+        CommentRootDto dto = new CommentRootDto(threadId, pageNum, sort);
         try {
-            return new ResponseEntity<ResponseDto>(commentService.getComments(dto), HttpStatus.OK);
+            return new ResponseEntity<ResponseDto>(commentService.getRootComments(dto), HttpStatus.OK);
         } catch (IllegalArgumentException e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ResponseDto(e.getMessage(), null));
         } catch (IllegalAccessError e) {

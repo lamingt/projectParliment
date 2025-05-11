@@ -6,14 +6,23 @@ import java.util.Optional;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import project.dto.CommentCreateDto;
 import project.dto.CommentGetDto;
+import project.dto.CommentRootDto;
 import project.dto.CommentVoteDto;
 import project.dto.ResponseDto;
 import project.dto.returns.CommentCreateReturnDto;
 import project.dto.returns.CommentGetReturnDto;
+import project.dto.returns.CommentInfoDto;
+import project.dto.returns.CommentRootReturnDto;
+import project.dto.returns.PaginationDto;
+import project.dto.returns.ThreadListInfoReturnDto;
 import project.threads.ThreadRepository;
 import project.users.Token;
 import project.threads.Thread;
@@ -29,6 +38,7 @@ public class CommentService {
     private CommentRepository commentRepository;
     private TokenRepository tokenRepository;
     private UserRepository userRepository;
+    private static final int COMMENTS_PER_PAGE = 20;
 
     public CommentService(CommentRepository commentRepository, TokenRepository tokenRepository,
             ThreadRepository threadRepository, UserRepository userRepository) {
@@ -47,13 +57,6 @@ public class CommentService {
         User user = AuthUtils.authenticate(tokenRepository, userRepository, tokenString);
 
         Comment parentComment = findParentComment(thread, parentCommentId);
-
-        // thread.getComments().stream().filter(c -> c.getId().equals(parentCommentId))
-        // .findFirst().orElse(null);
-        // if (parentCommentId != null && parentComment == null) {
-        // throw new IllegalArgumentException("Invalid parent comment id");
-        // }
-
         Comment comment = new Comment(thread, user, text, parentComment);
         if (parentComment != null) {
             parentComment.addReply(comment);
@@ -64,6 +67,49 @@ public class CommentService {
         threadRepository.save(thread);
 
         return new ResponseDto("Comment created successfully", new CommentCreateReturnDto(comment.getId()));
+    }
+
+    public ResponseDto getRootComments(CommentRootDto dto) {
+        UUID threadId = dto.getThreadId();
+        Integer pageNum = dto.getPageNum();
+        String sort = dto.getSort();
+        Thread thread = ThreadUtils.loadThread(threadRepository, threadId);
+
+        Sort sorting = Sort.by("createdAt").descending();
+        switch (sort.toLowerCase()) {
+            case "likes":
+                sorting = Sort.by("netLikeCount").descending();
+                break;
+            case "recent":
+                sorting = Sort.by("createdAt").descending();
+                break;
+            case "oldest":
+                sorting = Sort.by("createdAt").ascending();
+                break;
+            default:
+                break;
+        }
+
+        Pageable pageable = PageRequest.of(pageNum - 1, COMMENTS_PER_PAGE, sorting);
+        Page<Comment> page = commentRepository.findByThreadAndParentCommentIsNull(thread, pageable);
+        long numComments = page.getTotalElements();
+        int numPages = page.getTotalPages();
+        List<Comment> rootComments = page.getContent();
+
+        PaginationDto paginationInfo = new PaginationDto(
+                numPages,
+                pageNum,
+                numComments);
+
+        List<CommentInfoDto> pageInfo = new ArrayList<>();
+        for (Comment comment : rootComments) {
+            pageInfo.add(new CommentInfoDto(comment.getId(), threadId, comment.getCreatorId(), comment.getText(),
+                    comment.getParentCommentId(), comment.getNetLikeCount(), comment.getCreatedAt()));
+        }
+
+        CommentRootReturnDto response = new CommentRootReturnDto(paginationInfo, pageInfo);
+
+        return new ResponseDto("Comments retrieved successfully", response);
     }
 
     public ResponseDto getComments(CommentGetDto dto) {
