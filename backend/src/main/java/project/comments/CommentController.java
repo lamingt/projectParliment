@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import project.dto.CommentCreateDto;
 import project.dto.CommentGetDto;
+import project.dto.CommentRepliesDto;
 import project.dto.CommentRootDto;
 import project.dto.CommentVoteDto;
 import project.dto.ResponseDto;
@@ -29,8 +30,10 @@ public class CommentController {
     }
 
     @PostMapping("")
-    public ResponseEntity<ResponseDto> createComment(@RequestBody CommentCreateDto dto,
-            @RequestHeader("Authorization") String token) {
+    public ResponseEntity<ResponseDto> createComment(
+            @RequestBody CommentCreateDto dto,
+            @RequestHeader("Authorization") String token
+        ) {
         try {
             return new ResponseEntity<ResponseDto>(commentService.createComment(dto, token), HttpStatus.OK);
         } catch (IllegalArgumentException e) {
@@ -53,9 +56,11 @@ public class CommentController {
     }
 
     @GetMapping("/root")
-    public ResponseEntity<ResponseDto> getRootComments(@RequestParam("threadId") UUID threadId,
-            @RequestParam(name = "pageNum", defaultValue = "1") Integer pageNum,
-            @RequestParam(name = "sort", defaultValue = "recent") String sort) {
+    public ResponseEntity<ResponseDto> getRootComments(
+        @RequestParam("threadId") UUID threadId,
+        @RequestParam(name = "pageNum", defaultValue = "1") Integer pageNum,
+        @RequestParam(name = "sort", defaultValue = "recent") String sort
+    ) {
         CommentRootDto dto = new CommentRootDto(threadId, pageNum, sort);
         try {
             return new ResponseEntity<ResponseDto>(commentService.getRootComments(dto), HttpStatus.OK);
@@ -66,9 +71,28 @@ public class CommentController {
         }
     }
 
+    @GetMapping("/replies")
+    public ResponseEntity<ResponseDto> getReplies(
+            @RequestParam("commentId") UUID commentId,
+            @RequestParam(name = "pageNum", defaultValue = "1") Integer pageNum
+        ) {
+        CommentRepliesDto dto = new CommentRepliesDto(commentId, pageNum);
+        try {
+            return new ResponseEntity<ResponseDto>(commentService.getReplies(dto), HttpStatus.OK);
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ResponseDto(e.getMessage(), null));
+        } catch (IllegalAccessError e) {
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).body(new ResponseDto(e.getMessage(), null));
+        }
+    }
+
+    
+
     @PostMapping("/like")
-    public ResponseEntity<ResponseDto> likeComment(@RequestBody CommentVoteDto data,
-            @RequestHeader("Authorization") String token) {
+    public ResponseEntity<ResponseDto> likeComment(
+            @RequestBody CommentVoteDto data,
+            @RequestHeader("Authorization") String token
+        ) {
         try {
             return new ResponseEntity<ResponseDto>(commentService.likeComment(data, token), HttpStatus.OK);
         } catch (IllegalArgumentException e) {
@@ -79,8 +103,10 @@ public class CommentController {
     }
 
     @PostMapping("/dislike")
-    public ResponseEntity<ResponseDto> dislikeComment(@RequestBody CommentVoteDto data,
-            @RequestHeader("Authorization") String token) {
+    public ResponseEntity<ResponseDto> dislikeComment(
+            @RequestBody CommentVoteDto data,
+            @RequestHeader("Authorization") String token
+        ) {
         try {
             return new ResponseEntity<ResponseDto>(commentService.dislikeComment(data, token), HttpStatus.OK);
         } catch (IllegalArgumentException e) {

@@ -14,12 +14,14 @@ import org.springframework.stereotype.Service;
 
 import project.dto.CommentCreateDto;
 import project.dto.CommentGetDto;
+import project.dto.CommentRepliesDto;
 import project.dto.CommentRootDto;
 import project.dto.CommentVoteDto;
 import project.dto.ResponseDto;
 import project.dto.returns.CommentCreateReturnDto;
 import project.dto.returns.CommentGetReturnDto;
 import project.dto.returns.CommentInfoDto;
+import project.dto.returns.CommentRepliesReturnDto;
 import project.dto.returns.CommentRootReturnDto;
 import project.dto.returns.PaginationDto;
 import project.dto.returns.ThreadListInfoReturnDto;
@@ -39,6 +41,7 @@ public class CommentService {
     private TokenRepository tokenRepository;
     private UserRepository userRepository;
     private static final int COMMENTS_PER_PAGE = 20;
+    private static final int REPLIES_PER_PAGE = 5;
 
     public CommentService(CommentRepository commentRepository, TokenRepository tokenRepository,
             ThreadRepository threadRepository, UserRepository userRepository) {
@@ -96,21 +99,59 @@ public class CommentService {
         int numPages = page.getTotalPages();
         List<Comment> rootComments = page.getContent();
 
-        PaginationDto paginationInfo = new PaginationDto(
-                numPages,
-                pageNum,
-                numComments);
+        PaginationDto paginationInfo = new PaginationDto(numPages, pageNum, numComments);
 
         List<CommentInfoDto> pageInfo = new ArrayList<>();
         for (Comment comment : rootComments) {
-            pageInfo.add(new CommentInfoDto(comment.getId(), threadId, comment.getCreatorId(), comment.getText(),
-                    comment.getParentCommentId(), comment.getNetLikeCount(), comment.getCreatedAt()));
+            pageInfo.add(new CommentInfoDto(
+                comment.getId(), 
+                threadId, 
+                comment.getCreatorId(), 
+                comment.getText(),
+                comment.getParentCommentId(), 
+                comment.getNetLikeCount(), 
+                comment.getCreatedAt()
+            ));
         }
 
         CommentRootReturnDto response = new CommentRootReturnDto(paginationInfo, pageInfo);
 
         return new ResponseDto("Comments retrieved successfully", response);
     }
+
+    public ResponseDto getReplies(CommentRepliesDto dto) {
+        UUID commentId = dto.getCommentId();
+        Integer pageNum = dto.getPageNum();
+        Comment comment = ThreadUtils.loadComment(commentRepository, commentId);
+
+        Sort sorting = Sort.by("netLikeCount").descending();
+        Pageable pageable = PageRequest.of(pageNum - 1, REPLIES_PER_PAGE, sorting);
+        Page<Comment> page = commentRepository.findByParentComment(comment, pageable);
+        long numComments = page.getTotalElements();
+        int numPages = page.getTotalPages();
+        List<Comment> rootComments = page.getContent();
+
+        PaginationDto paginationInfo = new PaginationDto(numPages, pageNum, numComments);
+
+        List<CommentInfoDto> pageInfo = new ArrayList<>();
+        for (Comment c : rootComments) {
+            pageInfo.add(new CommentInfoDto(
+                c.getId(), 
+                c.getThreadId(), 
+                c.getCreatorId(), 
+                c.getText(),
+                c.getParentCommentId(), 
+                c.getNetLikeCount(), 
+                c.getCreatedAt()
+            ));
+        }
+
+        CommentRepliesReturnDto response = new CommentRepliesReturnDto(paginationInfo, pageInfo);
+
+        return new ResponseDto("Replies retrieved successfully", response);
+    }
+
+    
 
     public ResponseDto getComments(CommentGetDto dto) {
         UUID threadID = dto.getThreadId();

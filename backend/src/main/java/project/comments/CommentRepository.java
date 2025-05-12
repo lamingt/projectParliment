@@ -1,6 +1,5 @@
 package project.comments;
 
-import java.util.List;
 import java.util.UUID;
 
 import org.springframework.data.domain.Page;
@@ -16,4 +15,6 @@ public interface CommentRepository extends JpaRepository<Comment, UUID> {
         Thread thread,
         Pageable pageable
     );
+
+    Page<Comment> findByParentComment(Comment comment, Pageable pageable);
 }

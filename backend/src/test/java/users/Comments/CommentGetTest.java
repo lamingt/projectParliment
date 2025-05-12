@@ -11,11 +11,8 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jayway.jsonpath.JsonPath;
 
-import ch.qos.logback.core.subst.Token;
 import jakarta.transaction.Transactional;
 import net.minidev.json.JSONObject;
 
@@ -94,6 +91,9 @@ public class CommentGetTest {
             mockMvc.perform(get("/api/v1/comments/root?pageNum=1&sort=recent&threadId=" + thread.getId().toString()))
                 .andDo(MockMvcResultHandlers.print())
                 .andExpect(status().isOk())
+                .andExpect(jsonPath("$.data.pagination.numItems", Matchers.is(3)))
+                .andExpect(jsonPath("$.data.pagination.numPages", Matchers.is(1)))
+                .andExpect(jsonPath("$.data.pagination.currentPage", Matchers.is(1)))
                 .andExpect(jsonPath("$.data.commentInfo[*].text",
                     Matchers.contains(
                         "This is the third comment.",
@@ -104,6 +104,9 @@ public class CommentGetTest {
             mockMvc.perform(get("/api/v1/comments/root?pageNum=1&sort=oldest&threadId=" + thread.getId().toString()))
                 .andDo(MockMvcResultHandlers.print())
                 .andExpect(status().isOk())
+                .andExpect(jsonPath("$.data.pagination.numItems", Matchers.is(3)))
+                .andExpect(jsonPath("$.data.pagination.numPages", Matchers.is(1)))
+                .andExpect(jsonPath("$.data.pagination.currentPage", Matchers.is(1)))
                 .andExpect(jsonPath("$.data.commentInfo[*].text",
                     Matchers.contains(
                         "This is the first comment.",
@@ -137,12 +140,38 @@ public class CommentGetTest {
             mockMvc.perform(get("/api/v1/comments/root?pageNum=1&sort=likes&threadId=" + thread.getId().toString()))
                 .andDo(MockMvcResultHandlers.print())
                 .andExpect(status().isOk())
+                .andExpect(jsonPath("$.data.pagination.numItems", Matchers.is(3)))
+                .andExpect(jsonPath("$.data.pagination.numPages", Matchers.is(1)))
+                .andExpect(jsonPath("$.data.pagination.currentPage", Matchers.is(1)))
                 .andExpect(jsonPath("$.data.commentInfo[*].text",
                     Matchers.contains(
                         "This is the third comment.",
                         "This is the second comment.",
                         "This is the first comment."
                     )));
+        });
+    }
+
+    @Test
+    @Transactional
+    public void getNoReplies() {
+        assertDoesNotThrow(() -> {
+            mockMvc.perform(get("/api/v1/comments/replies?pageNum=1&commentId=" + comment1.getId().toString()).contentType("application/json"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.data.commentInfo", Matchers.empty()));
+        });
+    }
+
+    @Test
+    @Transactional
+    public void getSingleReply() {
+        assertDoesNotThrow(() -> {
+            mockMvc.perform(get("/api/v1/comments/replies?pageNum=1&commentId=" + comment3.getId().toString()).contentType("application/json"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.data.pagination.numItems", Matchers.is(1)))
+                .andExpect(jsonPath("$.data.pagination.numPages", Matchers.is(1)))
+                .andExpect(jsonPath("$.data.pagination.currentPage", Matchers.is(1)))
+                .andExpect(jsonPath("$.data.commentInfo[*].text", Matchers.contains("This is a reply.")));
         });
     }
 }
