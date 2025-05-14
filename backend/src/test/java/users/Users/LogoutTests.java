@@ -11,6 +11,7 @@ import org.springframework.test.web.servlet.MvcResult;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.jayway.jsonpath.JsonPath;
 
 import jakarta.transaction.Transactional;
 import net.minidev.json.JSONObject;
@@ -32,6 +33,7 @@ public class LogoutTests {
     @Autowired
     private MockMvc mockMvc;
     private MvcResult res;
+    private String token;
 
     @BeforeEach
     public void setup() {
@@ -43,6 +45,7 @@ public class LogoutTests {
             res = mockMvc
                     .perform(post("/api/v1/user/register").contentType("application/json").content(obj.toJSONString()))
                     .andReturn();
+            token = JsonPath.read(res.getResponse().getContentAsString(), "$.data.token");
         });
     }
 
@@ -50,14 +53,12 @@ public class LogoutTests {
     @Test
     public void successfulLogout() {
         assertDoesNotThrow(() -> {
-            ObjectMapper objectMapper = new ObjectMapper();
-            JsonNode obj = objectMapper.readTree(res.getResponse().getContentAsString());
-
-            JSONObject data = new JSONObject();
-            String token = obj.get("data").get("token").asText();
-            data.put("token", token);
-            mockMvc.perform(delete("/api/v1/user/logout").contentType("application/json").content(data.toJSONString()))
-                    .andExpect(status().isOk());
+            mockMvc.perform(
+                    delete("/api/v1/user/logout")
+                        .contentType("application/json")
+                        .header("Authorization", token)
+                )
+                .andExpect(status().isOk());
         });
     }
 
@@ -65,10 +66,12 @@ public class LogoutTests {
     @Test
     public void invalidLogout() {
         assertDoesNotThrow(() -> {
-            JSONObject data = new JSONObject();
-            data.put("token", "4gAjVOL86fRjgBcYPNHOI3-VTfEejw_P");
-            mockMvc.perform(delete("/api/v1/user/logout").contentType("application/json").content(data.toJSONString()))
-                    .andExpect(status().isBadRequest());
+            mockMvc.perform(
+                    delete("/api/v1/user/logout")
+                        .contentType("application/json")
+                        .header("Authorization", "4gAjVOL86fRjgBcYPNHOI3-VTfEejw_P")
+                )
+                .andExpect(status().isBadRequest());
         });
     }
 }

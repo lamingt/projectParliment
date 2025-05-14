@@ -5,11 +5,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import project.dto.AvatarUserDto;
 import project.dto.LoginDto;
-import project.dto.LogoutDto;
 import project.dto.RegisterDto;
 import project.dto.ResponseDto;
 
@@ -40,10 +41,21 @@ public class UserController {
         }
     }
 
+    @PostMapping("/avatar")
+    public ResponseEntity<ResponseDto> upload_avatar(@RequestBody AvatarUserDto avatarDetails, @RequestHeader("Authorization") String token) {
+        // try {
+        //     return new ResponseEntity<ResponseDto>(userService.loginUser(loginDetails), HttpStatus.OK);
+        // } catch (IllegalArgumentException e) {
+        //     return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ResponseDto(e.getMessage(), null));
+        // }
+        return null;
+    }
+    
+
     @DeleteMapping("/logout")
-    public ResponseEntity<ResponseDto> logout(@RequestBody LogoutDto logoutDetails) {
+    public ResponseEntity<ResponseDto> logout(@RequestHeader("Authorization") String token) {
         try {
-            return new ResponseEntity<ResponseDto>(userService.logoutUser(logoutDetails), HttpStatus.OK);
+            return new ResponseEntity<ResponseDto>(userService.logoutUser(token), HttpStatus.OK);
         } catch (IllegalArgumentException e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ResponseDto(e.getMessage(), null));
         }

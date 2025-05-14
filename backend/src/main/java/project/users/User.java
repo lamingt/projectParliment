@@ -20,18 +20,21 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 
-    @Column(unique = true, nullable = false)
+    @Column(unique = true, nullable = false, length = 20)
     private String username;
 
     @Column(nullable = false)
     private String password;
 
-    @Column(unique = true, nullable = false)
+    @Column(unique = true, nullable = false, length = 255)
     private String email;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private UserRoles role;
+
+    @Column(name = "avatar_filename", length = 255)
+    private String avatarFilename;
 
     public User() {
     }
@@ -73,6 +76,10 @@ public class User {
 
     public UserRoles getRole() {
         return role;
+    }
+
+    public String getAvatarFilename() {
+        return avatarFilename;
     }
 
     @Override

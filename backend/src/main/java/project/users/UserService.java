@@ -1,26 +1,33 @@
 package project.users;
 
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.Optional;
 
 import org.springframework.stereotype.Service;
-import jakarta.transaction.Transactional;
+import org.springframework.web.multipart.MultipartFile;
 
+import jakarta.transaction.Transactional;
+import project.utils.AuthUtils;
 import project.utils.PasswordUtils;
+import project.dto.AvatarUserDto;
 import project.dto.LoginDto;
-import project.dto.LogoutDto;
 import project.dto.RegisterDto;
 import project.dto.ResponseDto;
+import project.dto.returns.AvatarUploadReturnDto;
 import project.dto.returns.LoginReturnDto;
+import project.users.storage.StorageService;
 
 @Service
 public class UserService {
     private UserRepository userRepository;
     private TokenRepository tokenRepository;
+    private StorageService storageService;
 
-    public UserService(UserRepository userRepository, TokenRepository tokenRepository) {
+    public UserService(UserRepository userRepository, TokenRepository tokenRepository, StorageService storageService) {
         this.userRepository = userRepository;
         this.tokenRepository = tokenRepository;
+        this.storageService = storageService;
     }
 
     @Transactional
@@ -70,13 +77,25 @@ public class UserService {
     }
 
     @Transactional
-    public ResponseDto logoutUser(LogoutDto logoutDetails) {
-        Optional<Token> token = tokenRepository.findByToken(logoutDetails.getToken());
+    public ResponseDto logoutUser(String tokenString) {
+        Optional<Token> token = tokenRepository.findByToken(tokenString);
         if (!token.isPresent() || token.get().isExpired()) {
             throw new IllegalArgumentException("Token is invalid.");
         }
 
         tokenRepository.delete(token.get());
         return new ResponseDto("User logged out successfully.", null);
+    }
+
+    @Transactional
+    public ResponseDto uploadAvatar(AvatarUserDto avatarDetails, String tokenString) throws IOException {
+        MultipartFile file = avatarDetails.getFile();
+        User user = AuthUtils.authenticate(tokenRepository, userRepository, tokenString);
+
+        String filename = storageService.store(file, user.getId());
+
+        AvatarUploadReturnDto res = new AvatarUploadReturnDto(filename);
+
+        return new ResponseDto("File uploaded successfully", res);
     }
 }
