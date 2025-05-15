@@ -25,6 +25,7 @@ import project.dto.returns.CommentRepliesReturnDto;
 import project.dto.returns.CommentRootReturnDto;
 import project.dto.returns.PaginationDto;
 import project.dto.returns.ThreadListInfoReturnDto;
+import project.dto.returns.UserPublicDto;
 import project.threads.ThreadRepository;
 import project.users.Token;
 import project.threads.Thread;
@@ -103,10 +104,11 @@ public class CommentService {
 
         List<CommentInfoDto> pageInfo = new ArrayList<>();
         for (Comment comment : rootComments) {
+            User creator = userRepository.findById(comment.getCreatorId()).get();
             pageInfo.add(new CommentInfoDto(
                 comment.getId(), 
                 threadId, 
-                comment.getCreatorId(), 
+                new UserPublicDto(creator.getId(), creator.getUsername()), 
                 comment.getText(),
                 comment.getParentCommentId(), 
                 comment.getNetLikeCount(), 
@@ -135,10 +137,11 @@ public class CommentService {
 
         List<CommentInfoDto> pageInfo = new ArrayList<>();
         for (Comment c : rootComments) {
+            User creator = userRepository.findById(c.getCreatorId()).get();
             pageInfo.add(new CommentInfoDto(
                 c.getId(), 
                 c.getThreadId(), 
-                c.getCreatorId(), 
+                new UserPublicDto(creator.getId(), creator.getUsername()), 
                 c.getText(),
                 c.getParentCommentId(), 
                 c.getNetLikeCount(), 

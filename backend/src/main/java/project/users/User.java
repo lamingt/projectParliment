@@ -78,6 +78,10 @@ public class User {
         return role;
     }
 
+    public void setAvatarFilename(String avatarFilename) {
+        this.avatarFilename = avatarFilename;
+    }
+
     public String getAvatarFilename() {
         return avatarFilename;
     }

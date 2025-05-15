@@ -6,17 +6,17 @@ import java.util.UUID;
 public class CommentInfoDto {
     private UUID id;
     private UUID threadId;
-    private UUID creatorId;
+    private UserPublicDto creatorInfo;
     private String text;
     private UUID parentCommentId;
     private Integer netLikes;
     private Date createdAt;
 
-    public CommentInfoDto(UUID id, UUID threadId, UUID creatorId, String text, UUID parentCommentId,
+    public CommentInfoDto(UUID id, UUID threadId, UserPublicDto creatorInfo, String text, UUID parentCommentId,
             Integer netLikes, Date createdAt) {
         this.id = id;
         this.threadId = threadId;
-        this.creatorId = creatorId;
+        this.creatorInfo = creatorInfo;
         this.text = text;
         this.parentCommentId = parentCommentId;
         this.netLikes = netLikes;
@@ -31,8 +31,8 @@ public class CommentInfoDto {
         return threadId;
     }
 
-    public UUID getCreatorId() {
-        return creatorId;
+    public UserPublicDto getCreatorInfo() {
+        return creatorInfo;
     }
 
     public String getText() {

@@ -1,12 +1,15 @@
 package project.users;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.Optional;
+import java.util.UUID;
 
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import org.springframework.core.io.Resource;
 import jakarta.transaction.Transactional;
 import project.utils.AuthUtils;
 import project.utils.PasswordUtils;
@@ -14,7 +17,7 @@ import project.dto.AvatarUserDto;
 import project.dto.LoginDto;
 import project.dto.RegisterDto;
 import project.dto.ResponseDto;
-import project.dto.returns.AvatarUploadReturnDto;
+import project.dto.returns.AvatarGetReturnDto;
 import project.dto.returns.LoginReturnDto;
 import project.users.storage.StorageService;
 
@@ -93,9 +96,23 @@ public class UserService {
         User user = AuthUtils.authenticate(tokenRepository, userRepository, tokenString);
 
         String filename = storageService.store(file, user.getId());
+        user.setAvatarFilename(filename);
+        userRepository.save(user);
 
-        AvatarUploadReturnDto res = new AvatarUploadReturnDto(filename);
+        return new ResponseDto("File uploaded successfully", null);
+    }
 
-        return new ResponseDto("File uploaded successfully", res);
+    @Transactional
+    public Resource getAvatar(UUID userId) throws IOException {
+        User user = userRepository.findById(userId).orElseThrow(() -> new IllegalArgumentException());
+        Resource avatar = storageService.load(user.getAvatarFilename());
+
+        if (!avatar.exists() || !avatar.isReadable()) {
+            throw new FileNotFoundException("Could not read file " + user.getAvatarFilename());
+        }
+
+        AvatarGetReturnDto res = new AvatarGetReturnDto(avatar);
+        
+        return avatar;
     }
 }

@@ -99,6 +99,18 @@ public class CommentGetTest {
                         "This is the third comment.",
                         "This is the second comment.",
                         "This is the first comment."
+                    )))
+                .andExpect(jsonPath("$.data.commentInfo[*].creatorInfo.userId",
+                    Matchers.contains(
+                        userId.toString(),
+                        userId.toString(),
+                        userId.toString()
+                    )))
+                .andExpect(jsonPath("$.data.commentInfo[*].creatorInfo.username",
+                    Matchers.contains(
+                        "lamington",
+                        "lamington",
+                        "lamington"
                     )));
 
             mockMvc.perform(get("/api/v1/comments/root?pageNum=1&sort=oldest&threadId=" + thread.getId().toString()))
