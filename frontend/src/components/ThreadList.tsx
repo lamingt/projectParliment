@@ -44,7 +44,7 @@ function ThreadList() {
       </div>
       <div>
         {parseInt(pageNum) > 1 && <div onClick={handlePrevClick}>Back</div>}
-        {data.data.pagination.currentPage < data.data.pagination.totalPages && (
+        {data.data.pagination.currentPage < data.data.pagination.numPages && (
           <div onClick={handleNextClick}>Next</div>
         )}
       </div>

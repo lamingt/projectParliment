@@ -43,6 +43,7 @@ public class CommentController {
         }
     }
 
+    @Deprecated
     @GetMapping("")
     public ResponseEntity<ResponseDto> getComments(@RequestParam("threadId") UUID threadId) {
         CommentGetDto dto = new CommentGetDto(threadId);
