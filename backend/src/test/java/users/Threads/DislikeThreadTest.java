@@ -1,6 +1,7 @@
 package users.Threads;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+import static org.mockito.Answers.valueOf;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
@@ -74,7 +75,6 @@ public class DislikeThreadTest {
             ObjectMapper objectMapper = new ObjectMapper();
             JsonNode obj = objectMapper.readTree(res.getResponse().getContentAsString());
             String token = obj.get("data").get("token").asText();
-            String userId = obj.get("data").get("userId").asText();
             JSONObject data = new JSONObject();
             data.put("threadId", thread.getId().toString());
 
@@ -85,13 +85,18 @@ public class DislikeThreadTest {
             mockMvc.perform(
                     get("/api/v1/threads/thread?threadId=" + thread.getId().toString()))
                     .andExpect(status().isOk())
-                    .andExpect(jsonPath("$.data.dislikedBy[0]").value(userId));
+                    .andExpect(jsonPath("$.data.numDislikes").value(1));
+            mockMvc.perform(
+                    get("/api/v1/threads/thread?threadId=" + thread.getId().toString()).header("Authorization", token))
+                    .andExpect(status().isOk())
+                    .andExpect(jsonPath("$.data.numDislikes").value(1))
+                    .andExpect(jsonPath("$.data.likeStatus").value("disliked"));
         });
     }
 
     @Transactional
     @Test
-    public void successfulUnLike() {
+    public void successfulUnDislike() {
         assertDoesNotThrow(() -> {
             ObjectMapper objectMapper = new ObjectMapper();
             JsonNode obj = objectMapper.readTree(res.getResponse().getContentAsString());
@@ -111,7 +116,12 @@ public class DislikeThreadTest {
             mockMvc.perform(
                     get("/api/v1/threads/thread?threadId=" + thread.getId().toString()))
                     .andExpect(status().isOk())
-                    .andExpect(jsonPath("$.data.dislikedBy", Matchers.empty()));
+                    .andExpect(jsonPath("$.data.numDislikes").value(0));
+            mockMvc.perform(
+                    get("/api/v1/threads/thread?threadId=" + thread.getId().toString()).header("Authorization", token))
+                    .andExpect(status().isOk())
+                    .andExpect(jsonPath("$.data.numDislikes").value(0))
+                    .andExpect(jsonPath("$.data.likeStatus").value(""));
         });
     }
 
@@ -123,7 +133,6 @@ public class DislikeThreadTest {
             JsonNode obj = objectMapper.readTree(res.getResponse().getContentAsString());
 
             String token = obj.get("data").get("token").asText();
-            String userId = obj.get("data").get("userId").asText();
             JSONObject data = new JSONObject();
             data.put("threadId", thread.getId().toString());
 
@@ -138,11 +147,11 @@ public class DislikeThreadTest {
             mockMvc.perform(
                     get("/api/v1/threads/thread?threadId=" + thread.getId().toString()))
                     .andExpect(status().isOk())
-                    .andExpect(jsonPath("$.data.dislikedBy[0]").value(userId));
+                    .andExpect(jsonPath("$.data.numDislikes").value(1));
             mockMvc.perform(
                     get("/api/v1/threads/thread?threadId=" + thread.getId().toString()))
                     .andExpect(status().isOk())
-                    .andExpect(jsonPath("$.data.likedBy", Matchers.empty()));
+                    .andExpect(jsonPath("$.data.numLikes").value(0));
         });
     }
 }

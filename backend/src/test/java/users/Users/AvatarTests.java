@@ -72,4 +72,13 @@ public class AvatarTests {
                 .andExpect(content().bytes(expected));
         });
     }
+
+    @Test
+    @Transactional
+    public void getDefaultAvatar() {
+        assertDoesNotThrow(() -> {
+            mockMvc.perform(get("/api/v1/user/avatar/" + userId.toString()))
+                .andExpect(status().isOk());
+        });
+    }
 }

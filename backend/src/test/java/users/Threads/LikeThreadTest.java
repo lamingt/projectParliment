@@ -79,7 +79,6 @@ public class LikeThreadTest {
             JsonNode obj = objectMapper.readTree(res.getResponse().getContentAsString());
 
             String token = obj.get("data").get("token").asText();
-            String userId = obj.get("data").get("userId").asText();
             JSONObject data = new JSONObject();
             data.put("threadId", thread.getId().toString());
 
@@ -88,7 +87,12 @@ public class LikeThreadTest {
             mockMvc.perform(
                     get("/api/v1/threads/thread?threadId=" + thread.getId().toString()))
                     .andExpect(status().isOk())
-                    .andExpect(jsonPath("$.data.likedBy[0]").value(userId));
+                    .andExpect(jsonPath("$.data.numLikes").value(1));
+            mockMvc.perform(
+                    get("/api/v1/threads/thread?threadId=" + thread.getId().toString()).header("Authorization", token))
+                    .andExpect(status().isOk())
+                    .andExpect(jsonPath("$.data.numLikes").value(1))
+                    .andExpect(jsonPath("$.data.likeStatus").value("liked"));
         });
     }
 
@@ -110,7 +114,7 @@ public class LikeThreadTest {
             mockMvc.perform(
                     get("/api/v1/threads/thread?threadId=" + thread.getId().toString()))
                     .andExpect(status().isOk())
-                    .andExpect(jsonPath("$.data.likedBy", Matchers.empty()));
+                    .andExpect(jsonPath("$.data.numLikes").value(0));
         });
     }
 
@@ -122,7 +126,6 @@ public class LikeThreadTest {
             JsonNode obj = objectMapper.readTree(res.getResponse().getContentAsString());
 
             String token = obj.get("data").get("token").asText();
-            String userId = obj.get("data").get("userId").asText();
             JSONObject data = new JSONObject();
             data.put("threadId", thread.getId().toString());
 
@@ -137,11 +140,11 @@ public class LikeThreadTest {
             mockMvc.perform(
                     get("/api/v1/threads/thread?threadId=" + thread.getId().toString()))
                     .andExpect(status().isOk())
-                    .andExpect(jsonPath("$.data.likedBy[0]").value(userId));
+                    .andExpect(jsonPath("$.data.numLikes").value(1));
             mockMvc.perform(
                     get("/api/v1/threads/thread?threadId=" + thread.getId().toString()))
                     .andExpect(status().isOk())
-                    .andExpect(jsonPath("$.data.dislikedBy", Matchers.empty()));
+                    .andExpect(jsonPath("$.data.numDislikes").value(0));
         });
     }
 }

@@ -11,8 +11,8 @@ function ThreadBody() {
     day: "numeric",
   });
   return (
-    <div className="flex flex-col min-w-[40vw] p-5 gap-5 border-r-2">
-      <div className="text-3xl border-b-2">{threadInfo.title}</div>
+    <div className="p-5 flex flex-col gap-5 w-[100%]">
+      <div className="text-3xl border-b-2 border-gray-300">{threadInfo.title}</div>
       <div className="text-xl">Proposed: {formattedDate}</div>
       <div className="text-xl">Status: {threadInfo.status}</div>
       {threadInfo.active ? (
@@ -29,6 +29,10 @@ function ThreadBody() {
       <div>
         <p>AI Summary:</p>
         <p>TODO!</p>
+      </div>
+      <div className="flex flex-row gap-5">
+        <div>Likes: {threadInfo.numLikes}</div>
+        <div>Comments: {threadInfo.numComments}</div>
       </div>
     </div>
   );

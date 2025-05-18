@@ -3,15 +3,15 @@ package project.dto.returns;
 import java.util.List;
 
 public class ThreadListReturnDto {
-    private List<ThreadListInfoReturnDto> pageInfo;
+    private List<ThreadInfoReturnDto> pageInfo;
     private PaginationDto pagination;
 
-    public ThreadListReturnDto(List<ThreadListInfoReturnDto> pageInfo, PaginationDto pagination) {
+    public ThreadListReturnDto(List<ThreadInfoReturnDto> pageInfo, PaginationDto pagination) {
         this.pageInfo = pageInfo;
         this.pagination = pagination;
     }
 
-    public List<ThreadListInfoReturnDto> getPageInfo() {
+    public List<ThreadInfoReturnDto> getPageInfo() {
         return pageInfo;
     }
 

@@ -29,10 +29,10 @@ public class ThreadController {
 
     // Gets a list of all threads ordered by date on page num
     @GetMapping("/list")
-    public ResponseEntity<ResponseDto> getThreads(@RequestParam("pageNum") Integer pageNum) {
+    public ResponseEntity<ResponseDto> getThreads(@RequestParam("pageNum") Integer pageNum, @RequestHeader(value = "Authorization", required = false) String token) {
         ThreadListDto dto = new ThreadListDto(pageNum);
         try {
-            return new ResponseEntity<ResponseDto>(threadService.getThreads(dto), HttpStatus.OK);
+            return new ResponseEntity<ResponseDto>(threadService.getThreads(dto, token), HttpStatus.OK);
         } catch (IllegalArgumentException e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ResponseDto(e.getMessage(), null));
         } catch (IllegalAccessError e) {
@@ -41,10 +41,11 @@ public class ThreadController {
     }
 
     @GetMapping("/thread")
-    public ResponseEntity<ResponseDto> getThreadInfo(@RequestParam("threadId") UUID threadId) {
+    public ResponseEntity<ResponseDto> getThreadInfo(@RequestParam("threadId") UUID threadId, 
+        @RequestHeader(value = "Authorization", required = false) String token) {
         ThreadInfoDto dto = new ThreadInfoDto(threadId);
         try {
-            return new ResponseEntity<ResponseDto>(threadService.getThreadInfo(dto), HttpStatus.OK);
+            return new ResponseEntity<ResponseDto>(threadService.getThreadInfo(dto, token), HttpStatus.OK);
         } catch (IllegalArgumentException e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ResponseDto(e.getMessage(), null));
         } catch (IllegalAccessError e) {

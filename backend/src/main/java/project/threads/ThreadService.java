@@ -37,7 +37,7 @@ public class ThreadService {
         this.userRepository = userRepository;
     }
 
-    public ResponseDto getThreads(ThreadListDto dto) {
+    public ResponseDto getThreads(ThreadListDto dto, String tokenString) {
         Integer pageNum = dto.getPageNum();
 
         PageRequest pageRequest = PageRequest.of(pageNum - 1, THREADS_PER_PAGE);
@@ -47,12 +47,9 @@ public class ThreadService {
             throw new IllegalArgumentException("No threads exist on this page");
         }
 
-        List<ThreadListInfoReturnDto> pageInfo = new ArrayList<>();
+        List<ThreadInfoReturnDto> pageInfo = new ArrayList<>();
         for (Thread thread : threads) {
-            pageInfo.add(new ThreadListInfoReturnDto(thread.getId(), thread.getTitle(), thread.getSummary(),
-                    thread.getDate(),
-                    thread.getChamber(), thread.getStatus(), thread.getActive(),
-                    thread.getComments().size(), thread.getLikedBy().size()));
+            pageInfo.add(getThreadInfoDto(thread, tokenString));
         }
 
         PaginationDto pagination = new PaginationDto(
@@ -65,7 +62,7 @@ public class ThreadService {
         return new ResponseDto("Threads obtained successfully", response);
     }
 
-    public ResponseDto getThreadInfo(ThreadInfoDto threadInfo) {
+    public ResponseDto getThreadInfo(ThreadInfoDto threadInfo, String tokenString) {
         UUID threadId = threadInfo.getThreadId();
 
         Optional<Thread> thread = threadRepository.findById(threadId);
@@ -74,13 +71,32 @@ public class ThreadService {
         }
 
         Thread t = thread.get();
-
-        ThreadInfoReturnDto response = new ThreadInfoReturnDto(threadId, t.getTitle(), t.getSummary(), t.getDate(),
-                t.getChamber(), t.getStatus(), t.getActive(),
-                t.getLikedBy().stream().map(user -> user.getId()).collect(Collectors.toList()),
-                t.getDislikedBy().stream().map(user -> user.getId()).collect(Collectors.toList()));
+        ThreadInfoReturnDto response = getThreadInfoDto(t, tokenString);
 
         return new ResponseDto("Thread obtained successfully", response);
+    }
+
+    private ThreadInfoReturnDto getThreadInfoDto(Thread thread, String tokenString) {
+        Optional<User> user = AuthUtils.tryAuthenticate(tokenRepository, userRepository, tokenString);
+        String likeStatus = "";
+        if (user.isPresent() && thread.getDislikedBy().contains(user.get())) {
+            likeStatus = "disliked";
+        } else if (user.isPresent() && thread.getLikedBy().contains(user.get())) {
+            likeStatus = "liked";
+        }
+
+        return new ThreadInfoReturnDto(thread.getId(), 
+            thread.getTitle(), 
+            thread.getSummary(),  
+            thread.getDate(),
+            thread.getChamber(), 
+            thread.getStatus(), 
+            thread.getActive(),
+            thread.getLikedBy().size(), 
+            thread.getDislikedBy().size(), 
+            thread.getComments().size(),
+            likeStatus
+        );
     }
 
     public ResponseDto likeThread(ThreadVoteDto data, String tokenString) {

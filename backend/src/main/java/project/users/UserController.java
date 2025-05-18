@@ -65,7 +65,7 @@ public class UserController {
     @GetMapping("/avatar/{userId}")
     public ResponseEntity<Resource> getAvatar(@PathVariable("userId") UUID userId) {
         try {
-            return ResponseEntity.ok(userService.getAvatar(userId));
+            return userService.getAvatar(userId);
         } catch (IllegalArgumentException e) {
             return ResponseEntity.badRequest().build();
         } catch (IOException e) {

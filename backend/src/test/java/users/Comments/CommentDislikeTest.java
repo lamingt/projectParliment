@@ -102,8 +102,11 @@ public class CommentDislikeTest {
             data.put("commentId", commentId);
 
             mockMvc.perform(
-                    post("/api/v1/comments/dislike").contentType("application/json").header("Authorization", token)
-                            .content(data.toJSONString()))
+                    post("/api/v1/comments/dislike")
+                        .contentType("application/json")
+                        .header("Authorization", token)
+                        .content(data.toJSONString())
+                    )
                     .andExpect(status().isOk());
             mockMvc.perform(
                     get("/api/v1/comments?threadId=" + thread.getId().toString()))

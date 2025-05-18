@@ -6,6 +6,7 @@ import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 import java.util.UUID;
 
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
 import org.springframework.stereotype.Component;
@@ -18,7 +19,7 @@ public class LocalStorageService implements StorageService {
     public LocalStorageService() {
         try {
             upload_dir = Files.createTempDirectory("avatars");
-            Files.createDirectories(upload_dir);
+            // Files.createDirectories(upload_dir);
         } catch (IOException e) {
             throw new RuntimeException("Failed to initialise storage", e);
         }
@@ -35,7 +36,15 @@ public class LocalStorageService implements StorageService {
 
     @Override
     public Resource load(String filename) throws IOException {
+        if (filename == null) {
+            return defaultAvatar();
+        }
+
         Path file = upload_dir.resolve(filename);
+        if (!file.toFile().exists()) {
+            return defaultAvatar();
+        }
+
         return new UrlResource(file.toUri());
     }
 
@@ -44,5 +53,14 @@ public class LocalStorageService implements StorageService {
         Path file = upload_dir.resolve(filename);
         Files.delete(file);
     }
+
+    private Resource defaultAvatar() throws IOException {
+        Resource res = new ClassPathResource("static/default.jpg");
+
+        if (!res.exists() || !res.isReadable()) {
+            throw new IOException("Default avatar not found on classpath!");
+        }
+        return res;
+    } 
     
 }

@@ -15,12 +15,26 @@ public class AuthUtils {
         }
     }
 
-    public static User authenticate(TokenRepository tokenRepository, UserRepository userRepository,
-            String tokenString) {
+    public static User authenticate(
+        TokenRepository tokenRepository, 
+        UserRepository userRepository, 
+        String tokenString
+    ) {
         validateToken(tokenRepository, tokenString);
-        Token token = tokenRepository.findByToken(tokenString)
-                .orElseThrow(() -> new IllegalArgumentException("Invalid token"));
-        return userRepository.findById(token.getUserId())
-                .orElseThrow(() -> new IllegalArgumentException("Invalid user id"));
+        Token token = tokenRepository.findByToken(tokenString).orElseThrow(() -> new IllegalArgumentException("Invalid token"));
+
+        return userRepository.findById(token.getUserId()).orElseThrow(() -> new IllegalArgumentException("Invalid user id"));
+    }
+
+    public static Optional<User> tryAuthenticate(
+        TokenRepository tokenRepo,
+        UserRepository userRepo,
+        String tokenString
+    ) {
+        try {
+            return Optional.of(authenticate(tokenRepo, userRepo, tokenString));
+        } catch (IllegalAccessError | IllegalArgumentException e) {
+            return Optional.empty();
+        }
     }
 }

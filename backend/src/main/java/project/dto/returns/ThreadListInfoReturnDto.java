@@ -3,6 +3,7 @@ package project.dto.returns;
 import java.time.LocalDate;
 import java.util.UUID;
 
+@Deprecated
 public class ThreadListInfoReturnDto {
     private UUID id;
     private String title;
