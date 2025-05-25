@@ -1,5 +1,3 @@
---- Page 1 ---
-
 Title: Abolition of Special Prospecting Authorities (Ocean Protection) Bill 2024
 Date: 18 Nov 2024
 Chamber: House of Representatives
@@ -50,9 +48,6 @@ Date: 14 Sep 2023
 Chamber: Senate
 Status: Before Senate
 Summary: Amends the Australian Education Act 2013 to: redefine the Commonwealth share of funding for a government school to 25%; and introduce an obligation on the minister to be satisfied when determining the Commonwealth share that it is consistent with the objective that every school-aged child in Australia has access to a fully-funded government school.
-
---- Page 2 ---
-
 Title: Australian Education Legislation Amendment (Prohibiting the Indoctrination of Children) Bill 2020
 Date: 10 Feb 2020
 Chamber: Senate
@@ -103,9 +98,6 @@ Date: 25 Jun 2024
 Chamber: Senate
 Status: Before Senate
 Summary: Establishes a commission of inquiry into antisemitism at Australian universities.
-
---- Page 3 ---
-
 Title: Commonwealth Electoral Amendment (Banning Dirty Donations) Bill 2022
 Date: 24 Nov 2022
 Chamber: Senate
@@ -156,9 +148,6 @@ Date: 08 Feb 2023
 Chamber: Senate
 Status: Before Senate
 Summary: Amends the Criminal Code Act 1995 to introduce three new offences relating to the incitement of trespass, property damage or theft and unlawful obstruction of traffic in central business districts and other centres of significant business or cultural activity in Australia.
-
---- Page 4 ---
-
 Title: Criminal Code Amendment (Prohibition of Nazi Symbols) Bill 2023
 Date: 23 Mar 2023
 Chamber: Senate
@@ -209,9 +198,6 @@ Date: 26 Jun 2024
 Chamber: Senate
 Status: Before Senate
 Summary: Repeals the Digital ID Act 2024 and Digital ID (Transitional and Consequential Provisions) Act 2024. Also makes consequential amendments to 6 Acts.
-
---- Page 5 ---
-
 Title: Doctors for the Bush Bill 2024
 Date: 25 Nov 2024
 Chamber: House of Representatives
@@ -262,9 +248,6 @@ Date: 16 Jun 2021
 Chamber: Senate
 Status: Before Senate
 Summary: The bill: requires the Minister for Energy and Emission Reduction to table in each House of Parliament an annual statement outlining Australia's strategy on electric vehicles; and provides for the reference of matters to the Productivity Commission, including Australia’s support for the manufacture, purchase and use of electric vehicles.
-
---- Page 6 ---
-
 Title: Ending Poverty in Australia (Antipoverty Commission) Bill 2023
 Date: 30 Mar 2023
 Chamber: Senate
@@ -315,9 +298,6 @@ Date: 19 Aug 2024
 Chamber: House of Representatives
 Status: Before House of Representatives
 Summary: Amends the Fair Work (Registered Organisations) Act 2009 to: expand the circumstances in which a person may be automatically disqualified from office and make it a criminal offence for a person who is disqualified from holding office in a registered organisation to continue to hold office or act in a manner that would significantly influence the organisation; provide for a disqualification scheme that allows the Federal Court to disqualify an official from holding office in certain circumstances; expand the grounds for the cancellation of registration of organisations by the Federal Court; and enable the Federal Court to make orders instead of cancellation of registration.
-
---- Page 7 ---
-
 Title: Fair Work (Registered Organisations) Amendment (Removing Criminals from Worksites) Bill 2024 (No. 2)
 Date: 21 Aug 2024
 Chamber: Senate
@@ -368,9 +348,6 @@ Date: 28 Nov 2024
 Chamber: Senate
 Status: Before Senate
 Summary: No summary exists.
-
---- Page 8 ---
-
 Title: Governor-General Amendment (Cessation of Allowances in the Public Interest) Bill 2023
 Date: 06 Mar 2023
 Chamber: Senate
@@ -421,9 +398,6 @@ Date: 18 Nov 2024
 Chamber: House of Representatives
 Status: Before House of Representatives
 Summary: No summary exists.
-
---- Page 9 ---
-
 Title: Human Rights (Children Born Alive Protection) Bill 2022
 Date: 30 Nov 2022
 Chamber: Senate
@@ -474,9 +448,6 @@ Date: 18 Nov 2024
 Chamber: House of Representatives
 Status: Before House of Representatives
 Summary: No summary exists.
-
---- Page 10 ---
-
 Title: Migration Amendment (Limits on Immigration Detention) Bill 2024
 Date: 19 Aug 2024
 Chamber: House of Representatives
@@ -527,9 +498,6 @@ Date: 19 Nov 2024
 Chamber: Senate
 Status: Before Senate
 Summary: No summary exists.
-
---- Page 11 ---
-
 Title: Nature Positive (Environment Information Australia) Bill 2024
 Date: 29 May 2024
 Chamber: House of Representatives
@@ -580,9 +548,6 @@ Date: 07 Sep 2022
 Chamber: Senate
 Status: Before Senate
 Summary: Amends the Parliamentary Privileges Act 1987 to implement a recommendation of the interim report of the Royal Commission into Defence and Veteran Suicide to allow a royal commission, whose terms of reference require an examination of government, to analyse and draw inferences or conclusions from evidence that is subject to parliamentary privilege.
-
---- Page 12 ---
-
 Title: Protecting the Spirit of Sea Country Bill 2023
 Date: 08 Aug 2023
 Chamber: Senate
@@ -633,9 +598,6 @@ Date: 30 Nov 2023
 Chamber: House of Representatives
 Status: Before Senate
 Summary: Introduced with the Superannuation (Better Targeted Superannuation Concessions) Imposition Bill 2023, the bill amends: 9 Acts to make consequential amendments; the Australian Charities and Not-for-profits Commission Act 2012 to enable the disclosure of information about a recognised assessment activity in relation to a registered entity in certain circumstances; the Financial Regulator Assessment Authority Act 2021 to reduce the frequency of certain periodic reviews; 6 Acts to make miscellaneous and technical amendments in the Treasury portfolio; the Corporations Act 2001 to provide four licensing exemptions for foreign financial services providers; and the Payment Systems (Regulation) Act 1998 and 4 other Acts in relation to the payments regulatory framework.
-
---- Page 13 ---
-
 Title: Treasury Laws Amendment (Divesting from Illegal Israeli Settlements) Bill 2024
 Date: 28 Nov 2024
 Chamber: Senate

@@ -3,39 +3,60 @@ import bs4 as BeautifulSoup
 import requests
 import psycopg2
 import re
+from pathlib import Path
+
 
 if __name__ == "__main__":
-    limit = 100
+    script_dir = Path(__file__).parent
+    file_path = script_dir / "bills.txt"
     bills_info = []
-    for i in range(1, limit):
-        res = requests.get(f"https://www.aph.gov.au/Parliamentary_Business/Bills_Legislation/Bills_before_Parliament?Page={i}")
-        soup = BeautifulSoup.BeautifulSoup(res.text, 'html.parser')
+    
+    with open(file_path) as file:
+        while True:
+            info = []
+            for i in range(5):
+                line = file.readline().strip()
+                if line == "":
+                    break
+                line = re.sub(r'^[a-zA-Z]*: ', "", line)
+                info.append(line)
+            if len(info) == 0:
+                break
+            bills_info.append(tuple(info))
+    
+    '''
+        albo broke the parliament this doesnt work for now
+    '''
+    # limit = 100
+    # for i in range(1, limit):
+    #     res = requests.get(f"https://www.aph.gov.au/Parliamentary_Business/Bills_Legislation/Bills_before_Parliament?Page={i}")
+    #     soup = BeautifulSoup.BeautifulSoup(res.text, 'html.parser')
         
-        # No more results
-        if (soup.prettify().find("<ul class=\"search-filter-results\">") == -1):
-            break 
+    #     # No more results
+    #     if (soup.prettify().find("<ul class=\"search-filter-results\">") == -1):
+    #         break 
         
-        # print(f"--- Page {i} ---")
-        # print("")
+    #     # print(f"--- Page {i} ---")
+    #     # print("")
 
-        li_elements = soup.find_all('li', recursive=True)
-        bills = [li for li in li_elements if li.find('div')]
-        for bill in bills:
-            title = bill.select_one("h4 a").text.strip()
-            date = bill.select_one("dl dd:nth-of-type(1)").text.strip()
-            chamber = bill.select_one("dl dd:nth-of-type(2)").text.strip()
-            status = bill.select_one("dl dd:nth-of-type(3)").text.strip()
-            summary = bill.select_one("dl dd:nth-of-type(5)")
-            summary = summary.text.strip() if summary is not None else "No summary exists."
+    #     li_elements = soup.find_all('li', recursive=True)
+    #     bills = [li for li in li_elements if li.find('div')]
+    #     for bill in bills:
+    #         title = bill.select_one("h4 a").text.strip()
+    #         date = bill.select_one("dl dd:nth-of-type(1)").text.strip()
+    #         chamber = bill.select_one("dl dd:nth-of-type(2)").text.strip()
+    #         status = bill.select_one("dl dd:nth-of-type(3)").text.strip()
+    #         summary = bill.select_one("dl dd:nth-of-type(5)")
+    #         summary = summary.text.strip() if summary is not None else "No summary exists."
             
-            # print(f"Title: {title}")
-            # print(f"Date: {date}")
-            # print(f"Chamber: {chamber}")
-            # print(f"Status: {status}")
-            # print(f"Summary: {summary}")
-            bills_info.append((title, date, chamber, status, summary))
+    #         # print(f"Title: {title}")
+    #         # print(f"Date: {date}")
+    #         # print(f"Chamber: {chamber}")
+    #         # print(f"Status: {status}")
+    #         # print(f"Summary: {summary}")
+    #         bills_info.append((title, date, chamber, status, summary))
         
-        # print("")
+    #     # print("")
     
     try:
         db = psycopg2.connect(user="postgres",

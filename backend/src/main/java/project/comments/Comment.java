@@ -26,7 +26,7 @@ import project.threads.Thread;
 @Entity
 @Table(name = "comments", indexes = {
     @Index(name = "idx_comments_thread", columnList = "thread"),
-    @Index(name = "idx_comments_parent", columnList = "parent"),
+    @Index(name = "idx_comments_parent", columnList = "parent_comment"),
     @Index(name = "idx_comments_created", columnList = "thread, createdAt"),
     @Index(name = "idx_comments_likes", columnList = "thread, netLikeCount")
 })
